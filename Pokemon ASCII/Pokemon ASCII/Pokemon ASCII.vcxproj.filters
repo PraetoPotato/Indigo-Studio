@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\..\..\Isaiah%27s Stuff\UOIT Stuff\Game Development Workshop\Digital Text Based Game(GDW 3 )\Indigo-Studio\Pokemon ASCII\Pokemon ASCII\Main.cpp">
+    <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
