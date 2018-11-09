@@ -1,16 +1,19 @@
 #include <iostream>
-#include <fstream>
+#include <fstream>//im using this for importing txt files
 #include <string>
-#include <windows.h>
+#include <windows.h>//im using this to change the default window size
+#include <stdlib.h>//allows you to clear the screen
 
 int main() {
+	system("CLS");
 	//set console window size
 	HWND console = GetConsoleWindow();
 	RECT r;
 	GetWindowRect(console, &r);
-	MoveWindow(console, r.left, r.top, 1800, 1000, TRUE);
+	MoveWindow(console, r.left, r.top, 1800, 2000, TRUE);
 	std::string line;
 
+	//The Title Screen
 	//open text file
 	std::ifstream myfile("text logo.txt");
 	if (myfile.is_open())
@@ -22,6 +25,10 @@ int main() {
 		myfile.close();
 	}
 	else std::cout << "unable to open file" << std::endl;
+
+	
+	system("pause");
+	system("CLS");
 
 	system("pause");
 
