@@ -35,6 +35,28 @@ if (trainerBattle==true)
 {
   std::cout<<trainer dialogue;
   if statements for battle
+  if attack==physical
+  {
+    (((((2*level)/5)+2)*power*(attack/defense))/50)
+  }
+  
+  if attack==physical && sameTypeAsYourPokmeon's
+  {
+    (((((2*level)/5)+2)*power*(attack/defense))/50)*1.5
+  }
+
+    if attack==special
+  {
+    (((((2*level)/5)+2)*power*(specialAttack/specialDefense))/50)
+  }
+  
+      if attack==special && sameTypeAsYourPokmeon's
+  {
+    (((((2*level)/5)+2)*power*(specialAttack/specialDefense))/50)*1.5
+  }
+  
+//also if type is super effective just multiply the entire equation by 2. if not very effective half everything in the equation.
+
 
   if (win==true)
   {

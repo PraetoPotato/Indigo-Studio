@@ -21,9 +21,15 @@
     <ClCompile Include="Character.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\Isaiah%27s Stuff\UOIT Stuff\Game Development Workshop\Digital Text Based Game(GDW 3 )\Indigo-Studio\Pokemon ASCII\Pokemon ASCII\BattleStuff.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\Isaiah%27s Stuff\UOIT Stuff\Game Development Workshop\Digital Text Based Game(GDW 3 )\Indigo-Studio\Pokemon ASCII\Pokemon ASCII\BattleStuff.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

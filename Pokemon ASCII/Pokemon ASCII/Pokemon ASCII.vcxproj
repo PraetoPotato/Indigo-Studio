@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\..\Isaiah%27s Stuff\UOIT Stuff\Game Development Workshop\Digital Text Based Game(GDW 3 )\Indigo-Studio\Pokemon ASCII\Pokemon ASCII\BattleStuff.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\..\Isaiah%27s Stuff\UOIT Stuff\Game Development Workshop\Digital Text Based Game(GDW 3 )\Indigo-Studio\Pokemon ASCII\Pokemon ASCII\BattleStuff.h" />
     <ClInclude Include="Character.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
