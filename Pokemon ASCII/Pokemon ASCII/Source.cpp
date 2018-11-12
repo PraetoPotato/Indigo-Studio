@@ -5,7 +5,7 @@
 #include <stdlib.h>//allows you to clear the screen
 
 int main() {
-	system("CLS");
+	system("CLS");//this clears the screen
 	//set console window size
 	HWND console = GetConsoleWindow();
 	RECT r;
@@ -25,10 +25,9 @@ int main() {
 		myfile.close();
 	}
 	else std::cout << "unable to open file" << std::endl;
-
-	
 	system("pause");
 	system("CLS");
+
 
 	system("pause");
 
