@@ -3,6 +3,7 @@
 #include <string>
 #include <windows.h>//im using this to change the default window size
 #include <stdlib.h>//allows you to clear the screen
+#undef max
 //#include <Mmsystem.h>//alows you play music
 //#include <mciapi.h>//allows you to play music
 #pragma comment(lib, "winmm.lib")
@@ -43,12 +44,39 @@ int main(int argc, char* argv[])
 	PlaySound("Pokemon HeartGold and SoulSilver - Safari Zone Gate (8-Bit).wav", NULL, SND_FILENAME | SND_LOOP | SND_ASYNC);
 	while (starterChosen == false)
 	{
+		std::ifstream starterPokemon("starterPokemon.txt");
+		if (starterPokemon.is_open())
+		{
+			while (getline(starterPokemon, line))
+			{
+				std::cout << line << "\n";
+			}
+			starterPokemon.close();
+		}
+
 		std::cout << "Pick a Starter:" << std::endl;
-		std::cin >> starter;
+		while (!(std::cin >> starter))
+		{
+			system("CLS");
+			std::ifstream starterPokemon("starterPokemon.txt");
+			if (starterPokemon.is_open())
+			{
+				while (getline(starterPokemon, line))
+				{
+					std::cout << line << "\n";
+				}
+				starterPokemon.close();
+			}
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << "Pick a Starter:" << std::endl;
+		}
 		if (starter == 1|| starter == 2|| starter == 3)
 		{
 			starterChosen = true;
+
 		}
+		system("CLS");
 	}
 	PlaySound(NULL, 0, 0);
 	system("pause");
