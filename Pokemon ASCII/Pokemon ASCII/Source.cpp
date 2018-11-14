@@ -121,7 +121,7 @@ int main(int argc, char* argv[])
 		std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
 		std::cout << "                                 Before I can go any further, is this your first adventure? If need any advice, I'm certainly capable of giving it." << std::endl;
 		std::cout << "                                                                [1]Control Info  [2]Adventure Info [3]No Info Needed" << std::endl;
-		while (!(std::cin >> advice))
+		while (!(std::cin >>std::noskipws >> advice))//noskipws skips whitespace as input
 		{
 			system("CLS");
 			std::cin.clear();
@@ -179,7 +179,7 @@ int main(int argc, char* argv[])
 		}
 
 		std::cout << "Pick a Starter:" << std::endl;
-		while (!(std::cin >> starter))
+		while (!(std::cin >> std::noskipws >> starter))
 		{
 			system("CLS");
 			std::ifstream starterPokemon("starterPokemon.txt");
