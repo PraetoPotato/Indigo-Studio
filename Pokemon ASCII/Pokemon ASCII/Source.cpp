@@ -3,10 +3,11 @@
 #include <string>
 #include <windows.h>//im using this to change the default window size
 #include <stdlib.h>//allows you to clear the screen
+#include <iomanip>
 #undef max
 //#include <Mmsystem.h>//alows you play music
 //#include <mciapi.h>//allows you to play music
-#pragma comment(lib, "winmm.lib")
+#pragma comment(lib, "winmm.lib")//you need need for music
 
 bool starterChosen(false);
 int starter;
@@ -40,6 +41,166 @@ int main(int argc, char* argv[])
 	PlaySound(NULL, 0, 0);//Stops the music from playing
 	system("CLS");
 
+	//Introduction text
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+
+	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+	std::cout<< "                                                                                               Hello there, it's so very nice to see you!"<<std::endl;
+
+
+	system("pause");
+	system("CLS");
+
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+
+	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+	std::cout << "                                                                                              Welcome to the world of Pokemon!" << std::endl;
+
+
+	system("pause");
+	system("CLS");
+
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+
+	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+	std::cout << "                                                                                              My name is Professor Oak." << std::endl;
+
+
+	system("pause");
+	system("CLS");
+
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+
+	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+	std::cout << "                                 Before I can go any further, is this your first adventure? If need any advice, I'm certainly capable of giving it." << std::endl;
+
+
+	system("pause");
+	system("CLS");
 	//Pick a Starter Screen
 	PlaySound("Pokemon HeartGold and SoulSilver - Safari Zone Gate (8-Bit).wav", NULL, SND_FILENAME | SND_LOOP | SND_ASYNC);
 	while (starterChosen == false)
@@ -78,16 +239,28 @@ int main(int argc, char* argv[])
 		}
 		system("CLS");
 	}
+
 	PlaySound(NULL, 0, 0);
+
 
 	if (starter == 1)
 	{
 		std::cout << "You choose Squirtle!"<<std::endl;
 	}
 
-	system("pause");
+	if (starter == 2)
+	{
+		std::cout << "You choose Bulbasaur!" << std::endl;
+	}
+
+	if (starter == 3)
+	{
+		std::cout << "You choose Charmander!" << std::endl;
+	}
 
 	system("pause");
+
+
 	return 0;
 }
 
