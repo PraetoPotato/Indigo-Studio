@@ -208,16 +208,19 @@ int main(int argc, char* argv[])
 
 	if (starter == 1)
 	{
+		PlaySound("Pokémon RedBlueYellow - Pokémon Capture - Sound Effect.wav", NULL, SND_FILENAME| SND_ASYNC);
 		std::cout << "You choose Squirtle!"<<std::endl;
 	}
 
 	if (starter == 2)
 	{
+		PlaySound("Pokémon RedBlueYellow - Pokémon Capture - Sound Effect.wav", NULL, SND_FILENAME | SND_ASYNC);
 		std::cout << "You choose Bulbasaur!" << std::endl;
 	}
 
 	if (starter == 3)
 	{
+		PlaySound("Pokémon RedBlueYellow - Pokémon Capture - Sound Effect.wav", NULL, SND_FILENAME | SND_ASYNC);
 		std::cout << "You choose Charmander!" << std::endl;
 	}
 
