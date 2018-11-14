@@ -10,7 +10,9 @@
 #pragma comment(lib, "winmm.lib")//you need need for music
 
 bool starterChosen(false);
+bool adviceComplete(false);
 int starter;
+int advice;
 
 int main(int argc, char* argv[])
 {
@@ -23,9 +25,9 @@ int main(int argc, char* argv[])
 	std::string line;
 
 	//The Title Screen
-	//open text file
+
 	PlaySound("Pokemon Blue Version - Title Screen.wav", NULL, SND_FILENAME |SND_LOOP| SND_ASYNC);//SND_LOOP loops the music, SND_ASYNC lets you play the music while the thing is displaying
-	std::ifstream myfile("text logo.txt");
+	std::ifstream myfile("text logo.txt");//open text file
 	if (myfile.is_open())
 	{
 		while (getline(myfile, line))
@@ -42,38 +44,18 @@ int main(int argc, char* argv[])
 	PlaySound(NULL, 0, 0);//Stops the music from playing
 	//Introduction text
 	PlaySound("Pokemon BlueRed - Route 24 & 25.wav", NULL, SND_FILENAME | SND_LOOP | SND_ASYNC);
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
+
+	std::ifstream profOak("Oak.txt");
+	if (profOak.is_open())
+	{
+		while (getline(profOak, line))
+		{
+			std::cout << line << "\n";
+		}
+		profOak.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
 
 	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
 	std::cout<< "                                                                                               Hello there, it's so very nice to see you!"<<std::endl;
@@ -82,38 +64,17 @@ int main(int argc, char* argv[])
 	system("pause");
 	system("CLS");
 
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
+	profOak.open("Oak.txt", std::ios::in);
+	if (profOak.is_open())
+	{
+		while (getline(profOak, line))
+		{
+			std::cout << line << "\n";
+		}
+		profOak.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
 
 	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
 	std::cout << "                                                                                              Welcome to the world of Pokemon!" << std::endl;
@@ -122,38 +83,18 @@ int main(int argc, char* argv[])
 	system("pause");
 	system("CLS");
 
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
+	profOak.open("Oak.txt", std::ios::in);
+
+	if (profOak.is_open())
+	{
+		while (getline(profOak, line))
+		{
+			std::cout << line << "\n";
+		}
+		profOak.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
 
 	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
 	std::cout << "                                                                                              My name is Professor Oak." << std::endl;
@@ -162,44 +103,64 @@ int main(int argc, char* argv[])
 	system("pause");
 	system("CLS");
 
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\[1]Control Info  [2]Adventure Info [3]No Info Needed";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
+	while (adviceComplete == false)
+	{
+		profOak.open("Oak.txt", std::ios::in);//open the text file
 
-	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
-	std::cout << "                                 Before I can go any further, is this your first adventure? If need any advice, I'm certainly capable of giving it." << std::endl;
+		if (profOak.is_open())
+		{
+			while (getline(profOak, line))
+			{
+				std::cout << line << "\n";
+			}
+			profOak.close();
+		}
 
+		else std::cout << "unable to open file" << std::endl;
 
-	system("pause");
+		std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+		std::cout << "                                 Before I can go any further, is this your first adventure? If need any advice, I'm certainly capable of giving it." << std::endl;
+		std::cout << "                                                                [1]Control Info  [2]Adventure Info [3]No Info Needed" << std::endl;
+		while (!(std::cin >> advice))
+		{
+			system("CLS");
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+			profOak.open("Oak.txt", std::ios::in);
+
+			if (profOak.is_open())
+			{
+				while (getline(profOak, line))
+				{
+					std::cout << line << "\n";
+				}
+				profOak.close();
+			}
+
+			std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+			std::cout << "                                 Before I can go any further, is this your first adventure? If need any advice, I'm certainly capable of giving it." << std::endl;
+			std::cout << "                                                                [1]Control Info  [2]Adventure Info [3]No Info Needed" << std::endl;
+		}
+		if (advice == 1 || advice == 2 ||advice == 3)
+		{
+			adviceComplete = true;
+		}
+		system("CLS");
+	}
+	//Movement instructions screen
+	if (advice == 1)
+	{
+		std::cout << "insert movement stuff here." << std::endl;
+		system("pause");
+	}
+
+	if (advice == 2)
+	{
+		std::cout << "insert stuff here." << std::endl;
+		system("pause");
+	}
+
 	PlaySound(NULL, 0, 0);
 	system("CLS");
 
