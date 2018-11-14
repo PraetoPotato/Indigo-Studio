@@ -79,9 +79,15 @@ int main(int argc, char* argv[])
 		system("CLS");
 	}
 	PlaySound(NULL, 0, 0);
+
+	if (starter == 1)
+	{
+		std::cout << "You choose Squirtle!"<<std::endl;
+	}
+
 	system("pause");
 
-
+	system("pause");
 	return 0;
 }
 
