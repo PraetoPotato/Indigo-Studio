@@ -38,10 +38,10 @@ int main(int argc, char* argv[])
 	else std::cout << "unable to open file" << std::endl;
 	
 	system("pause");
-	PlaySound(NULL, 0, 0);//Stops the music from playing
 	system("CLS");
-
+	PlaySound(NULL, 0, 0);//Stops the music from playing
 	//Introduction text
+	PlaySound("Pokemon BlueRed - Route 24 & 25.wav", NULL, SND_FILENAME | SND_LOOP | SND_ASYNC);
 	std::cout << "\n";
 	std::cout << "\n";
 	std::cout << "\n";
@@ -166,7 +166,7 @@ int main(int argc, char* argv[])
 	std::cout << "\n";
 	std::cout << "\n";
 	std::cout << "\n";
-	std::cout << "\n";
+	std::cout << "\[1]Control Info  [2]Adventure Info [3]No Info Needed";
 	std::cout << "\n";
 	std::cout << "\n";
 	std::cout << "\n";
@@ -200,7 +200,9 @@ int main(int argc, char* argv[])
 
 
 	system("pause");
+	PlaySound(NULL, 0, 0);
 	system("CLS");
+
 	//Pick a Starter Screen
 	PlaySound("Pokemon HeartGold and SoulSilver - Safari Zone Gate (8-Bit).wav", NULL, SND_FILENAME | SND_LOOP | SND_ASYNC);
 	while (starterChosen == false)
