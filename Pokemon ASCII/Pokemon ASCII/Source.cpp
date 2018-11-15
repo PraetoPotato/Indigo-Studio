@@ -4,11 +4,10 @@
 #include <windows.h>//im using this to change the default window size
 #include <stdlib.h>//allows you to clear the screen
 #include <iomanip>
-#include <Mmsystem.h>
-#include <mciapi.h>
+#include <Mmsystem.h>//allows you to use mciSendString
+#include <mciapi.h>//allows you to use mciSendString
 #undef max
-//#include <Mmsystem.h>//alows you play music
-//#include <mciapi.h>//allows you to play music
+
 #pragma comment(lib, "winmm.lib")//you need need for music
 
 bool starterChosen(false);
@@ -144,27 +143,26 @@ int main(int argc, char* argv[])
 			std::cout << "                                            Before I can go any further, is this your first adventure? If need any advice, I'm certainly capable of giving it." << std::endl;
 			std::cout << "                                                                            [1]Control Info  [2]Adventure Info [3]No Info Needed" << std::endl;
 		}
-		if (advice == 1 || advice == 2 ||advice == 3)
+		if (advice == 1)
+		{
+			system("CLS");
+			std::cout << "insert movement stuff here." << std::endl;
+			system("pause");
+		}
+		//adventure instructions screen
+		if (advice == 2)
+		{
+			system("CLS");
+			std::cout << "insert stuff here." << std::endl;
+			system("pause");
+		}
+
+		if (advice == 3)
 		{
 			adviceComplete = true;
 		}
 		system("CLS");
 	}
-	//Movement instructions screen
-	if (advice == 1)
-	{
-		std::cout << "insert movement stuff here." << std::endl;
-		system("pause");
-	}
-	//adventure instructions screen
-	if (advice == 2)
-	{
-		std::cout << "insert stuff here." << std::endl;
-		system("pause");
-	}
-
-
-	system("CLS");
 
 	profOak.open("Nidorino.txt", std::ios::in);
 
@@ -178,7 +176,13 @@ int main(int argc, char* argv[])
 	}
 
 	else std::cout << "unable to open file" << std::endl;
-
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
 	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
 	mciSendString("open \"Pokémon - Nidorino (Cry).mp3\" type mpegvideo alias mp3", NULL, 0, NULL);//I used this so that this sound effect can be played over the music//Play Sound doesn't allow to play two sound simataneuosly
 	mciSendString("play mp3", NULL, 0, NULL);
@@ -200,8 +204,15 @@ int main(int argc, char* argv[])
 		profOak.close();
 	}
 
-	else std::cout << "unable to open file" << std::endl;
 
+	else std::cout << "unable to open file" << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
 	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
 	std::cout << "                                                                                   For some people,Pokemon are pets. Some use them for battles." << std::endl;
 
@@ -220,7 +231,13 @@ int main(int argc, char* argv[])
 	}
 
 	else std::cout << "unable to open file" << std::endl;
-
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
 	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
 	std::cout << "                                                                                   I on the other hand, study Pokemon as a profession." << std::endl;
 
