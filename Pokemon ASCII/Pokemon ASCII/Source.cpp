@@ -4,6 +4,8 @@
 #include <windows.h>//im using this to change the default window size
 #include <stdlib.h>//allows you to clear the screen
 #include <iomanip>
+#include <Mmsystem.h>
+#include <mciapi.h>
 #undef max
 //#include <Mmsystem.h>//alows you play music
 //#include <mciapi.h>//allows you to play music
@@ -119,8 +121,8 @@ int main(int argc, char* argv[])
 		else std::cout << "unable to open file" << std::endl;
 
 		std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
-		std::cout << "                                 Before I can go any further, is this your first adventure? If need any advice, I'm certainly capable of giving it." << std::endl;
-		std::cout << "                                                                [1]Control Info  [2]Adventure Info [3]No Info Needed" << std::endl;
+		std::cout << "                                            Before I can go any further, is this your first adventure? If need any advice, I'm certainly capable of giving it." << std::endl;
+		std::cout << "                                                                            [1]Control Info  [2]Adventure Info [3]No Info Needed" << std::endl;
 		while (!(std::cin >>std::noskipws >> advice))//noskipws skips whitespace as input
 		{
 			system("CLS");
@@ -139,8 +141,8 @@ int main(int argc, char* argv[])
 			}
 
 			std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
-			std::cout << "                                 Before I can go any further, is this your first adventure? If need any advice, I'm certainly capable of giving it." << std::endl;
-			std::cout << "                                                                [1]Control Info  [2]Adventure Info [3]No Info Needed" << std::endl;
+			std::cout << "                                            Before I can go any further, is this your first adventure? If need any advice, I'm certainly capable of giving it." << std::endl;
+			std::cout << "                                                                            [1]Control Info  [2]Adventure Info [3]No Info Needed" << std::endl;
 		}
 		if (advice == 1 || advice == 2 ||advice == 3)
 		{
@@ -154,16 +156,136 @@ int main(int argc, char* argv[])
 		std::cout << "insert movement stuff here." << std::endl;
 		system("pause");
 	}
-
+	//adventure instructions screen
 	if (advice == 2)
 	{
 		std::cout << "insert stuff here." << std::endl;
 		system("pause");
 	}
 
-	PlaySound(NULL, 0, 0);
+
 	system("CLS");
 
+	profOak.open("Nidorino.txt", std::ios::in);
+
+	if (profOak.is_open())
+	{
+		while (getline(profOak, line))
+		{
+			std::cout << line << "\n";
+		}
+		profOak.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+
+	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+	mciSendString("open \"Pokémon - Nidorino (Cry).mp3\" type mpegvideo alias mp3", NULL, 0, NULL);//I used this so that this sound effect can be played over the music//Play Sound doesn't allow to play two sound simataneuosly
+	mciSendString("play mp3", NULL, 0, NULL);
+	//Sleep(800);
+	//PlaySound("Pokemon BlueRed - Route 24 & 25.wav", NULL, SND_FILENAME | SND_LOOP | SND_ASYNC);
+	std::cout << "                                                                                      This world is inhabited by creatures called Pokemon." << std::endl;
+
+	system("pause");
+	system("CLS");
+
+	profOak.open("Nidorino.txt", std::ios::in);
+
+	if (profOak.is_open())
+	{
+		while (getline(profOak, line))
+		{
+			std::cout << line << "\n";
+		}
+		profOak.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+
+	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+	std::cout << "                                                                                   For some people,Pokemon are pets. Some use them for battles." << std::endl;
+
+	system("pause");
+	system("CLS");
+
+	profOak.open("Nidorino.txt", std::ios::in);
+
+	if (profOak.is_open())
+	{
+		while (getline(profOak, line))
+		{
+			std::cout << line << "\n";
+		}
+		profOak.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+
+	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+	std::cout << "                                                                                   I on the other hand, study Pokemon as a profession." << std::endl;
+
+	system("pause");
+	system("CLS");
+
+	profOak.open("Oak.txt", std::ios::in);
+
+	if (profOak.is_open())
+	{
+		while (getline(profOak, line))
+		{
+			std::cout << line << "\n";
+		}
+		profOak.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+
+	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+	std::cout << "                                                                                              Ash!" << std::endl;
+
+	system("pause");
+	system("CLS");
+
+	profOak.open("Oak.txt", std::ios::in);
+
+	if (profOak.is_open())
+	{
+		while (getline(profOak, line))
+		{
+			std::cout << line << "\n";
+		}
+		profOak.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+
+	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+	std::cout << "                                                                                             Your very own Pokemon legend is about to unfold!" << std::endl;
+
+
+	system("pause");
+	system("CLS");
+
+	profOak.open("Oak.txt", std::ios::in);
+
+	if (profOak.is_open())
+	{
+		while (getline(profOak, line))
+		{
+			std::cout << line << "\n";
+		}
+		profOak.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+
+	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+	std::cout << "                                                                             A world full of hopes and dream eith Pokemon awaits! Let's go!" << std::endl;
+
+
+	system("pause");
+	system("CLS");
+	PlaySound(NULL, 0, 0);
 	//Pick a Starter Screen
 	PlaySound("Pokemon HeartGold and SoulSilver - Safari Zone Gate (8-Bit).wav", NULL, SND_FILENAME | SND_LOOP | SND_ASYNC);
 	while (starterChosen == false)
