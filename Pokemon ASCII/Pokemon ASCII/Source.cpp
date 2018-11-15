@@ -365,7 +365,9 @@ int main(int argc, char* argv[])
 
 	system("pause");
 
+//Battle Stuff
 
+//OverWorld stuff
 	return 0;
 }
 
