@@ -62,7 +62,7 @@ void DrawGym::movement()
 		//break;
 	case 'd':
 		system("CLS");
-		if (y + 1 <=24)
+		if (x + 1 <=24)
 		{
 			x++;
 			drawGym(x, y);
