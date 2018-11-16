@@ -7,15 +7,30 @@
 #include <Mmsystem.h>//allows you to use mciSendString
 #include <mciapi.h>//allows you to use mciSendString
 #include <conio.h>//allows you to use getch() which will allow keyboard input
+#include "DrawGym.h"
 #undef max
 
 #pragma comment(lib, "winmm.lib")//you need need for music
 
 bool starterChosen(false);
 bool adviceComplete(false);
+bool inOverWorld(true);
 int starter;
 int advice;
 
+void drawmap(char maze[][50])
+{
+	for (int row = 0;row < 50;row++)
+	{
+		for (int col = 0;col < 50;col++)
+		{
+			std::cout << maze[col][row];
+			maze[2][3] = '#';
+		}
+		std::cout << std::endl;
+	}
+
+}
 int main(int argc, char* argv[])
 {
 	system("CLS");//this clears the screen
@@ -371,6 +386,13 @@ int main(int argc, char* argv[])
 
 
 //OverWorld stuff
+	system("CLS");
+	char maze[50][50] = { '.' };
+	int row, col;
+	for (row = 0;row < 50;row++)
+		for (col = 0;col < 50;col++)
+			maze[col][row] = '.';
+	drawmap(maze);
 
 //while(inOverworld)
 	//char var(0);
@@ -381,6 +403,7 @@ int main(int argc, char* argv[])
 	//      wasd;
 	// }
 
+	system("pause");
 	return 0;
 }
 
