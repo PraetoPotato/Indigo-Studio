@@ -3,10 +3,10 @@
 
 void DrawGym::display()
 {
+	system("CLS");
+	drawGym(x, y);
 	for (;;)
 	{
-		system("CLS");
-		drawGym(x, y);
 		movement();
 	}
 	
@@ -19,6 +19,7 @@ void DrawGym::drawGym(int charX,int charB)
 		{
 			map[col][row] = '.';
 			map[12][0] = '$';
+			map[0][5] = 'O';
 			map[charX][charB] = '@';
 
 			std::cout << map[col][row];
@@ -71,6 +72,9 @@ void DrawGym::movement()
 			drawGym(x, y);
 		}
 		break;
+	default:
+		system("CLS");
+		drawGym(x, y);
 	}
 
 }
