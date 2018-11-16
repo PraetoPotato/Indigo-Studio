@@ -6,6 +6,7 @@
 #include <iomanip>
 #include <Mmsystem.h>//allows you to use mciSendString
 #include <mciapi.h>//allows you to use mciSendString
+#include <conio.h>//allows you to use getch() which will allow keyboard input
 #undef max
 
 #pragma comment(lib, "winmm.lib")//you need need for music
@@ -367,7 +368,19 @@ int main(int argc, char* argv[])
 
 //Battle Stuff
 	//battle()
+
+
 //OverWorld stuff
+
+//while(inOverworld)
+	//char var(0);
+	//var=getch();
+	//switch(var)
+	// {
+	//   case:
+	//      wasd;
+	// }
+
 	return 0;
 }
 
