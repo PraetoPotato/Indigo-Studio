@@ -3,9 +3,12 @@
 
 void DrawGym::display()
 {
-	drawGym(x,y);
-	for(;;)
+	for (;;)
+	{
+		system("CLS");
+		drawGym(x, y);
 		movement();
+	}
 	
 }
 void DrawGym::drawGym(int charX,int charB)
