@@ -18,19 +18,6 @@ bool inOverWorld(true);
 int starter;
 int advice;
 
-void drawmap(char maze[][50])
-{
-	for (int row = 0;row < 50;row++)
-	{
-		for (int col = 0;col < 50;col++)
-		{
-			std::cout << maze[col][row];
-			maze[2][3] = '#';
-		}
-		std::cout << std::endl;
-	}
-
-}
 int main(int argc, char* argv[])
 {
 	system("CLS");//this clears the screen
@@ -387,12 +374,13 @@ int main(int argc, char* argv[])
 
 //OverWorld stuff
 	system("CLS");
-	char maze[50][50] = { '.' };
-	int row, col;
-	for (row = 0;row < 50;row++)
-		for (col = 0;col < 50;col++)
-			maze[col][row] = '.';
-	drawmap(maze);
+	DrawGym gym;
+	if (inOverWorld == true)
+	{
+		system("CLS");
+		gym.display();
+	}
+	
 
 //while(inOverworld)
 	//char var(0);
