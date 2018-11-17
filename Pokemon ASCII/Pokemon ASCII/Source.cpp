@@ -6,12 +6,15 @@
 #include <iomanip>
 #include <Mmsystem.h>//allows you to use mciSendString
 #include <mciapi.h>//allows you to use mciSendString
+#include <conio.h>//allows you to use getch() which will allow keyboard input
+#include "DrawGym.h"
 #undef max
 
 #pragma comment(lib, "winmm.lib")//you need need for music
 
 bool starterChosen(false);
 bool adviceComplete(false);
+bool inOverWorld(true);
 int starter;
 int advice;
 
@@ -367,7 +370,28 @@ int main(int argc, char* argv[])
 
 //Battle Stuff
 	//battle()
+
+
 //OverWorld stuff
+	system("CLS");
+	DrawGym gym;
+	if (inOverWorld == true)
+	{
+		system("CLS");
+		gym.display();
+	}
+	
+
+//while(inOverworld)
+	//char var(0);
+	//var=getch();
+	//switch(var)
+	// {
+	//   case:
+	//      wasd;
+	// }
+
+	system("pause");
 	return 0;
 }
 
