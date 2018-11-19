@@ -8,6 +8,7 @@
 #include <mciapi.h>//allows you to use mciSendString
 #include <conio.h>//allows you to use getch() which will allow keyboard input
 #include "DrawGym.h"
+
 #undef max
 
 #pragma comment(lib, "winmm.lib")//you need need for music
@@ -18,8 +19,16 @@ bool inOverWorld(true);
 int starter;
 int advice;
 
+
 int main(int argc, char* argv[])
 {
+
+
+
+	int x;
+
+
+
 	system("CLS");//this clears the screen
 	//set console window size
 	HWND console = GetConsoleWindow();
@@ -156,7 +165,7 @@ int main(int argc, char* argv[])
 		if (advice == 2)
 		{
 			system("CLS");
-			std::cout << "insert stuff here." << std::endl;
+			std::cout << "You are about to leave your home and live your new life travelling far and wide to become a Pokemon master" << std::endl;
 			system("pause");
 		}
 
@@ -352,24 +361,56 @@ int main(int argc, char* argv[])
 	{
 		PlaySound("Pokémon RedBlueYellow - Pokémon Capture - Sound Effect.wav", NULL, SND_FILENAME| SND_ASYNC);
 		std::cout << "You choose Squirtle!"<<std::endl;
+		x = 1;
+	
+
 	}
 
 	if (starter == 2)
 	{
 		PlaySound("Pokémon RedBlueYellow - Pokémon Capture - Sound Effect.wav", NULL, SND_FILENAME | SND_ASYNC);
 		std::cout << "You choose Bulbasaur!" << std::endl;
+		x = 2;
+	
 	}
 
 	if (starter == 3)
 	{
 		PlaySound("Pokémon RedBlueYellow - Pokémon Capture - Sound Effect.wav", NULL, SND_FILENAME | SND_ASYNC);
 		std::cout << "You choose Charmander!" << std::endl;
+		x = 3;
+		
 	}
+
 
 	system("pause");
 
+/*
+	status starter;
+	
+	{
+		starter.pokemon();
+	}
+
+	
+	*/
 //Battle Stuff
 	//battle()
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
 
 
 //OverWorld stuff
@@ -379,9 +420,15 @@ int main(int argc, char* argv[])
 	{
 		system("CLS");
 		gym.display();
+
+		
+
+
+
+
 	}
 	
-
+	
 //while(inOverworld)
 	//char var(0);
 	//var=getch();

@@ -27,6 +27,9 @@
     <ClCompile Include="DrawGym.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Battle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h">

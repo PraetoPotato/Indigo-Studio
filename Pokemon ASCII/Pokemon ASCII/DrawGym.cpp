@@ -1,4 +1,5 @@
 #include "DrawGym.h"
+#include "Battle.h"
 #include <iostream>
 
 void DrawGym::display()
@@ -20,12 +21,29 @@ void DrawGym::drawGym(int charX,int charB)
 			map[col][row] = '.';
 			map[12][0] = '$';
 			map[0][5] = 'O';
+			map[15][15] = 'O';
+			//map[14][15] = 'O';
 			map[charX][charB] = '@';
+			if (map[14][15] == '@')
+			{ 
+				battle fight;
+			
+				system("CLS");
+				fight.battle1();
+			}
 
+
+
+
+
+			
+
+			
 			std::cout << map[col][row];
 			
 		}
 		std::cout << std::endl;
+		
 	}
 	
 }
