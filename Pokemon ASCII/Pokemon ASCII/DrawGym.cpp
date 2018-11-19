@@ -2,16 +2,24 @@
 #include "Battle.h"
 #include <iostream>
 
-void DrawGym::display()
+void DrawGym::display(int starterNum)
 {
 	system("CLS");
 	drawGym(x, y);
 	for (;;)
 	{
 		movement();
+		if (map[14][15] == '@')
+		{
+			
+			battle fight(starterNum);
+			system("CLS");
+			fight.battle1();
+		}
 	}
 	
 }
+\
 void DrawGym::drawGym(int charX,int charB)
 {
 	for (int row = 0;row < 25;row++)
@@ -24,13 +32,13 @@ void DrawGym::drawGym(int charX,int charB)
 			map[15][15] = 'O';
 			//map[14][15] = 'O';
 			map[charX][charB] = '@';
-			if (map[14][15] == '@')
-			{ 
-				battle fight;
-			
-				system("CLS");
-				fight.battle1();
-			}
+			//if (map[14][15] == '@')
+			//{ 
+			//	battle fight;
+			//
+			//	system("CLS");
+			//	fight.battle1();
+			//}
 
 
 

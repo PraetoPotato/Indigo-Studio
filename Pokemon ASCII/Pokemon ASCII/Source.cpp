@@ -8,7 +8,7 @@
 #include <mciapi.h>//allows you to use mciSendString
 #include <conio.h>//allows you to use getch() which will allow keyboard input
 #include "DrawGym.h"
-
+#include "Battle.h"
 #undef max
 
 #pragma comment(lib, "winmm.lib")//you need need for music
@@ -362,7 +362,6 @@ int main(int argc, char* argv[])
 		PlaySound("Pokémon RedBlueYellow - Pokémon Capture - Sound Effect.wav", NULL, SND_FILENAME| SND_ASYNC);
 		std::cout << "You choose Squirtle!"<<std::endl;
 		x = 1;
-	
 
 	}
 
@@ -419,11 +418,9 @@ int main(int argc, char* argv[])
 	if (inOverWorld == true)
 	{
 		system("CLS");
-		gym.display();
+		gym.display(x);
 
 		
-
-
 
 
 	}
