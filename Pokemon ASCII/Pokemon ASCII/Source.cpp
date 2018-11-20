@@ -158,14 +158,14 @@ int main(int argc, char* argv[])
 		if (advice == 1)
 		{
 			system("CLS");
-			std::cout << "insert movement stuff here." << std::endl;
+			std::cout << "Movement \n  w moving  up\n a moving  left\n d moving  right\n  s moving  down\n" << std::endl;
 			system("pause");
 		}
 		//adventure instructions screen
 		if (advice == 2)
 		{
 			system("CLS");
-			std::cout << "You are about to leave your home and live your new life travelling far and wide to become a Pokemon master" << std::endl;
+			std::cout << "You are about to leave your home and live your new life travelling far and wide to become a Pokemon master. " << std::endl;
 			system("pause");
 		}
 
@@ -309,7 +309,7 @@ int main(int argc, char* argv[])
 	else std::cout << "unable to open file" << std::endl;
 
 	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
-	std::cout << "                                                                             A world full of hopes and dream eith Pokemon awaits! Let's go!" << std::endl;
+	std::cout << "                                                                             A world full of hopes and dream with Pokemon awaits! Let's go!" << std::endl;
 
 
 	system("pause");

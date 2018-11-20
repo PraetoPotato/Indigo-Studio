@@ -2,7 +2,7 @@
 #include "Battle.h"
 #include <iostream>
 #include <windows.h>
-
+#pragma comment(lib, "winmm.lib")
 void DrawGym::display(int starterNum)
 {
 	battle fight(starterNum);
@@ -20,6 +20,8 @@ void DrawGym::display(int starterNum)
 				std::cout << "                                                                Hah! do you think you can beat Brock you chump?" << std::endl;
 				system("pause");
                 system("CLS");
+				PlaySound("Trainer Battle intro.wav", NULL, SND_FILENAME | SND_ASYNC);
+				Sleep(3000);
                 fight.battle1();
 				playerWin = true;
 			}

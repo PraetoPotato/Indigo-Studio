@@ -5,6 +5,7 @@
 #include <ctime>
 #include <conio.h>//allows you to use getch() which will allow keyboard input
 #include <fstream>
+#pragma comment(lib, "winmm.lib")
 using namespace std;
 
 
@@ -160,11 +161,13 @@ void battle::sandShrewMoveSet()
 
 void battle::battle1()
 {
+	PlaySound("Pokemon RedBlueYellow - Battle! Trainer Music (HQ).wav", NULL, SND_FILENAME | SND_LOOP | SND_ASYNC);
 	drawPlayerNCamper();
 	textBox();
 	std::cout << "                                                                                                  Camper Todd wants to battle!" << std::endl;
 	system("pause");
 	system("CLS");
+
 	if (starter == "Squirtle")
 	{
 		drawPlayerNSandhrew();
@@ -284,6 +287,7 @@ void battle::battle1()
 
 			}
 		}
+		PlaySound(NULL, 0, 0);
 		drawSquirtleNCamper();
 		textBox();
 		std::cout << "                                                                                                         Trainer Ash defeated Camper Todd! " << std::endl;
