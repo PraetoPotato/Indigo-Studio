@@ -1,0 +1,12 @@
+Movement 
+w moving fowards up
+a moving toward left
+d moving towards right
+s moving towards down
+
+
+To open inventory press E
+*use number pad to select items to use in inventory
+
+Battle 
+use number pad to control your pokemon and use their ability
