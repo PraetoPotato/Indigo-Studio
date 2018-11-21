@@ -15,6 +15,8 @@ public:
 	void drawPlayerNSandhrew();
 	void drawSquirtleNSandShrew();
 	void drawSquirtleNCamper();
+	void displayHP();
+	void displayTrainerHP();
 private:
 	std::string starter;
 	bool move1=false;

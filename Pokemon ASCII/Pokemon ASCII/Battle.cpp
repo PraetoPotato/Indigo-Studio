@@ -27,6 +27,17 @@ int TraHP = 50;
 int attack;
 std::string line;
 std::ifstream draw;
+
+void battle::displayHP()
+{
+	cout << "Pokemon HP:" << HP << "/50";
+}
+
+void battle::displayTrainerHP()
+{
+	cout << "                                                                                                                                                                     " << "Trainer Pokemon HP:" << TraHP << "/50" << endl;
+}
+
 void battle::keyBoardInput()
 {
 	char selectMove = 0;
@@ -147,7 +158,8 @@ void battle::sandShrewMoveSet()
 	moveNum = rand()%2+1;
 	if (moveNum == 1)
 	{
-		std::cout << "                                                                                              SandShrew used Scratch!"<<std::endl;
+		std::cout << "                                                                                              SandShrew used Scratch! It dealt 15 Damage"<<std::endl;
+		HP -= 15;
 	}
 	if (moveNum == 2)
 	{
@@ -178,10 +190,12 @@ void battle::battle1()
 		drawSquirtleNSandShrew();
 		textBox();
 		cout << "                                                                                                               Go Squritle!\n";
-		Sleep(1000);
+		Sleep(2000);
 		system("CLS");
 		drawSquirtleNSandShrew();
 		textBox();
+		displayHP();
+		displayTrainerHP();
 		squirtleMoveSet();
 		for(;;)
 		{
@@ -191,11 +205,13 @@ void battle::battle1()
 				if (move1 == true)
 				{
 					system("CLS");
-					TraHP = TraHP - 20;
+					TraHP = TraHP - 15;
 					drawSquirtleNSandShrew();
 					textBox();
-					cout << "                                                                                Squirtle Used Tackle!\n";
-					Sleep(1500);
+					displayHP();
+					displayTrainerHP();
+					cout << "                                                                                Squirtle Used Tackle! It dealt 15 Damage\n";
+					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
 					{
@@ -203,12 +219,16 @@ void battle::battle1()
 					}
 					drawSquirtleNSandShrew();
 					textBox();
+					displayHP();
+					displayTrainerHP();
 					sandShrewMoveSet();
-					Sleep(1500);
+					Sleep(2500);
 					move1 = false;
 					system("CLS");
 					drawSquirtleNSandShrew();
 					textBox();
+					displayHP();
+					displayTrainerHP();
 					squirtleMoveSet();
 
 				}
@@ -219,8 +239,10 @@ void battle::battle1()
 					TraHP = TraHP - 30;
 					drawSquirtleNSandShrew();
 					textBox();
-					cout << "                                                                                Squirtle Used Water Gun!\n";
-					Sleep(1500);
+					displayHP();
+					displayTrainerHP();
+					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt 30 Damage! \n";
+					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
 					{
@@ -228,23 +250,29 @@ void battle::battle1()
 					}
 					drawSquirtleNSandShrew();
 					textBox();
+					displayHP();
+					displayTrainerHP();
 					sandShrewMoveSet();
 					Sleep(1500);
 					move2 = false;
 					system("CLS");
 					drawSquirtleNSandShrew();
 					textBox();
+					displayHP();
+					displayTrainerHP();
 					squirtleMoveSet();
 				}
 
 				else if (move3 == true)
 				{
 					system("CLS");
-					TraHP = TraHP - 15;
+					TraHP = TraHP - 20;
 					drawSquirtleNSandShrew();
 					textBox();
-					cout << "                                                                                    Squirtle Used Bubble!\n";
-					Sleep(1500);
+					displayHP();
+					displayTrainerHP();
+					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt 20 Damage! \n";
+					Sleep(2500);
 					if (TraHP <= 0)
 					{
 						break;
@@ -252,12 +280,16 @@ void battle::battle1()
 					system("CLS");
 					drawSquirtleNSandShrew();
 					textBox();
+					displayHP();
+					displayTrainerHP();
 					sandShrewMoveSet();
-					Sleep(1500);
+					Sleep(2500);
 					move3 = false;
 					system("CLS");
 					drawSquirtleNSandShrew();
 					textBox();
+					displayHP();
+					displayTrainerHP();
 					squirtleMoveSet();
 				}
 
@@ -266,13 +298,17 @@ void battle::battle1()
 					system("CLS");
 					drawSquirtleNSandShrew();
 					textBox();
+					displayHP();
+					displayTrainerHP();
 					cout << "                                                                                   Squirtle Used Tail Whip!\n";
-					Sleep(1500);
+					Sleep(2500);
 					system("CLS");
 					drawSquirtleNSandShrew();
 					textBox();
+					displayHP();
+					displayTrainerHP();
 					sandShrewMoveSet();
-					Sleep(1500);
+					Sleep(2500);
 					if (TraHP <= 0)
 					{
 						break;
@@ -281,6 +317,8 @@ void battle::battle1()
 					system("CLS");
 					drawSquirtleNSandShrew();
 					textBox();
+					displayHP();
+					displayTrainerHP();
 					squirtleMoveSet();
 				}
 
@@ -291,13 +329,13 @@ void battle::battle1()
 		drawSquirtleNCamper();
 		textBox();
 		std::cout << "                                                                                                         Trainer Ash defeated Camper Todd! " << std::endl;
-		Sleep(500);
+		Sleep(1000);
 		system("pause");
 		system("CLS");
 		drawSquirtleNCamper();
 		textBox();
 		std::cout << "                                                                                                          Dang! I lost to a chump! " << std::endl;
-		Sleep(500);
+		Sleep(1000);
 		system("pause");
 	}
 
@@ -318,28 +356,29 @@ void battle::battle1()
 
 			if (move1 == true)
 			{
-				TraHP = TraHP - 5;
+				TraHP = TraHP - 15;
 				cout << "Bulbasaur Used Tackle!\n";
 				move1 = false;
 			}
 
 			else if (move2 == true)
 			{
-				TraHP = TraHP - 15;
+				TraHP = TraHP - 5;
+				HP += 5;
 				cout << "Bulbasaur Used Leech Seed!\n";
 				move2 = false;
 			}
 
 			else if (move3 == true)
 			{
-				TraHP = TraHP - 15;
 				cout << "Bulbasaur Used Growl!\n";
 				move3 = false;
 			}
 
 			else if (move4 == true)
 			{
-				cout << "Bulbasaur Used Vine Whip!\n";
+				cout << "Bulbasaur Used Vine Whip! It was super effective and dealt 25 damage!\n";
+				TraHP = TraHP - 25;
 				move4 = false;
 			}
 
@@ -363,21 +402,20 @@ void battle::battle1()
 				keyBoardInput();
 				if (move1 == true)
 				{
-					TraHP = TraHP - 5;
+					TraHP = TraHP - 15;
 					cout << "Charmander Used Scratch!\n";
 					move1 = false;
 				}
 
 				else if (move2 == true)
 				{
-					TraHP = TraHP - 15;
+					TraHP = TraHP - 10;
 					cout << "Charmander Used Ember!\n";
 					move2 = false;
 				}
 
 				else if (move3 == true)
 				{
-					TraHP = TraHP - 15;
 					cout << "Charmander Used Growl!\n";
 					move3 = false;
 				}
@@ -385,6 +423,7 @@ void battle::battle1()
 				else if (move4 == true)
 				{
 					cout << "Charmander Used Dragon Rage!\n";
+					TraHP = TraHP - 25;
 					move4 = false;
 				}
 
