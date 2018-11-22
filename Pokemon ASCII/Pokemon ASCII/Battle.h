@@ -15,6 +15,11 @@ public:
 	void drawPlayerNSandhrew();
 	void drawSquirtleNSandShrew();
 	void drawSquirtleNCamper();
+	void drawPlayerNDiglett();
+	void drawPlayerNGeoDude();
+	void drawPlayerNBrock();
+	void drawSquirtleNBrock();
+	void drawPlayerNOnix();
 private:
 	std::string starter;
 	bool move1=false;
