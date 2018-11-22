@@ -20,6 +20,8 @@ public:
 	void drawPlayerNBrock();
 	void drawSquirtleNBrock();
 	void drawPlayerNOnix();
+	void displayHP();
+	void displayTrainerHP();
 private:
 	std::string starter;
 	bool move1=false;
