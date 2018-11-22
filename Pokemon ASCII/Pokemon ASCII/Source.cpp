@@ -158,7 +158,12 @@ int main(int argc, char* argv[])
 		if (advice == 1)
 		{
 			system("CLS");
+
 			std::cout << "Movement \n  w moving  up\n a moving  left\n d moving  right\n  s moving  down\n" << std::endl;
+
+
+			std::cout << "insert movement stuff here." << std::endl;
+
 			system("pause");
 		}
 		//adventure instructions screen
@@ -230,7 +235,7 @@ int main(int argc, char* argv[])
 
 	system("pause");
 	system("CLS");
-
+	
 	profOak.open("Nidorino.txt", std::ios::in);
 
 	if (profOak.is_open())
