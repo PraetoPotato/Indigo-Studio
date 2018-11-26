@@ -127,4 +127,6 @@ void DrawGym::movement()
 		drawGym(x, y);
 	}
 }
+
+//here's a thing
 	
