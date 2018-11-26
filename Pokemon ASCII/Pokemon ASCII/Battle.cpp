@@ -326,6 +326,7 @@ void battle::battle1()
 			}
 		}
 		PlaySound(NULL, 0, 0);
+		system("CLS");
 		drawSquirtleNCamper();
 		textBox();
 		std::cout << "                                                                                                         Trainer Ash defeated Camper Todd! " << std::endl;
