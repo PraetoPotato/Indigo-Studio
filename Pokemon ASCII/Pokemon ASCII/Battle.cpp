@@ -353,7 +353,7 @@ void battle::battle1()
 
 
 		Sleep(2000);
-		//system("CLS");
+		system("CLS");
 		textBox();
 		cout << "Go Bulbasaur!\n";
 		Sleep(2000);

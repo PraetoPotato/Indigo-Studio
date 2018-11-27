@@ -20,6 +20,12 @@ public:
 	void drawPlayerNBrock();
 	void drawSquirtleNBrock();
 	void drawPlayerNOnix();
+	void drawCharmanderNCamper();
+	void drawCharmanderNSandshrew();
+	void drawCharmanderNDiglett();
+	void drawCharmanderNGeodude();
+	void drawCharmanderNBrock();
+	void drawCharmanderNOnix();
 	void displayHP();
 	void displayTrainerHP();
 private:
