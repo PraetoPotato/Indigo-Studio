@@ -22,6 +22,8 @@ public:
 	void drawPlayerNOnix();
 	void displayHP();
 	void displayTrainerHP();
+	void attackTackle(bool);
+	void displayTackleDmg();
 private:
 	std::string starter;
 	bool move1=false;
