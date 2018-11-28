@@ -25,6 +25,7 @@ void trainer1Pok()
 int HP = 50;
 int TraHP = 50;
 int attack;
+bool defenseCurl(false);
 std::string line;
 std::ifstream draw;
 
@@ -37,6 +38,33 @@ void battle::displayTrainerHP()
 {
 	cout << "                                                                                                                                                                     " << "Trainer Pokemon HP:" << TraHP << "/50" << endl;
 }
+
+void battle::attackTackle(bool defenseCurl)
+{
+	if (defenseCurl == true)
+	{
+		TraHP = TraHP -10;
+		defenseCurl = false;
+	}
+	else
+	{
+		TraHP = TraHP - 15;
+	}
+}
+
+void battle::displayTackleDmg()
+{
+	if (defenseCurl == true)
+	{
+		cout << "                                                                                Squirtle Used Tackle! It dealt 10 Damage\n";
+	}
+	else 
+	{
+		cout << "                                                                                Squirtle Used Tackle! It dealt 15 Damage\n";
+	}
+	
+}
+
 
 void battle::keyBoardInput()
 {
@@ -152,6 +180,16 @@ void battle::squirtleMoveSet()
 	cout << "                                                                                          1 - Tackle - Power=40       2 - Water Gun - Power=40\n";
 	cout << "                                                                                          3 - Bubble - Power=20       4 - Tail Whip - Lowers defense\n";
 }
+void battle::charmanderMoveSet()
+{
+
+}
+void battle::bulbasaurMoveSet()
+{
+	cout << "                                                                                                            Pick a move\n";
+	cout << "                                                                                          1 - Tackle - Power=40        2 - Leech Seed - Power=40\n";
+	cout << "                                                                                          3 - Growl - Lowers attack    4 - Vine Whip- Power=40\n";
+}
 void battle::sandShrewMoveSet()
 {
 	int moveNum;
@@ -166,9 +204,194 @@ void battle::sandShrewMoveSet()
 		std::cout << "                                                                                              SandShrew used Defense Curl!" << std::endl;
 		Sleep(1500);
 		std::cout << "                                                                                              SandShrew's defense rose!" << std::endl;
+		defenseCurl = true;
 	}
 
 }
+
+void battle::drawCharmanderNCamper()
+{
+	std::ifstream draw("Charmander N Camper.txt");
+	if (draw.is_open())
+	{
+		while (getline(draw, line))
+		{
+			std::cout << line << "\n";
+		}
+		draw.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+}
+
+void battle::drawCharmanderNSandshrew()
+{
+	std::ifstream draw("Charmander N SandShrew.txt");
+	if (draw.is_open())
+	{
+		while (getline(draw, line))
+		{
+			std::cout << line << "\n";
+		}
+		draw.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+}
+
+void battle::drawCharmanderNDiglett()
+{
+	std::ifstream draw("Charmander N Diglett.txt");
+	if (draw.is_open())
+	{
+		while (getline(draw, line))
+		{
+			std::cout << line << "\n";
+		}
+		draw.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+}
+
+void battle::drawCharmanderNGeodude()
+{
+	std::ifstream draw("Charmander N Geodude.txt");
+	if (draw.is_open())
+	{
+		while (getline(draw, line))
+		{
+			std::cout << line << "\n";
+		}
+		draw.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+}
+
+void battle::drawCharmanderNOnix()
+{
+	std::ifstream draw("Charmander N Onix.txt");
+	if (draw.is_open())
+	{
+		while (getline(draw, line))
+		{
+			std::cout << line << "\n";
+		}
+		draw.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+}
+
+void battle::drawCharmanderNBrock()
+{
+	std::ifstream draw("Charmander N Brock.txt");
+	if (draw.is_open())
+	{
+		while (getline(draw, line))
+		{
+			std::cout << line << "\n";
+		}
+		draw.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+}
+
+void battle::drawBulbasaurNBrock()
+{
+	std::ifstream draw("Bulbasaur N Brock.txt");
+	if (draw.is_open())
+	{
+		while (getline(draw, line))
+		{
+			std::cout << line << "\n";
+		}
+		draw.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+}
+
+void battle::drawBulbasaurNCamper()
+{
+	std::ifstream draw("Bulbasaur N Camper.txt");
+	if (draw.is_open())
+	{
+		while (getline(draw, line))
+		{
+			std::cout << line << "\n";
+		}
+		draw.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+}
+
+void battle::drawBulbasaurNSandshrew()
+{
+	std::ifstream draw("Bulbasaur N Sandshrew.txt");
+	if (draw.is_open())
+	{
+		while (getline(draw, line))
+		{
+			std::cout << line << "\n";
+		}
+		draw.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+}
+
+void battle::drawBulbasaurNDiglett()
+{
+	std::ifstream draw("Bulbasaur N Diglett.txt");
+	if (draw.is_open())
+	{
+		while (getline(draw, line))
+		{
+			std::cout << line << "\n";
+		}
+		draw.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+}
+
+void battle::drawBulbasaurNGeodude()
+{
+	std::ifstream draw("Bulbasaur N Geodude.txt");
+	if (draw.is_open())
+	{
+		while (getline(draw, line))
+		{
+			std::cout << line << "\n";
+		}
+		draw.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+}
+
+void battle::drawBulbasaurNOnix()
+{
+	std::ifstream draw("Bulbasaur N Onix.txt");
+	if (draw.is_open())
+	{
+		while (getline(draw, line))
+		{
+			std::cout << line << "\n";
+		}
+		draw.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+}
+
+
+
+
 
 
 void battle::battle1()
@@ -209,12 +432,12 @@ void battle::battle1()
 				if (move1 == true)
 				{
 					system("CLS");
-					TraHP = TraHP - 15;
+					attackTackle(defenseCurl);
 					drawSquirtleNSandShrew();
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					cout << "                                                                                Squirtle Used Tackle! It dealt 15 Damage\n";
+					displayTackleDmg();
 					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
@@ -340,6 +563,7 @@ void battle::battle1()
 		drawSquirtleNCamper();
 		textBox();
 		std::cout << "                                                                                                          Dang! I lost to a chump! " << std::endl;
+		std::cout << "                                                                                                          You've gained 30 experience points, your pokemon is now level 11! " << std::endl;
 		Sleep(1000);
 		system("pause");
 	}
@@ -351,34 +575,32 @@ void battle::battle1()
 		cout << "                                                                                                             Camper Todd sent out Sandshrew!\n";
 
 
-
-		Sleep(2000);
-		//system("CLS");
-		textBox();
-		cout << "Go Bulbasaur!\n";
 		Sleep(2000);
 		system("CLS");
-		drawSquirtleNSandShrew();
+		drawBulbasaurNSandshrew();
+		textBox();
+		cout << "                                                                                                                Go Bulbasaur!\n";
+		Sleep(2000);
+		system("CLS");
+		drawBulbasaurNSandshrew();
 		textBox();
 		displayHP();
 		displayTrainerHP();
+		bulbasaurMoveSet();
 		
-		//Sleep(1000);
-		//system("CLS");
-
-
-		cout << "                                                                                         Pick a move\n";
-		cout << "                                                                      1 - Tackle - Power=40        2 - Leech Seed - Power=40\n";
-		cout << "                                                                      3 - Growl - Lowers attack    4 - Vine Whip- Power=40\n";
 		for (;;)
 		{
 			keyBoardInput();
 
 			if (move1 == true)
 			{
+				system("CLS");
 				TraHP = TraHP - 15;
-				
-				cout << "Bulbasaur Used Tackle!\n";
+				drawBulbasaurNSandshrew();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				cout << "                                                                                         Bulbasaur Used Tackle!\n";
 				Sleep(2500);
 				move1 = false;
 				system("CLS");
@@ -386,7 +608,7 @@ void battle::battle1()
 				{
 					break;
 				}
-				drawSquirtleNSandShrew();
+				drawBulbasaurNSandshrew();
 				textBox();
 				displayHP();
 				displayTrainerHP();
@@ -394,21 +616,28 @@ void battle::battle1()
 				Sleep(2500);
 				move1 = false;
 				system("CLS");
-				drawSquirtleNSandShrew();
+				drawBulbasaurNSandshrew();
 				textBox();
 				displayHP();
 				displayTrainerHP();
-				cout << "                                                                                         Pick a move\n";
-				cout << "                                                                      1 - Tackle - Power=40        2 - Leech Seed - Power=40\n";
-				cout << "                                                                      3 - Growl - Lowers attack    4 - Vine Whip- Power=40\n";
+				bulbasaurMoveSet();
 				
 			}
 
 			else if (move2 == true)
 			{
+				system("CLS");
 				TraHP = TraHP - 5;
 				HP += 5;
-				cout << "Bulbasaur Used Leech Seed!\n";
+				if (HP > 50)
+				{
+					HP = 50;
+				}
+				drawBulbasaurNSandshrew();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				cout << "                                                                                           Bulbasaur Used Leech Seed!\n";
 				Sleep(2500);
 				move2 = false;
 				system("CLS");
@@ -416,7 +645,7 @@ void battle::battle1()
 				{
 					break;
 				}
-				drawSquirtleNSandShrew();
+				drawBulbasaurNSandshrew();
 				textBox();
 				displayHP();
 				displayTrainerHP();
@@ -424,19 +653,21 @@ void battle::battle1()
 				Sleep(2500);
 				move2 = false;
 				system("CLS");
-				drawSquirtleNSandShrew();
+				drawBulbasaurNSandshrew();
 				textBox();
 				displayHP();
 				displayTrainerHP();
-				cout << "                                                                                         Pick a move\n";
-				cout << "                                                                      1 - Tackle - Power=40        2 - Leech Seed - Power=40\n";
-				cout << "                                                                      3 - Growl - Lowers attack    4 - Vine Whip- Power=40\n";
-
+				bulbasaurMoveSet();
 			}
 
 			else if (move3 == true)
 			{
-				cout << "Bulbasaur Used Growl!\n";
+				system("CLS");
+				drawBulbasaurNSandshrew();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				cout << "                                                                                         Bulbasaur Used Growl!\n";
 				Sleep(2500);
 				move3 = false;
 				system("CLS");
@@ -444,7 +675,7 @@ void battle::battle1()
 				{
 					break;
 				}
-				drawSquirtleNSandShrew();
+				drawBulbasaurNSandshrew();
 				textBox();
 				displayHP();
 				displayTrainerHP();
@@ -452,19 +683,22 @@ void battle::battle1()
 				Sleep(2500);
 				move3 = false;
 				system("CLS");
-				drawSquirtleNSandShrew();
+				drawBulbasaurNSandshrew();
 				textBox();
 				displayHP();
 				displayTrainerHP();
-				cout << "                                                                                         Pick a move\n";
-				cout << "                                                                      1 - Tackle - Power=40        2 - Leech Seed - Power=40\n";
-				cout << "                                                                      3 - Growl - Lowers attack    4 - Vine Whip- Power=40\n";
+				bulbasaurMoveSet();
 
 			}
 
 			else if (move4 == true)
 			{
-				cout << "Bulbasaur Used Vine Whip! It was super effective and dealt 25 damage!\n";
+				system("CLS");
+				drawBulbasaurNSandshrew();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				cout << "                                                                                   Bulbasaur Used Vine Whip! It was super effective and dealt 25 damage!\n";
 				Sleep(2500);
 				TraHP = TraHP - 25;
 				move4 = false;
@@ -473,7 +707,7 @@ void battle::battle1()
 				{
 					break;
 				}
-				drawSquirtleNSandShrew();
+				drawBulbasaurNSandshrew();
 				textBox();
 				displayHP();
 				displayTrainerHP();
@@ -481,13 +715,11 @@ void battle::battle1()
 				Sleep(2500);
 				move4 = false;
 				system("CLS");
-				drawSquirtleNSandShrew();
+				drawBulbasaurNSandshrew();
 				textBox();
 				displayHP();
 				displayTrainerHP();
-				cout << "                                                                                         Pick a move\n";
-				cout << "                                                                      1 - Tackle - Power=40        2 - Leech Seed - Power=40\n";
-				cout << "                                                                      3 - Growl - Lowers attack    4 - Vine Whip- Power=40\n";
+				bulbasaurMoveSet();                                               
 
 			}
 
@@ -495,13 +727,13 @@ void battle::battle1()
 		cout << HP << "            " << TraHP;
 		PlaySound(NULL, 0, 0);
 		system("CLS");
-		drawSquirtleNCamper();
+		drawBulbasaurNCamper();
 		textBox();
 		std::cout << "                                                                                                         Trainer Ash defeated Camper Todd! " << std::endl;
 		Sleep(1000);
 		system("pause");
 		system("CLS");
-		drawSquirtleNCamper();
+		drawBulbasaurNCamper();
 		textBox();
 		std::cout << "                                                                                                          Dang! I lost to a chump! " << std::endl;
 		Sleep(1000);

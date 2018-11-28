@@ -10,18 +10,34 @@ public:
 	void battle3();    //the gym leader
 	void keyBoardInput();
 	void squirtleMoveSet();
+	void bulbasaurMoveSet();
+	void charmanderMoveSet();
 	void sandShrewMoveSet();
 	void drawPlayerNCamper();
-	void drawPlayerNSandhrew();
 	void drawSquirtleNSandShrew();
 	void drawSquirtleNCamper();
+	void drawPlayerNSandhrew();
 	void drawPlayerNDiglett();
 	void drawPlayerNGeoDude();
 	void drawPlayerNBrock();
-	void drawSquirtleNBrock();
 	void drawPlayerNOnix();
+	void drawSquirtleNBrock();
+	void drawCharmanderNCamper();
+	void drawCharmanderNSandshrew();
+	void drawCharmanderNDiglett();
+	void drawCharmanderNGeodude();
+	void drawCharmanderNBrock();
+	void drawCharmanderNOnix();
+	void drawBulbasaurNCamper();
+	void drawBulbasaurNSandshrew();
+	void drawBulbasaurNDiglett();
+	void drawBulbasaurNGeodude();
+	void drawBulbasaurNOnix();
+	void drawBulbasaurNBrock();
 	void displayHP();
 	void displayTrainerHP();
+	void attackTackle(bool);
+	void displayTackleDmg();
 private:
 	std::string starter;
 	bool move1=false;
