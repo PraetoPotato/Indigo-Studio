@@ -25,6 +25,7 @@ void trainer1Pok()
 int HP = 50;
 int TraHP = 50;
 int attack;
+bool defenseCurl(false);
 std::string line;
 std::ifstream draw;
 
@@ -37,6 +38,33 @@ void battle::displayTrainerHP()
 {
 	cout << "                                                                                                                                                                     " << "Trainer Pokemon HP:" << TraHP << "/50" << endl;
 }
+
+void battle::attackTackle(bool defenseCurl)
+{
+	if (defenseCurl == true)
+	{
+		TraHP = TraHP -10;
+		defenseCurl = false;
+	}
+	else
+	{
+		TraHP = TraHP - 15;
+	}
+}
+
+void battle::displayTackleDmg()
+{
+	if (defenseCurl == true)
+	{
+		cout << "                                                                                Squirtle Used Tackle! It dealt 10 Damage\n";
+	}
+	else 
+	{
+		cout << "                                                                                Squirtle Used Tackle! It dealt 15 Damage\n";
+	}
+	
+}
+
 
 void battle::keyBoardInput()
 {
@@ -166,6 +194,7 @@ void battle::sandShrewMoveSet()
 		std::cout << "                                                                                              SandShrew used Defense Curl!" << std::endl;
 		Sleep(1500);
 		std::cout << "                                                                                              SandShrew's defense rose!" << std::endl;
+		defenseCurl = true;
 	}
 
 }
@@ -205,12 +234,12 @@ void battle::battle1()
 				if (move1 == true)
 				{
 					system("CLS");
-					TraHP = TraHP - 15;
+					attackTackle(defenseCurl);
 					drawSquirtleNSandShrew();
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					cout << "                                                                                Squirtle Used Tackle! It dealt 15 Damage\n";
+					displayTackleDmg();
 					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
@@ -335,6 +364,7 @@ void battle::battle1()
 		drawSquirtleNCamper();
 		textBox();
 		std::cout << "                                                                                                          Dang! I lost to a chump! " << std::endl;
+		std::cout << "                                                                                                          You've gained 30 experience points, your pokemon is now level 11! " << std::endl;
 		Sleep(1000);
 		system("pause");
 	}
