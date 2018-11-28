@@ -37,6 +37,7 @@ public:
 	void displayHP();
 	void displayTrainerHP();
 	void attackTackle(bool);
+	void attackScratch(bool);
 	void displayTackleDmg();
 private:
 	std::string starter;

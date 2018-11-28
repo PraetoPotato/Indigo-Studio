@@ -65,6 +65,18 @@ void battle::displayTackleDmg()
 	
 }
 
+void battle::attackScratch(bool defenseCurl)
+{
+	if (defenseCurl == true)
+	{
+		TraHP = TraHP - 10;
+		defenseCurl = false;
+	}
+	else
+	{
+		TraHP = TraHP - 15;
+	}
+}
 
 void battle::keyBoardInput()
 {
@@ -182,7 +194,10 @@ void battle::squirtleMoveSet()
 }
 void battle::charmanderMoveSet()
 {
-
+	cout << "                                                                                                            Pick a move\n";
+	cout << "Pick a move\n";
+	cout << "                                                                                          1 - Scratch - Power=40       2 - Ember- Power=40 \n";
+	cout << "                                                                                          3 - Growl - Lowers attack    4 - Dragon Rage- Takes 40 HP\n";
 }
 void battle::bulbasaurMoveSet()
 {
@@ -744,37 +759,44 @@ void battle::battle1()
 	{
 		drawPlayerNSandhrew();
 		textBox();
-		
 		cout << "                                                                                                             Camper Todd sent out Sandshrew!\n";
-
-		textBox();
 		Sleep(2000);
-		cout << "Go Charmander!\n";
-		
-		//system("CLS");
-		
-		Sleep(1000);
-		
+		system("CLS");
 
 
-			cout <<                                                                                             "Pick a move\n";
-					cout << "                                                               1 - Scratch - Power=40       2 - Ember- Power=40 \n";
-					cout << "                                                               3 - Growl - Lowers attack    4 - Dragon Rage- Takes 40 HP\n";
-			for (;;)
+
+
+		drawCharmanderNSandshrew();
+		textBox();
+		cout << "                                                                                                               Go Squritle!\n";
+		Sleep(2000);
+		system("CLS");
+		drawCharmanderNSandshrew();
+		textBox();
+		displayHP();
+		displayTrainerHP();
+		charmanderMoveSet();
+		for (;;)
+		{
+			if (playerTurn == true)
 			{
 				keyBoardInput();
 				if (move1 == true)
 				{
-					TraHP = TraHP - 15;
-					cout << "Charmander Used Scratch!\n";
+					system("CLS");
+					attackScratch(defenseCurl);
+					drawCharmanderNSandshrew();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayTackleDmg();
 					Sleep(2500);
-					move1 = false;
 					system("CLS");
 					if (TraHP <= 0)
 					{
 						break;
 					}
-					drawSquirtleNSandShrew();
+					drawCharmanderNSandshrew();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -782,55 +804,60 @@ void battle::battle1()
 					Sleep(2500);
 					move1 = false;
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawCharmanderNSandshrew();
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					cout <<                                                                                    "Pick a move\n";
-					cout << "                                                               1 - Scratch - Power=40       2 - Ember- Power=40 \n";
-					cout << "                                                               3 - Growl - Lowers attack    4 - Dragon Rage- Takes 40 HP\n";
+					charmanderMoveSet();
 
 				}
 
 				else if (move2 == true)
 				{
-					TraHP = TraHP - 10;
-					cout << "Charmander Used Ember!\n";
+					system("CLS");
+					TraHP = TraHP - 30;
+					drawCharmanderNSandshrew();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt 30 Damage! \n";
 					Sleep(2500);
-					move2 = false;
 					system("CLS");
 					if (TraHP <= 0)
 					{
 						break;
 					}
-					drawSquirtleNSandShrew();
+					drawCharmanderNSandshrew();
 					textBox();
 					displayHP();
 					displayTrainerHP();
 					sandShrewMoveSet();
-					Sleep(2500);
+					Sleep(1500);
 					move2 = false;
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawCharmanderNSandshrew();
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					cout << "                                                                                    Pick a move\n";
-					cout << "                                                               1 - Scratch - Power=40       2 - Ember- Power=40 \n";
-					cout << "                                                               3 - Growl - Lowers attack    4 - Dragon Rage- Takes 40 HP\n";
+					charmanderMoveSet();
 				}
 
 				else if (move3 == true)
 				{
-					cout << "Charmander Used Growl!\n";
-					Sleep(2500);
-					move3 = false;
 					system("CLS");
+					TraHP = TraHP - 20;
+					drawCharmanderNSandshrew();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt 20 Damage! \n";
+					Sleep(2500);
 					if (TraHP <= 0)
 					{
 						break;
 					}
-					drawSquirtleNSandShrew();
+					system("CLS");
+					drawCharmanderNSandshrew();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -838,58 +865,64 @@ void battle::battle1()
 					Sleep(2500);
 					move3 = false;
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawCharmanderNSandshrew();
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					cout <<                                                                                    "Pick a move\n";
-					cout << "                                                               1 - Scratch - Power=40       2 - Ember- Power=40 \n";
-					cout << "                                                               3 - Growl - Lowers attack    4 - Dragon Rage- Takes 40 HP\n";
+					charmanderMoveSet();
 				}
 
 				else if (move4 == true)
 				{
-					cout << "Charmander Used Dragon Rage!\n";
-					Sleep(2500);
-					TraHP = TraHP - 25;
-					move4 = false;
 					system("CLS");
-					if (TraHP <= 0)
-					{
-						break;
-					}
-					drawSquirtleNSandShrew();
+					drawCharmanderNSandshrew();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					cout << "                                                                                   Squirtle Used Tail Whip!\n";
+					Sleep(2500);
+					system("CLS");
+					drawCharmanderNSandshrew();
 					textBox();
 					displayHP();
 					displayTrainerHP();
 					sandShrewMoveSet();
 					Sleep(2500);
+					if (TraHP <= 0)
+					{
+						break;
+					}
 					move4 = false;
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawCharmanderNSandshrew();
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					cout <<                                                                                    "Pick a move\n";
-					cout << "                                                               1 - Scratch - Power=40       2 - Ember- Power=40 \n";
-					cout << "                                                               3 - Growl - Lowers attack    4 - Dragon Rage- Takes 40 HP\n";
+					charmanderMoveSet();
 				}
 
+
 			}
-			cout << HP << "            " << TraHP;
-			PlaySound(NULL, 0, 0);
-			system("CLS");
-			drawSquirtleNCamper();
-			textBox();
-			std::cout << "                                                                                                         Trainer Ash defeated Camper Todd! " << std::endl;
-			Sleep(1000);
-			system("pause");
-			system("CLS");
-			drawSquirtleNCamper();
-			textBox();
-			std::cout << "                                                                                                          Dang! I lost to a chump! " << std::endl;
-			Sleep(1000);
-			system("pause");
+		}
+		PlaySound(NULL, 0, 0);
+		system("CLS");
+		drawCharmanderNSandshrew();
+		textBox();
+		std::cout << "                                                                                           You've gained 30 experience points, your pokemon is now level 11! " << std::endl;
+		Sleep(1000);
+		system("pause");
+		system("CLS");
+		drawCharmanderNCamper();
+		textBox();
+		std::cout << "                                                                                                         Trainer Ash defeated Camper Todd! " << std::endl;
+		Sleep(1000);
+		system("pause");
+		system("CLS");
+		drawCharmanderNCamper();
+		textBox();
+		std::cout << "                                                                                                          Dang! I lost to a chump! " << std::endl;
+		Sleep(1000);
+		system("pause");
 	}
 
 }
