@@ -35,6 +35,7 @@ public:
 	void drawBulbasaurNOnix();
 	void drawBulbasaurNBrock();
 	void displayHP();
+	void displayXP();
 	void displayTrainerHP();
 	void attackTackle(bool);
 	void displayTackleDmg();

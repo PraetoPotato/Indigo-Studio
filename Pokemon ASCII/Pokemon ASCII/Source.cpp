@@ -158,14 +158,14 @@ int main(int argc, char* argv[])
 		if (advice == 1)
 		{
 			system("CLS");
-			std::cout << "Movement \n  w moving  up\n a moving  left\n d moving  right\n  s moving  down\n" << std::endl;
+			std::cout << "Movement Controls: \n  W: Move Up \n  A: Move Left \n  D: Move Right \n  S: Move Down \n" << std::endl;
 			system("pause");
 		}
 		//adventure instructions screen
 		if (advice == 2)
 		{
 			system("CLS");
-			std::cout << "You are about to leave your home and live your new life travelling far and wide to become a Pokemon master. " << std::endl;
+			std::cout << "You are about to leave your home and live your new life travelling far and wide to become a Pokemon master." << std::endl << "Your goal in this new world is to defeat all the gym trainers and beat Brock, the Rock Gym Leader. " << std::endl;
 			system("pause");
 		}
 

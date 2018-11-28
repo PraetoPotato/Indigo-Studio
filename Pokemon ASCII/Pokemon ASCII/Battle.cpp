@@ -24,6 +24,7 @@ void trainer1Pok()
 //string name;
 int HP = 50;
 int TraHP = 50;
+int pokemonLevel = 10;
 int attack;
 bool defenseCurl(false);
 std::string line;
@@ -36,7 +37,19 @@ void battle::displayHP()
 
 void battle::displayTrainerHP()
 {
-	cout << "                                                                                                                                                                     " << "Trainer Pokemon HP:" << TraHP << "/50" << endl;
+	if (TraHP > 0)
+	{
+		cout << "                                                                                                                                                                     " << "Trainer Pokemon HP:" << TraHP << "/50" << endl;
+	}
+	else
+	{
+		cout << "                                                                                                                                                                     " << "Trainer Pokemon HP:" << "0/50" << endl;
+	}
+}
+
+void battle::displayXP()
+{
+	cout << "Level:" << pokemonLevel << endl;
 }
 
 void battle::attackTackle(bool defenseCurl)
@@ -423,6 +436,7 @@ void battle::battle1()
 		textBox();
 		displayHP();
 		displayTrainerHP();
+		displayXP();
 		squirtleMoveSet();
 		for(;;)
 		{
@@ -437,6 +451,7 @@ void battle::battle1()
 					textBox();
 					displayHP();
 					displayTrainerHP();
+					displayXP();
 					displayTackleDmg();
 					Sleep(2500);
 					system("CLS");
@@ -448,6 +463,7 @@ void battle::battle1()
 					textBox();
 					displayHP();
 					displayTrainerHP();
+					displayXP();
 					sandShrewMoveSet();
 					Sleep(2500);
 					move1 = false;
@@ -456,6 +472,7 @@ void battle::battle1()
 					textBox();
 					displayHP();
 					displayTrainerHP();
+					displayXP();
 					squirtleMoveSet();
 
 				}
@@ -468,6 +485,7 @@ void battle::battle1()
 					textBox();
 					displayHP();
 					displayTrainerHP();
+					displayXP();
 					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt 30 Damage! \n";
 					Sleep(2500);
 					system("CLS");
@@ -479,6 +497,7 @@ void battle::battle1()
 					textBox();
 					displayHP();
 					displayTrainerHP();
+					displayXP();
 					sandShrewMoveSet();
 					Sleep(1500);
 					move2 = false;
@@ -487,6 +506,7 @@ void battle::battle1()
 					textBox();
 					displayHP();
 					displayTrainerHP();
+					displayXP();
 					squirtleMoveSet();
 				}
 
@@ -498,6 +518,7 @@ void battle::battle1()
 					textBox();
 					displayHP();
 					displayTrainerHP();
+					displayXP();
 					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt 20 Damage! \n";
 					Sleep(2500);
 					if (TraHP <= 0)
@@ -509,6 +530,7 @@ void battle::battle1()
 					textBox();
 					displayHP();
 					displayTrainerHP();
+					displayXP();
 					sandShrewMoveSet();
 					Sleep(2500);
 					move3 = false;
@@ -517,6 +539,7 @@ void battle::battle1()
 					textBox();
 					displayHP();
 					displayTrainerHP();
+					displayXP();
 					squirtleMoveSet();
 				}
 
@@ -527,6 +550,7 @@ void battle::battle1()
 					textBox();
 					displayHP();
 					displayTrainerHP();
+					displayXP();
 					cout << "                                                                                   Squirtle Used Tail Whip!\n";
 					Sleep(2500);
 					system("CLS");
@@ -534,6 +558,7 @@ void battle::battle1()
 					textBox();
 					displayHP();
 					displayTrainerHP();
+					displayXP();
 					sandShrewMoveSet();
 					Sleep(2500);
 					if (TraHP <= 0)
@@ -546,6 +571,7 @@ void battle::battle1()
 					textBox();
 					displayHP();
 					displayTrainerHP();
+					displayXP();
 					squirtleMoveSet();
 				}
 
@@ -563,6 +589,7 @@ void battle::battle1()
 		drawSquirtleNCamper();
 		textBox();
 		std::cout << "                                                                                                          Dang! I lost to a chump! " << std::endl;
+		pokemonLevel = pokemonLevel + 1;
 		std::cout << "                                                                                                          You've gained 30 experience points, your pokemon is now level 11! " << std::endl;
 		Sleep(1000);
 		system("pause");
