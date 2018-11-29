@@ -17,4 +17,6 @@ private:
 	bool trainerEncounter3Complete = false;
 	bool gymEncounter = false;
 	bool playerWin = false;
+	bool playerWin2 = false;
+	bool playerWin3 = false;
 };

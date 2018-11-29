@@ -13,6 +13,9 @@ public:
 	void bulbasaurMoveSet();
 	void charmanderMoveSet();
 	void sandShrewMoveSet();
+	void diglettMoveSet();
+	void geoDudeMoveSet();
+	void onixMoveSet();
 	void drawPlayerNCamper();
 	void drawSquirtleNSandShrew();
 	void drawSquirtleNCamper();
@@ -40,6 +43,7 @@ public:
 	void attackTackle(bool);
 	void attackScratch(bool);
 	void displayTackleDmg();
+	void displayScratchDmg();
 private:
 	std::string starter;
 	bool move1=false;
