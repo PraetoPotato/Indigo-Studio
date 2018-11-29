@@ -25,6 +25,7 @@ void trainer1Pok()
 int HP = 50;
 int TraHP = 50;
 int pokemonLevel = 10;
+int TrainerLevel = 10;
 int attack;
 bool defenseCurl(false);
 std::string line;
@@ -35,6 +36,10 @@ void battle::displayHP()
 	cout << "Pokemon HP:" << HP << "/50";
 }
 
+void battle::displayTrainerLevel()
+{
+	cout << "                                                                                                                                                                                                " << "Level:" << TrainerLevel;
+}
 void battle::displayTrainerHP()
 {
 	if (TraHP > 0)
@@ -142,7 +147,10 @@ battle::battle(int starterNum)
 	}
 }
 
+void::battle::drawPlayerNDiglett()
+{
 
+}
 void battle::drawPlayerNCamper()
 {
 	
@@ -524,6 +532,7 @@ void battle::battle1()
 		displayHP();
 		displayTrainerHP();
 		displayXP();
+		displayTrainerLevel();
 		squirtleMoveSet();
 		for(;;)
 		{
@@ -539,6 +548,7 @@ void battle::battle1()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					displayTackleDmg();
 					Sleep(2500);
 					system("CLS");
@@ -556,6 +566,7 @@ void battle::battle1()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					sandShrewMoveSet();
 					Sleep(2500);
 					move1 = false;
@@ -565,6 +576,7 @@ void battle::battle1()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					squirtleMoveSet();
 
 				}
@@ -578,6 +590,7 @@ void battle::battle1()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt 30 Damage! \n";
 					Sleep(2500);
 					system("CLS");
@@ -595,6 +608,7 @@ void battle::battle1()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					sandShrewMoveSet();
 					Sleep(1500);
 					move2 = false;
@@ -604,6 +618,7 @@ void battle::battle1()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					squirtleMoveSet();
 				}
 
@@ -616,6 +631,7 @@ void battle::battle1()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt 20 Damage! \n";
 					Sleep(2500);
 					if (TraHP <= 0)
@@ -633,6 +649,7 @@ void battle::battle1()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					sandShrewMoveSet();
 					Sleep(2500);
 					move3 = false;
@@ -642,6 +659,7 @@ void battle::battle1()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					squirtleMoveSet();
 				}
 
@@ -653,6 +671,7 @@ void battle::battle1()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					cout << "                                                                                   Squirtle Used Tail Whip!\n";
 					Sleep(2500);
 					system("CLS");
@@ -661,6 +680,7 @@ void battle::battle1()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					sandShrewMoveSet();
 					Sleep(2500);
 					if (TraHP <= 0)
@@ -679,6 +699,7 @@ void battle::battle1()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					squirtleMoveSet();
 				}
 
@@ -1116,6 +1137,7 @@ void battle::battle2()
 		displayHP();
 		displayTrainerHP();
 		displayXP();
+		displayTrainerLevel();
 		squirtleMoveSet();
 		for (;;)
 		{
@@ -1131,6 +1153,7 @@ void battle::battle2()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					displayTackleDmg();
 					Sleep(2500);
 					system("CLS");
@@ -1148,6 +1171,7 @@ void battle::battle2()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					sandShrewMoveSet();
 					Sleep(2500);
 					move1 = false;
@@ -1157,6 +1181,7 @@ void battle::battle2()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					squirtleMoveSet();
 
 				}
@@ -1170,6 +1195,7 @@ void battle::battle2()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt 30 Damage! \n";
 					Sleep(2500);
 					system("CLS");
@@ -1187,6 +1213,7 @@ void battle::battle2()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					sandShrewMoveSet();
 					Sleep(1500);
 					move2 = false;
@@ -1196,6 +1223,7 @@ void battle::battle2()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					squirtleMoveSet();
 				}
 
@@ -1208,6 +1236,7 @@ void battle::battle2()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt 20 Damage! \n";
 					Sleep(2500);
 					if (TraHP <= 0)
@@ -1225,6 +1254,7 @@ void battle::battle2()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					sandShrewMoveSet();
 					Sleep(2500);
 					move3 = false;
@@ -1234,6 +1264,7 @@ void battle::battle2()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					squirtleMoveSet();
 				}
 
@@ -1245,6 +1276,7 @@ void battle::battle2()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					cout << "                                                                                   Squirtle Used Tail Whip!\n";
 					Sleep(2500);
 					system("CLS");
@@ -1253,6 +1285,7 @@ void battle::battle2()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					sandShrewMoveSet();
 					Sleep(2500);
 					if (TraHP <= 0)
@@ -1271,6 +1304,7 @@ void battle::battle2()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					squirtleMoveSet();
 				}
 
@@ -1700,6 +1734,7 @@ void battle::battle3()
 		displayHP();
 		displayTrainerHP();
 		displayXP();
+		displayTrainerLevel();
 		squirtleMoveSet();
 		for (;;)
 		{
@@ -1715,6 +1750,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					displayTackleDmg();
 					Sleep(2500);
 					system("CLS");
@@ -1732,6 +1768,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					sandShrewMoveSet();
 					Sleep(2500);
 					move1 = false;
@@ -1741,6 +1778,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					squirtleMoveSet();
 
 				}
@@ -1754,6 +1792,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt 30 Damage! \n";
 					Sleep(2500);
 					system("CLS");
@@ -1771,6 +1810,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					sandShrewMoveSet();
 					Sleep(1500);
 					move2 = false;
@@ -1780,6 +1820,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					squirtleMoveSet();
 				}
 
@@ -1792,6 +1833,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt 20 Damage! \n";
 					Sleep(2500);
 					if (TraHP <= 0)
@@ -1809,6 +1851,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					sandShrewMoveSet();
 					Sleep(2500);
 					move3 = false;
@@ -1818,6 +1861,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					squirtleMoveSet();
 				}
 
@@ -1829,6 +1873,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					cout << "                                                                                   Squirtle Used Tail Whip!\n";
 					Sleep(2500);
 					system("CLS");
@@ -1837,6 +1882,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					sandShrewMoveSet();
 					Sleep(2500);
 					if (TraHP <= 0)
@@ -1855,6 +1901,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					squirtleMoveSet();
 				}
 
@@ -1871,6 +1918,7 @@ void battle::battle3()
 		displayHP();
 		displayTrainerHP();
 		displayXP();
+		displayTrainerLevel();
 		squirtleMoveSet();
 		for (;;)
 		{
@@ -1886,6 +1934,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					displayTackleDmg();
 					Sleep(2500);
 					system("CLS");
@@ -1903,6 +1952,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					sandShrewMoveSet();
 					Sleep(2500);
 					move1 = false;
@@ -1912,6 +1962,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					squirtleMoveSet();
 
 				}
@@ -1925,6 +1976,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt 30 Damage! \n";
 					Sleep(2500);
 					system("CLS");
@@ -1942,6 +1994,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					sandShrewMoveSet();
 					Sleep(1500);
 					move2 = false;
@@ -1951,6 +2004,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					squirtleMoveSet();
 				}
 
@@ -1963,6 +2017,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt 20 Damage! \n";
 					Sleep(2500);
 					if (TraHP <= 0)
@@ -1980,6 +2035,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					sandShrewMoveSet();
 					Sleep(2500);
 					move3 = false;
@@ -1989,6 +2045,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					squirtleMoveSet();
 				}
 
@@ -2000,6 +2057,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					cout << "                                                                                   Squirtle Used Tail Whip!\n";
 					Sleep(2500);
 					system("CLS");
@@ -2008,6 +2066,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					sandShrewMoveSet();
 					Sleep(2500);
 					if (TraHP <= 0)
@@ -2026,6 +2085,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
+					displayTrainerLevel();
 					squirtleMoveSet();
 				}
 

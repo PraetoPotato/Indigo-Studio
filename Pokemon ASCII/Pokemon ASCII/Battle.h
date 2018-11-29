@@ -47,6 +47,7 @@ public:
 	void attackScratch(bool);
 	void displayTackleDmg();
 	void displayScratchDmg();
+	void displayTrainerLevel();
 private:
 	std::string starter;
 	bool move1=false;
