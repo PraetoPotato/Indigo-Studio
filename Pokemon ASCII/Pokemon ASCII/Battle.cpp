@@ -204,6 +204,21 @@ void battle::drawSquirtleNCamper()
 
 	else std::cout << "unable to open file" << std::endl;
 }
+
+void battle::drawSquirtleNDiglett()
+{
+
+}
+
+void battle::drawSquirtleNGeodude()
+{
+
+}
+
+void battle::drawSquirtleNOnix()
+{
+
+}
 void battle::textBox()
 {
 
@@ -1082,7 +1097,7 @@ void battle::battle2()
 
 	if (starter == "Squirtle")
 	{
-		drawPlayerNSandhrew();
+		drawPlayerNDiglett();
 		textBox();
 		cout << "                                                                                                             Camper James sent out Sandshrew!\n";
 		Sleep(2000);
@@ -1474,21 +1489,21 @@ void battle::battle2()
 
 	if (starter == "Charmander")
 	{
-		drawPlayerNSandhrew();
+		drawPlayerNDiglett();
 		textBox();
-		cout << "                                                                                                             Camper James sent out Sandshrew!\n";
+		cout << "                                                                                                             Camper James sent out Diglett!\n";
 		Sleep(2000);
 		system("CLS");
 
 
 
 
-		drawCharmanderNSandshrew();
+		drawCharmanderNDiglett();
 		textBox();
 		cout << "                                                                                                               Go Charmander!\n";
 		Sleep(2000);
 		system("CLS");
-		drawCharmanderNSandshrew();
+		drawCharmanderNDiglett();
 		textBox();
 		displayHP();
 		displayTrainerHP();
@@ -1502,7 +1517,7 @@ void battle::battle2()
 				{
 					system("CLS");
 					attackScratch(defenseCurl);
-					drawCharmanderNSandshrew();
+					drawCharmanderNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1518,7 +1533,7 @@ void battle::battle2()
 						TraHP = 50;
 						break;
 					}
-					drawCharmanderNSandshrew();
+					drawCharmanderNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1526,7 +1541,7 @@ void battle::battle2()
 					Sleep(2500);
 					move1 = false;
 					system("CLS");
-					drawCharmanderNSandshrew();
+					drawCharmanderNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1538,7 +1553,7 @@ void battle::battle2()
 				{
 					system("CLS");
 					TraHP = TraHP - 20;
-					drawCharmanderNSandshrew();
+					drawCharmanderNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1554,7 +1569,7 @@ void battle::battle2()
 						TraHP = 50;
 						break;
 					}
-					drawCharmanderNSandshrew();
+					drawCharmanderNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1562,7 +1577,7 @@ void battle::battle2()
 					Sleep(1500);
 					move2 = false;
 					system("CLS");
-					drawCharmanderNSandshrew();
+					drawCharmanderNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1572,7 +1587,7 @@ void battle::battle2()
 				else if (move3 == true)
 				{
 					system("CLS");
-					drawCharmanderNSandshrew();
+					drawCharmanderNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1588,7 +1603,7 @@ void battle::battle2()
 						break;
 					}
 					system("CLS");
-					drawCharmanderNSandshrew();
+					drawCharmanderNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1596,7 +1611,7 @@ void battle::battle2()
 					Sleep(2500);
 					move3 = false;
 					system("CLS");
-					drawCharmanderNSandshrew();
+					drawCharmanderNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1607,7 +1622,7 @@ void battle::battle2()
 				{
 					system("CLS");
 					TraHP = TraHP - 40;
-					drawCharmanderNSandshrew();
+					drawCharmanderNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1624,14 +1639,14 @@ void battle::battle2()
 					}
 					move4 = false;
 					system("CLS");
-					drawCharmanderNSandshrew();
+					drawCharmanderNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
 					sandShrewMoveSet();
 					Sleep(2500);
 					system("CLS");
-					drawCharmanderNSandshrew();
+					drawCharmanderNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1643,7 +1658,7 @@ void battle::battle2()
 		}
 		PlaySound(NULL, 0, 0);
 		system("CLS");
-		drawCharmanderNSandshrew();
+		drawCharmanderNDiglett();
 		textBox();
 		std::cout << "                                                                                           You've gained 30 experience points, your pokemon is now level 11! " << std::endl;
 		Sleep(1000);

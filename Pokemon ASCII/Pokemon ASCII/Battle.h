@@ -25,6 +25,9 @@ public:
 	void drawPlayerNBrock();
 	void drawPlayerNOnix();
 	void drawSquirtleNBrock();
+	void drawSquirtleNDiglett();
+	void drawSquirtleNGeodude();
+	void drawSquirtleNOnix();
 	void drawCharmanderNCamper();
 	void drawCharmanderNSandshrew();
 	void drawCharmanderNDiglett();
