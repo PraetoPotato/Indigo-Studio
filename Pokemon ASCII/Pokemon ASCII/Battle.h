@@ -13,6 +13,9 @@ public:
 	void bulbasaurMoveSet();
 	void charmanderMoveSet();
 	void sandShrewMoveSet();
+	void diglettMoveSet();
+	void geoDudeMoveSet();
+	void onixMoveSet();
 	void drawPlayerNCamper();
 	void drawSquirtleNSandShrew();
 	void drawSquirtleNCamper();
@@ -22,6 +25,9 @@ public:
 	void drawPlayerNBrock();
 	void drawPlayerNOnix();
 	void drawSquirtleNBrock();
+	void drawSquirtleNDiglett();
+	void drawSquirtleNGeodude();
+	void drawSquirtleNOnix();
 	void drawCharmanderNCamper();
 	void drawCharmanderNSandshrew();
 	void drawCharmanderNDiglett();
@@ -35,9 +41,12 @@ public:
 	void drawBulbasaurNOnix();
 	void drawBulbasaurNBrock();
 	void displayHP();
+	void displayXP();
 	void displayTrainerHP();
 	void attackTackle(bool);
+	void attackScratch(bool);
 	void displayTackleDmg();
+	void displayScratchDmg();
 private:
 	std::string starter;
 	bool move1=false;

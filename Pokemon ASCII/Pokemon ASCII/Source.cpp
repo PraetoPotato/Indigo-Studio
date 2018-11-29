@@ -158,19 +158,14 @@ int main(int argc, char* argv[])
 		if (advice == 1)
 		{
 			system("CLS");
-
-			std::cout << "Movement \n  w moving  up\n a moving  left\n d moving  right\n  s moving  down\n" << std::endl;
-
-
-			std::cout << "insert movement stuff here." << std::endl;
-
+			std::cout << "Movement Controls: \n  W: Move Up \n  A: Move Left \n  D: Move Right \n  S: Move Down \n" << std::endl;
 			system("pause");
 		}
 		//adventure instructions screen
 		if (advice == 2)
 		{
 			system("CLS");
-			std::cout << "You are about to leave your home and live your new life travelling far and wide to become a Pokemon master. " << std::endl;
+			std::cout << "You are about to leave your home and live your new life travelling far and wide to become a Pokemon master." << std::endl << "Your goal in this new world is to defeat all the gym trainers and beat Brock, the Rock Gym Leader. " << std::endl;
 			system("pause");
 		}
 
@@ -201,7 +196,7 @@ int main(int argc, char* argv[])
 	std::cout << std::endl;
 	std::cout << std::endl;
 	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
-	mciSendString("open \"Pokémon - Nidorino (Cry).mp3\" type mpegvideo alias mp3", NULL, 0, NULL);//I used this so that this sound effect can be played over the music//Play Sound doesn't allow to play two sound simataneuosly
+	mciSendString("open \"Pokï¿½mon - Nidorino (Cry).mp3\" type mpegvideo alias mp3", NULL, 0, NULL);//I used this so that this sound effect can be played over the music//Play Sound doesn't allow to play two sound simataneuosly
 	mciSendString("play mp3", NULL, 0, NULL);
 	//Sleep(800);
 	//PlaySound("Pokemon BlueRed - Route 24 & 25.wav", NULL, SND_FILENAME | SND_LOOP | SND_ASYNC);
@@ -364,7 +359,7 @@ int main(int argc, char* argv[])
 
 	if (starter == 1)
 	{
-		PlaySound("Pokémon RedBlueYellow - Pokémon Capture - Sound Effect.wav", NULL, SND_FILENAME| SND_ASYNC);
+		PlaySound("Pokï¿½mon RedBlueYellow - Pokï¿½mon Capture - Sound Effect.wav", NULL, SND_FILENAME| SND_ASYNC);
 		std::cout << "You choose Squirtle!"<<std::endl;
 		x = 1;
 
@@ -372,7 +367,7 @@ int main(int argc, char* argv[])
 
 	if (starter == 2)
 	{
-		PlaySound("Pokémon RedBlueYellow - Pokémon Capture - Sound Effect.wav", NULL, SND_FILENAME | SND_ASYNC);
+		PlaySound("Pokï¿½mon RedBlueYellow - Pokï¿½mon Capture - Sound Effect.wav", NULL, SND_FILENAME | SND_ASYNC);
 		std::cout << "You choose Bulbasaur!" << std::endl;
 		x = 2;
 	
@@ -380,7 +375,7 @@ int main(int argc, char* argv[])
 
 	if (starter == 3)
 	{
-		PlaySound("Pokémon RedBlueYellow - Pokémon Capture - Sound Effect.wav", NULL, SND_FILENAME | SND_ASYNC);
+		PlaySound("Pokï¿½mon RedBlueYellow - Pokï¿½mon Capture - Sound Effect.wav", NULL, SND_FILENAME | SND_ASYNC);
 		std::cout << "You choose Charmander!" << std::endl;
 		x = 3;
 		

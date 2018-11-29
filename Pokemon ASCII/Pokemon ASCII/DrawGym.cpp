@@ -29,6 +29,40 @@ void DrawGym::display(int starterNum)
 			//system("CLS");
 			//fight.battle1();
 		}
+		if (map[14][5] == '@' || map[13][5] == '@' || map[12][5] == '@' || map[11][5] == '@' || map[10][5] == '@' || map[9][5] == '@' || map[8][5] == '@')
+		{
+
+			if (playerWin2 == false)
+			{
+				std::cout << "                                                                You do not want to play me. I am a very angry man." << std::endl;
+				system("pause");
+				system("CLS");
+				PlaySound("Trainer Battle intro.wav", NULL, SND_FILENAME | SND_ASYNC);
+				Sleep(3000);
+				fight.battle2();
+				playerWin2 = true;
+			}
+			//system("pause");
+			//system("CLS");
+			//fight.battle1();
+		}
+		if (map[13][1] == '@' )
+		{
+
+			if (playerWin3 == false)
+			{
+				std::cout << "                                                                You do not want to play me. I am a very angry man." << std::endl;
+				system("pause");
+				system("CLS");
+				PlaySound("Trainer Battle intro.wav", NULL, SND_FILENAME | SND_ASYNC);
+				Sleep(3000);
+				fight.battle3();
+				playerWin3 = true;
+			}
+			//system("pause");
+			//system("CLS");
+			//fight.battle1();
+		}
 	}
 }
 
