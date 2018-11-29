@@ -196,7 +196,7 @@ int main(int argc, char* argv[])
 	std::cout << std::endl;
 	std::cout << std::endl;
 	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
-	mciSendString("open \"Pokémon - Nidorino (Cry).mp3\" type mpegvideo alias mp3", NULL, 0, NULL);//I used this so that this sound effect can be played over the music//Play Sound doesn't allow to play two sound simataneuosly
+	mciSendString("open \"Pokï¿½mon - Nidorino (Cry).mp3\" type mpegvideo alias mp3", NULL, 0, NULL);//I used this so that this sound effect can be played over the music//Play Sound doesn't allow to play two sound simataneuosly
 	mciSendString("play mp3", NULL, 0, NULL);
 	//Sleep(800);
 	//PlaySound("Pokemon BlueRed - Route 24 & 25.wav", NULL, SND_FILENAME | SND_LOOP | SND_ASYNC);
@@ -230,7 +230,7 @@ int main(int argc, char* argv[])
 
 	system("pause");
 	system("CLS");
-
+	
 	profOak.open("Nidorino.txt", std::ios::in);
 
 	if (profOak.is_open())
@@ -359,7 +359,7 @@ int main(int argc, char* argv[])
 
 	if (starter == 1)
 	{
-		PlaySound("Pokémon RedBlueYellow - Pokémon Capture - Sound Effect.wav", NULL, SND_FILENAME| SND_ASYNC);
+		PlaySound("Pokï¿½mon RedBlueYellow - Pokï¿½mon Capture - Sound Effect.wav", NULL, SND_FILENAME| SND_ASYNC);
 		std::cout << "You choose Squirtle!"<<std::endl;
 		x = 1;
 
@@ -367,7 +367,7 @@ int main(int argc, char* argv[])
 
 	if (starter == 2)
 	{
-		PlaySound("Pokémon RedBlueYellow - Pokémon Capture - Sound Effect.wav", NULL, SND_FILENAME | SND_ASYNC);
+		PlaySound("Pokï¿½mon RedBlueYellow - Pokï¿½mon Capture - Sound Effect.wav", NULL, SND_FILENAME | SND_ASYNC);
 		std::cout << "You choose Bulbasaur!" << std::endl;
 		x = 2;
 	
@@ -375,7 +375,7 @@ int main(int argc, char* argv[])
 
 	if (starter == 3)
 	{
-		PlaySound("Pokémon RedBlueYellow - Pokémon Capture - Sound Effect.wav", NULL, SND_FILENAME | SND_ASYNC);
+		PlaySound("Pokï¿½mon RedBlueYellow - Pokï¿½mon Capture - Sound Effect.wav", NULL, SND_FILENAME | SND_ASYNC);
 		std::cout << "You choose Charmander!" << std::endl;
 		x = 3;
 		
