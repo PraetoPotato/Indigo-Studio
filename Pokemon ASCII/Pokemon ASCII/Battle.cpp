@@ -1790,7 +1790,7 @@ void battle::battle3()
 	PlaySound("Pokemon RedBlueYellow - Battle! Trainer Music (HQ).wav", NULL, SND_FILENAME | SND_LOOP | SND_ASYNC);
 	drawPlayerNCamper();
 	textBox();
-	std::cout << "                                                                                                  Camper James wants to battle!" << std::endl;
+	std::cout << "                                                                                                  Gym Leader Brock wants to battle!" << std::endl;
 	system("pause");
 	system("CLS");
 	drawPlayerNGeoDude();
@@ -2191,17 +2191,175 @@ void battle::battle3()
 
 	if (starter == "Bulbasaur")
 	{
-		drawPlayerNSandhrew();
-		textBox();
-		cout << "                                                                                                             Camper James sent out Sandshrew!\n";
-
-
-		Sleep(2000);
 		system("CLS");
 		drawBulbasaurNDiglett();
 		textBox();
 		cout << "                                                                                                                Go Bulbasaur!\n";
 		Sleep(2000);
+		system("CLS");
+		drawBulbasaurNDiglett();
+		textBox();
+		displayHP();
+		displayTrainerHP();
+		bulbasaurMoveSet();
+
+		for (;;)
+		{
+			keyBoardInput();
+
+			if (move1 == true)
+			{
+				system("CLS");
+				TraHP = TraHP - 15;
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				cout << "                                                                                         Bulbasaur Used Tackle!\n";
+				Sleep(2500);
+				move1 = false;
+				system("CLS");
+				if (TraHP <= 0)
+				{
+					move1 = false;
+					move2 = false;
+					move3 = false;
+					move4 = false;
+					TraHP = 50;
+					break;
+				}
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				diglettMoveSet();
+				Sleep(2500);
+				move1 = false;
+				system("CLS");
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				bulbasaurMoveSet();
+
+			}
+
+			else if (move2 == true)
+			{
+				system("CLS");
+				TraHP = TraHP - 5;
+				HP += 5;
+				if (HP > 50)
+				{
+
+					HP = 50;
+				}
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				cout << "                                                                                           Bulbasaur Used Leech Seed!\n";
+				Sleep(2500);
+				move2 = false;
+				system("CLS");
+				if (TraHP <= 0)
+				{
+					move1 = false;
+					move2 = false;
+					move3 = false;
+					move4 = false;
+					TraHP = 50;
+					break;
+				}
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				diglettMoveSet();
+				Sleep(2500);
+				move2 = false;
+				system("CLS");
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				bulbasaurMoveSet();
+			}
+
+			else if (move3 == true)
+			{
+				system("CLS");
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				cout << "                                                                                         Bulbasaur Used Growl!\n";
+				Sleep(2500);
+				move3 = false;
+				system("CLS");
+				if (TraHP <= 0)
+				{
+					move1 = false;
+					move2 = false;
+					move3 = false;
+					move4 = false;
+					TraHP = 50;
+					break;
+				}
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				diglettMoveSet();
+				Sleep(2500);
+				move3 = false;
+				system("CLS");
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				bulbasaurMoveSet();
+
+			}
+
+			else if (move4 == true)
+			{
+				system("CLS");
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				cout << "                                                                                   Bulbasaur Used Vine Whip! It was super effective and dealt 25 damage!\n";
+				Sleep(2500);
+				TraHP = TraHP - 25;
+				move4 = false;
+				system("CLS");
+				if (TraHP <= 0)
+				{
+					move1 = false;
+					move2 = false;
+					move3 = false;
+					move4 = false;
+					TraHP = 50;
+					break;
+				}
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				diglettMoveSet();
+				Sleep(2500);
+				move4 = false;
+				system("CLS");
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				bulbasaurMoveSet();
+
+			}
+
+		}
 		system("CLS");
 		drawBulbasaurNDiglett();
 		textBox();
@@ -2383,14 +2541,6 @@ void battle::battle3()
 	}
 	if (starter == "Charmander")
 	{
-		drawPlayerNDiglett();
-		textBox();
-		cout << "                                                                                                             Camper James sent out Diglett!\n";
-		Sleep(2000);
-		system("CLS");
-
-
-
 
 		drawCharmanderNDiglett();
 		textBox();
@@ -2550,24 +2700,187 @@ void battle::battle3()
 
 			}
 		}
-		PlaySound(NULL, 0, 0);
 		system("CLS");
-		drawCharmanderNDiglett();
+		drawBulbasaurNDiglett();
 		textBox();
-		std::cout << "                                                                                           You've gained 30 experience points, your pokemon is now level 11! " << std::endl;
-		Sleep(1000);
-		system("pause");
-		system("CLS");
-		drawCharmanderNCamper();
-		textBox();
-		std::cout << "                                                                                                         Alright, you pass. " << std::endl;
-		Sleep(1000);
-		system("pause");
-		system("CLS");
-		drawCharmanderNCamper();
-		textBox();
-		std::cout << "                                                                                                          Alright, you pass. " << std::endl;
-		Sleep(1000);
-		system("pause");
+		displayHP();
+		displayTrainerHP();
+		bulbasaurMoveSet();
+
+		for (;;)
+		{
+			keyBoardInput();
+
+			if (move1 == true)
+			{
+				system("CLS");
+				TraHP = TraHP - 15;
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				cout << "                                                                                         Bulbasaur Used Tackle!\n";
+				Sleep(2500);
+				move1 = false;
+				system("CLS");
+				if (TraHP <= 0)
+				{
+					move1 = false;
+					move2 = false;
+					move3 = false;
+					move4 = false;
+					TraHP = 50;
+					break;
+				}
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				diglettMoveSet();
+				Sleep(2500);
+				move1 = false;
+				system("CLS");
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				bulbasaurMoveSet();
+
+			}
+
+			else if (move2 == true)
+			{
+				system("CLS");
+				TraHP = TraHP - 5;
+				HP += 5;
+				if (HP > 50)
+				{
+
+					HP = 50;
+				}
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				cout << "                                                                                           Bulbasaur Used Leech Seed!\n";
+				Sleep(2500);
+				move2 = false;
+				system("CLS");
+				if (TraHP <= 0)
+				{
+					move1 = false;
+					move2 = false;
+					move3 = false;
+					move4 = false;
+					TraHP = 50;
+					break;
+				}
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				diglettMoveSet();
+				Sleep(2500);
+				move2 = false;
+				system("CLS");
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				bulbasaurMoveSet();
+			}
+
+			else if (move3 == true)
+			{
+				system("CLS");
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				cout << "                                                                                         Bulbasaur Used Growl!\n";
+				Sleep(2500);
+				move3 = false;
+				system("CLS");
+				if (TraHP <= 0)
+				{
+					move1 = false;
+					move2 = false;
+					move3 = false;
+					move4 = false;
+					TraHP = 50;
+					break;
+				}
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				diglettMoveSet();
+				Sleep(2500);
+				move3 = false;
+				system("CLS");
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				bulbasaurMoveSet();
+
+			}
+
+			else if (move4 == true)
+			{
+				system("CLS");
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				cout << "                                                                                   Bulbasaur Used Vine Whip! It was super effective and dealt 25 damage!\n";
+				Sleep(2500);
+				TraHP = TraHP - 25;
+				move4 = false;
+				system("CLS");
+				if (TraHP <= 0)
+				{
+					move1 = false;
+					move2 = false;
+					move3 = false;
+					move4 = false;
+					TraHP = 50;
+					break;
+				}
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				diglettMoveSet();
+				Sleep(2500);
+				move4 = false;
+				system("CLS");
+				drawBulbasaurNDiglett();
+				textBox();
+				displayHP();
+				displayTrainerHP();
+				bulbasaurMoveSet();
+
+			}
+			PlaySound(NULL, 0, 0);
+			system("CLS");
+			drawCharmanderNDiglett();
+			textBox();
+			std::cout << "                                                                                           You've gained 30 experience points, your pokemon is now level 11! " << std::endl;
+			Sleep(1000);
+			system("pause");
+			system("CLS");
+			drawCharmanderNCamper();
+			textBox();
+			std::cout << "                                                                                                         Alright, you pass. " << std::endl;
+			Sleep(1000);
+			system("pause");
+			system("CLS");
+			drawCharmanderNCamper();
+			textBox();
+			std::cout << "                                                                                                          Alright, you pass. " << std::endl;
+			Sleep(1000);
+			system("pause");
+		}
 	}
 }
