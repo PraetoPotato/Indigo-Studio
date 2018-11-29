@@ -142,6 +142,21 @@ battle::battle(int starterNum)
 	}
 }
 
+void battle::drawPlayerNDiglett()
+{
+
+	std::ifstream draw("Player N Diglett.txt");
+	if (draw.is_open())
+	{
+		while (getline(draw, line))
+		{
+			std::cout << line << "\n";
+		}
+		draw.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+}
 
 void battle::drawPlayerNCamper()
 {
@@ -207,17 +222,60 @@ void battle::drawSquirtleNCamper()
 
 void battle::drawSquirtleNDiglett()
 {
+	std::ifstream draw("Squirtle N Diglett.txt");
+	if (draw.is_open())
+	{
+		while (getline(draw, line))
+		{
+			std::cout << line << "\n";
+		}
+		draw.close();
+	}
 
+	else std::cout << "unable to open file" << std::endl;
 }
+void battle::drawSquirtleNBrock()
+{
+	std::ifstream draw("Squirtle N Brock.txt");
+	if (draw.is_open())
+	{
+		while (getline(draw, line))
+		{
+			std::cout << line << "\n";
+		}
+		draw.close();
+	}
 
+	else std::cout << "unable to open file" << std::endl;
+}
 void battle::drawSquirtleNGeodude()
 {
+	std::ifstream draw("Squirtle N Geodude.txt");
+	if (draw.is_open())
+	{
+		while (getline(draw, line))
+		{
+			std::cout << line << "\n";
+		}
+		draw.close();
+	}
 
+	else std::cout << "unable to open file" << std::endl;
 }
 
 void battle::drawSquirtleNOnix()
 {
+	std::ifstream draw("Squirtle N Onix.txt");
+	if (draw.is_open())
+	{
+		while (getline(draw, line))
+		{
+			std::cout << line << "\n";
+		}
+		draw.close();
+	}
 
+	else std::cout << "unable to open file" << std::endl;
 }
 void battle::textBox()
 {
@@ -1099,19 +1157,19 @@ void battle::battle2()
 	{
 		drawPlayerNDiglett();
 		textBox();
-		cout << "                                                                                                             Camper James sent out Sandshrew!\n";
+		cout << "                                                                                                             Camper James sent out Diglett!\n";
 		Sleep(2000);
 		system("CLS");
 
 
 
 
-		drawSquirtleNSandShrew();
+		drawSquirtleNDiglett();
 		textBox();
 		cout << "                                                                                                               Go Squritle!\n";
 		Sleep(2000);
 		system("CLS");
-		drawSquirtleNSandShrew();
+		drawSquirtleNDiglett();
 		textBox();
 		displayHP();
 		displayTrainerHP();
@@ -1126,7 +1184,7 @@ void battle::battle2()
 				{
 					system("CLS");
 					attackTackle(defenseCurl);
-					drawSquirtleNSandShrew();
+					drawSquirtleNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1143,7 +1201,7 @@ void battle::battle2()
 						TraHP = 50;
 						break;
 					}
-					drawSquirtleNSandShrew();
+					drawSquirtleNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1152,7 +1210,7 @@ void battle::battle2()
 					Sleep(2500);
 					move1 = false;
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1165,7 +1223,7 @@ void battle::battle2()
 				{
 					system("CLS");
 					TraHP = TraHP - 30;
-					drawSquirtleNSandShrew();
+					drawSquirtleNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1182,7 +1240,7 @@ void battle::battle2()
 						TraHP = 50;
 						break;
 					}
-					drawSquirtleNSandShrew();
+					drawSquirtleNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1191,7 +1249,7 @@ void battle::battle2()
 					Sleep(1500);
 					move2 = false;
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1203,7 +1261,7 @@ void battle::battle2()
 				{
 					system("CLS");
 					TraHP = TraHP - 20;
-					drawSquirtleNSandShrew();
+					drawSquirtleNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1220,7 +1278,7 @@ void battle::battle2()
 						break;
 					}
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1229,7 +1287,7 @@ void battle::battle2()
 					Sleep(2500);
 					move3 = false;
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1240,7 +1298,7 @@ void battle::battle2()
 				else if (move4 == true)
 				{
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1266,7 +1324,7 @@ void battle::battle2()
 					}
 					move4 = false;
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1303,12 +1361,12 @@ void battle::battle2()
 
 		Sleep(2000);
 		system("CLS");
-		drawBulbasaurNSandshrew();
+		drawBulbasaurNDiglett();
 		textBox();
 		cout << "                                                                                                                Go Bulbasaur!\n";
 		Sleep(2000);
 		system("CLS");
-		drawBulbasaurNSandshrew();
+		drawBulbasaurNDiglett();
 		textBox();
 		displayHP();
 		displayTrainerHP();
@@ -1322,7 +1380,7 @@ void battle::battle2()
 			{
 				system("CLS");
 				TraHP = TraHP - 15;
-				drawBulbasaurNSandshrew();
+				drawBulbasaurNDiglett();
 				textBox();
 				displayHP();
 				displayTrainerHP();
@@ -1339,7 +1397,7 @@ void battle::battle2()
 					TraHP = 50;
 					break;
 				}
-				drawBulbasaurNSandshrew();
+				drawBulbasaurNDiglett();
 				textBox();
 				displayHP();
 				displayTrainerHP();
@@ -1347,7 +1405,7 @@ void battle::battle2()
 				Sleep(2500);
 				move1 = false;
 				system("CLS");
-				drawBulbasaurNSandshrew();
+				drawBulbasaurNDiglett();
 				textBox();
 				displayHP();
 				displayTrainerHP();
@@ -1365,7 +1423,7 @@ void battle::battle2()
 
 					HP = 50;
 				}
-				drawBulbasaurNSandshrew();
+				drawBulbasaurNDiglett();
 				textBox();
 				displayHP();
 				displayTrainerHP();
@@ -1382,7 +1440,7 @@ void battle::battle2()
 					TraHP = 50;
 					break;
 				}
-				drawBulbasaurNSandshrew();
+				drawBulbasaurNDiglett();
 				textBox();
 				displayHP();
 				displayTrainerHP();
@@ -1390,7 +1448,7 @@ void battle::battle2()
 				Sleep(2500);
 				move2 = false;
 				system("CLS");
-				drawBulbasaurNSandshrew();
+				drawBulbasaurNDiglett();
 				textBox();
 				displayHP();
 				displayTrainerHP();
@@ -1400,7 +1458,7 @@ void battle::battle2()
 			else if (move3 == true)
 			{
 				system("CLS");
-				drawBulbasaurNSandshrew();
+				drawBulbasaurNDiglett();
 				textBox();
 				displayHP();
 				displayTrainerHP();
@@ -1417,7 +1475,7 @@ void battle::battle2()
 					TraHP = 50;
 					break;
 				}
-				drawBulbasaurNSandshrew();
+				drawBulbasaurNDiglett();
 				textBox();
 				displayHP();
 				displayTrainerHP();
@@ -1425,7 +1483,7 @@ void battle::battle2()
 				Sleep(2500);
 				move3 = false;
 				system("CLS");
-				drawBulbasaurNSandshrew();
+				drawBulbasaurNDiglett();
 				textBox();
 				displayHP();
 				displayTrainerHP();
@@ -1436,7 +1494,7 @@ void battle::battle2()
 			else if (move4 == true)
 			{
 				system("CLS");
-				drawBulbasaurNSandshrew();
+				drawBulbasaurNDiglett();
 				textBox();
 				displayHP();
 				displayTrainerHP();
@@ -1454,7 +1512,7 @@ void battle::battle2()
 					TraHP = 50;
 					break;
 				}
-				drawBulbasaurNSandshrew();
+				drawBulbasaurNDiglett();
 				textBox();
 				displayHP();
 				displayTrainerHP();
@@ -1462,7 +1520,7 @@ void battle::battle2()
 				Sleep(2500);
 				move4 = false;
 				system("CLS");
-				drawBulbasaurNSandshrew();
+				drawBulbasaurNDiglett();
 				textBox();
 				displayHP();
 				displayTrainerHP();
