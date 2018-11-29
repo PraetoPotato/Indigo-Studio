@@ -1206,7 +1206,7 @@ void battle::battle2()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
-					sandShrewMoveSet();
+					diglettMoveSet();
 					Sleep(2500);
 					move1 = false;
 					system("CLS");
@@ -1245,7 +1245,7 @@ void battle::battle2()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
-					sandShrewMoveSet();
+					diglettMoveSet();
 					Sleep(1500);
 					move2 = false;
 					system("CLS");
@@ -1283,7 +1283,7 @@ void battle::battle2()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
-					sandShrewMoveSet();
+					diglettMoveSet();
 					Sleep(2500);
 					move3 = false;
 					system("CLS");
@@ -1306,12 +1306,12 @@ void battle::battle2()
 					cout << "                                                                                   Squirtle Used Tail Whip!\n";
 					Sleep(2500);
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNDiglett();
 					textBox();
 					displayHP();
 					displayTrainerHP();
 					displayXP();
-					sandShrewMoveSet();
+					diglettMoveSet();
 					Sleep(2500);
 					if (TraHP <= 0)
 					{
@@ -1737,23 +1737,29 @@ void battle::battle2()
 }
 void battle::battle3()
 {
+	PlaySound("Pokemon RedBlueYellow - Battle! Trainer Music (HQ).wav", NULL, SND_FILENAME | SND_LOOP | SND_ASYNC);
+	drawPlayerNCamper();
+	textBox();
+	std::cout << "                                                                                                  Camper James wants to battle!" << std::endl;
+	system("pause");
+	system("CLS");
 	if (starter == "Squirtle")
 	{
 		drawPlayerNSandhrew();
 		textBox();
-		cout << "                                                                                                             Camper James sent out Sandshrew!\n";
+		cout << "                                                                                                             Gym Leader Brock sent out Geodude!\n";
 		Sleep(2000);
 		system("CLS");
 
 
 
 
-		drawSquirtleNSandShrew();
+		drawSquirtleNGeodude();
 		textBox();
 		cout << "                                                                                                               Go Squritle!\n";
 		Sleep(2000);
 		system("CLS");
-		drawSquirtleNSandShrew();
+		drawSquirtleNGeodude();
 		textBox();
 		displayHP();
 		displayTrainerHP();
@@ -1768,7 +1774,7 @@ void battle::battle3()
 				{
 					system("CLS");
 					attackTackle(defenseCurl);
-					drawSquirtleNSandShrew();
+					drawSquirtleNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1785,7 +1791,7 @@ void battle::battle3()
 						TraHP = 50;
 						break;
 					}
-					drawSquirtleNSandShrew();
+					drawSquirtleNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1794,7 +1800,7 @@ void battle::battle3()
 					Sleep(2500);
 					move1 = false;
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1807,7 +1813,7 @@ void battle::battle3()
 				{
 					system("CLS");
 					TraHP = TraHP - 30;
-					drawSquirtleNSandShrew();
+					drawSquirtleNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1824,7 +1830,7 @@ void battle::battle3()
 						TraHP = 50;
 						break;
 					}
-					drawSquirtleNSandShrew();
+					drawSquirtleNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1833,7 +1839,7 @@ void battle::battle3()
 					Sleep(1500);
 					move2 = false;
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1845,7 +1851,7 @@ void battle::battle3()
 				{
 					system("CLS");
 					TraHP = TraHP - 20;
-					drawSquirtleNSandShrew();
+					drawSquirtleNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1862,7 +1868,7 @@ void battle::battle3()
 						break;
 					}
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1871,7 +1877,7 @@ void battle::battle3()
 					Sleep(2500);
 					move3 = false;
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1882,7 +1888,7 @@ void battle::battle3()
 				else if (move4 == true)
 				{
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1890,7 +1896,7 @@ void battle::battle3()
 					cout << "                                                                                   Squirtle Used Tail Whip!\n";
 					Sleep(2500);
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1908,7 +1914,7 @@ void battle::battle3()
 					}
 					move4 = false;
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1919,12 +1925,12 @@ void battle::battle3()
 
 			}
 		}
-		drawSquirtleNSandShrew();
+		drawSquirtleNOnix();
 		textBox();
 		cout << "                                                                                                             Camper James sent out Sandshrew!\n";
 		Sleep(2000);
 		system("CLS");
-		drawSquirtleNSandShrew();
+		drawSquirtleNOnix();
 		textBox();
 		displayHP();
 		displayTrainerHP();
@@ -1939,7 +1945,7 @@ void battle::battle3()
 				{
 					system("CLS");
 					attackTackle(defenseCurl);
-					drawSquirtleNSandShrew();
+					drawSquirtleNOnix();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1956,7 +1962,7 @@ void battle::battle3()
 						TraHP = 50;
 						break;
 					}
-					drawSquirtleNSandShrew();
+					drawSquirtleNOnix();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1965,7 +1971,7 @@ void battle::battle3()
 					Sleep(2500);
 					move1 = false;
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNOnix();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1978,7 +1984,7 @@ void battle::battle3()
 				{
 					system("CLS");
 					TraHP = TraHP - 30;
-					drawSquirtleNSandShrew();
+					drawSquirtleNOnix();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -1995,7 +2001,7 @@ void battle::battle3()
 						TraHP = 50;
 						break;
 					}
-					drawSquirtleNSandShrew();
+					drawSquirtleNOnix();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -2016,7 +2022,7 @@ void battle::battle3()
 				{
 					system("CLS");
 					TraHP = TraHP - 20;
-					drawSquirtleNSandShrew();
+					drawSquirtleNOnix();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -2033,7 +2039,7 @@ void battle::battle3()
 						break;
 					}
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNOnix();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -2042,7 +2048,7 @@ void battle::battle3()
 					Sleep(2500);
 					move3 = false;
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNOnix();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -2053,7 +2059,7 @@ void battle::battle3()
 				else if (move4 == true)
 				{
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNOnix();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -2061,7 +2067,7 @@ void battle::battle3()
 					cout << "                                                                                   Squirtle Used Tail Whip!\n";
 					Sleep(2500);
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNOnix();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -2079,7 +2085,7 @@ void battle::battle3()
 					}
 					move4 = false;
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNOnix();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -2090,6 +2096,20 @@ void battle::battle3()
 
 			}
 		}
+		cout << HP << "            " << TraHP;
+		PlaySound(NULL, 0, 0);
+		system("CLS");
+		drawBulbasaurNCamper();
+		textBox();
+		std::cout << "                                                                                                         Trainer Ash defeated Camper James! " << std::endl;
+		Sleep(1000);
+		system("pause");
+		system("CLS");
+		drawBulbasaurNCamper();
+		textBox();
+		std::cout << "                                                                                                          Alright, you pass. " << std::endl;
+		Sleep(1000);
+		system("pause");
 	}
 
 }
