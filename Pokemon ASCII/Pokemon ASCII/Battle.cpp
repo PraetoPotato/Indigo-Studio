@@ -2273,7 +2273,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					geoDudeMoveSet();
+					onixMoveSet();
 					Sleep(2500);
 					if (HP <= 0)
 					{
@@ -2323,7 +2323,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					geoDudeMoveSet();
+					onixMoveSet();
 					Sleep(1500);
 					if (HP <= 0)
 					{
@@ -2335,7 +2335,7 @@ void battle::battle3()
 					}
 					move2 = false;
 					system("CLS");
-					drawSquirtleNSandShrew();
+					drawSquirtleNOnix();
 					textBox();
 					displayHP();
 					displayTrainerHP();
@@ -2372,7 +2372,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					geoDudeMoveSet();
+					onixMoveSet();
 					Sleep(2500);
 					if (HP <= 0)
 					{
@@ -2411,7 +2411,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					geoDudeMoveSet();
+					onixMoveSet();
 					Sleep(2500);
 					if (HP <= 0)
 					{
@@ -2468,7 +2468,7 @@ void battle::battle3()
 
 		drawBulbasaurNGeodude();
 		textBox();
-		cout << "                                                                                                               Go Squritle!\n";
+		cout << "                                                                                                               Go Bulbasaur!\n";
 		Sleep(2000);
 		system("CLS");
 		drawBulbasaurNGeodude();
@@ -2477,7 +2477,7 @@ void battle::battle3()
 		displayTrainerHP();
 		displayXP();
 		displayTrainerLevel();
-		squirtleMoveSet();
+		bulbasaurMoveSet();
 		for (;;)
 		{
 			if (playerTurn == true)
@@ -2493,7 +2493,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					displayTackleDmg();
+					std::cout << "                                                                                             Bulbasaur used Tackle!";
 					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
@@ -2529,21 +2529,26 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					squirtleMoveSet();
+					bulbasaurMoveSet();
 
 				}
 
 				else if (move2 == true)
 				{
 					system("CLS");
-					TraHP = TraHP - 30;
+					TraHP = TraHP - 5;
+					HP += 5;
+					if (HP > 50)
+					{
+						HP = 50;
+					}
 					drawBulbasaurNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt 30 Damage! \n";
+					cout << "                                                                                Bulbasaur used Leech Seed! \n";
 					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
@@ -2579,20 +2584,19 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					squirtleMoveSet();
+					bulbasaurMoveSet();
 				}
 
 				else if (move3 == true)
 				{
 					system("CLS");
-					TraHP = TraHP - 20;
 					drawBulbasaurNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt 20 Damage! \n";
+					cout << "                                                                                    Bulbasaur Used Growl! It was super effective and dealt 20 Damage! \n";
 					Sleep(2500);
 					if (TraHP <= 0)
 					{
@@ -2628,11 +2632,12 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					squirtleMoveSet();
+					bulbasaurMoveSet();
 				}
 
 				else if (move4 == true)
 				{
+				    TraHP -= 40;
 					system("CLS");
 					drawBulbasaurNGeodude();
 					textBox();
@@ -2640,7 +2645,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                   Squirtle Used Tail Whip!\n";
+					cout << "                                                                                   Bulbasaur Used Vine Whip! It's super effective!\n";
 					Sleep(2500);
 					system("CLS");
 					drawBulbasaurNGeodude();
@@ -2676,15 +2681,16 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					squirtleMoveSet();
+					bulbasaurMoveSet();
 				}
 
 
 			}
 		}
+		system("CLS");
 		drawBulbasaurNOnix();
 		textBox();
-		cout << "                                                                                                             Camper James sent out Sandshrew!\n";
+		cout << "                                                                                                             Camper James sent out Onix!\n";
 		Sleep(2000);
 		system("CLS");
 		drawBulbasaurNOnix();
@@ -2693,7 +2699,7 @@ void battle::battle3()
 		displayTrainerHP();
 		displayXP();
 		displayTrainerLevel();
-		squirtleMoveSet();
+		bulbasaurMoveSet();
 		for (;;)
 		{
 			if (playerTurn == true)
@@ -2709,7 +2715,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					displayTackleDmg();
+				    std::cout << "                                                                                               Bulbasaur used Tackle!" << std::endl;
 					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
@@ -2727,7 +2733,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					sandShrewMoveSet();
+					onixMoveSet();
 					Sleep(2500);
 					if (HP <= 0)
 					{
@@ -2745,21 +2751,21 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					squirtleMoveSet();
+					bulbasaurMoveSet();
 
 				}
 
 				else if (move2 == true)
 				{
 					system("CLS");
-					TraHP = TraHP - 30;
+					TraHP = TraHP - 5;
 					drawBulbasaurNOnix();
 					textBox();
 					displayHP();
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt 30 Damage! \n";
+					cout << "                                                                                Squirtle Used Leech Seed! It was super effective and dealt 30 Damage! \n";
 					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
@@ -2777,7 +2783,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					sandShrewMoveSet();
+					onixMoveSet();
 					Sleep(1500);
 					if (HP <= 0)
 					{
@@ -2795,20 +2801,19 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					squirtleMoveSet();
+					bulbasaurMoveSet();
 				}
 
 				else if (move3 == true)
 				{
 					system("CLS");
-					TraHP = TraHP - 20;
 					drawBulbasaurNOnix();
 					textBox();
 					displayHP();
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt 20 Damage! \n";
+					cout << "                                                                                    Bulbasaur used Growl! It was super effective and dealt 20 Damage! \n";
 					Sleep(2500);
 					if (TraHP <= 0)
 					{
@@ -2826,7 +2831,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					sandShrewMoveSet();
+					onixMoveSet();
 					Sleep(2500);
 					if (HP <= 0)
 					{
@@ -2838,25 +2843,26 @@ void battle::battle3()
 					}
 					move3 = false;
 					system("CLS");
-					drawCharmanderNOnix();
-					textBox();
-					displayHP();
-					displayTrainerHP();
-					displayXP();
-					displayTrainerLevel();
-					squirtleMoveSet();
-				}
-
-				else if (move4 == true)
-				{
-					system("CLS");
 					drawBulbasaurNOnix();
 					textBox();
 					displayHP();
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                   Squirtle Used Tail Whip!\n";
+					bulbasaurMoveSet();
+				}
+
+				else if (move4 == true)
+				{
+					system("CLS");
+					TraHP -=40 ;
+					drawBulbasaurNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					cout << "                                                                                   Bulbasaur used Vine Whip! It's super Effective!!\n";
 					Sleep(2500);
 					system("CLS");
 					drawBulbasaurNOnix();
@@ -2864,8 +2870,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
-					drawBulbasaurNOnix();
-					sandShrewMoveSet();
+					onixMoveSet();
 					Sleep(2500);
 					if (HP <= 0)
 					{
@@ -2891,8 +2896,7 @@ void battle::battle3()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
-					drawBulbasaurNOnix();
-					squirtleMoveSet();
+					bulbasaurMoveSet();
 				}
 
 
@@ -2922,7 +2926,7 @@ void battle::battle3()
 
 		drawCharmanderNGeodude();
 		textBox();
-		cout << "                                                                                                               Go Squritle!\n";
+		cout << "                                                                                                               Go Charmander!\n";
 		Sleep(2000);
 		system("CLS");
 		drawCharmanderNGeodude();
@@ -2931,7 +2935,7 @@ void battle::battle3()
 		displayTrainerHP();
 		displayXP();
 		displayTrainerLevel();
-		squirtleMoveSet();
+		charmanderMoveSet();
 		for (;;)
 		{
 			if (playerTurn == true)
@@ -2940,14 +2944,14 @@ void battle::battle3()
 				if (move1 == true)
 				{
 					system("CLS");
-					attackTackle(defenseCurl);
+					TraHP = TraHP - 20;
 					drawCharmanderNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					displayTackleDmg();
+					cout << "                                                                              Charmander used Scratch!";
 					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
@@ -2965,7 +2969,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					sandShrewMoveSet();
+					geoDudeMoveSet();
 					Sleep(2500);
 					if (HP <= 0)
 					{
@@ -2983,21 +2987,20 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					squirtleMoveSet();
+					charmanderMoveSet();
 
 				}
 
 				else if (move2 == true)
 				{
 					system("CLS");
-					TraHP = TraHP - 30;
 					drawCharmanderNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt 30 Damage! \n";
+					cout << "                                                                                Charmander used Growl! \n";
 					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
@@ -3015,7 +3018,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					sandShrewMoveSet();
+					geoDudeMoveSet();
 					Sleep(1500);
 					if (HP <= 0)
 					{
@@ -3033,7 +3036,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					squirtleMoveSet();
+					charmanderMoveSet();
 				}
 
 				else if (move3 == true)
@@ -3046,7 +3049,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt 20 Damage! \n";
+					cout << "                                                                                    Charmander used Ember! It was not very effective! \n";
 					Sleep(2500);
 					if (TraHP <= 0)
 					{
@@ -3064,7 +3067,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					sandShrewMoveSet();
+					geoDudeMoveSet();
 					Sleep(2500);
 					if (HP <= 0)
 					{
@@ -3082,7 +3085,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					squirtleMoveSet();
+					charmanderMoveSet();
 				}
 
 				else if (move4 == true)
@@ -3094,7 +3097,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                   Squirtle Used Tail Whip!\n";
+					cout << "                                                                                   Charmander used Dragon Rage!\n";
 					Sleep(2500);
 					system("CLS");
 					drawCharmanderNGeodude();
@@ -3103,7 +3106,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					sandShrewMoveSet();
+					geoDudeMoveSet();
 					Sleep(2500);
 					if (HP <= 0)
 					{
@@ -3130,7 +3133,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					squirtleMoveSet();
+					charmanderMoveSet();
 				}
 
 
@@ -3147,7 +3150,7 @@ void battle::battle3()
 		displayTrainerHP();
 		displayXP();
 		displayTrainerLevel();
-		squirtleMoveSet();
+		charmanderMoveSet();
 		for (;;)
 		{
 			if (playerTurn == true)
@@ -3156,14 +3159,14 @@ void battle::battle3()
 				if (move1 == true)
 				{
 					system("CLS");
-					attackTackle(defenseCurl);
+					TraHP = TraHP - 20;
 					drawCharmanderNOnix();
 					textBox();
 					displayHP();
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					displayTackleDmg();
+					cout << "                                                                                      Charmander used Scratch!";
 					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
@@ -3181,7 +3184,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					sandShrewMoveSet();
+					onixMoveSet();
 					Sleep(2500);
 					if (HP <= 0)
 					{
@@ -3199,21 +3202,20 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					squirtleMoveSet();
+					charmanderMoveSet();
 
 				}
 
 				else if (move2 == true)
 				{
 					system("CLS");
-					TraHP = TraHP - 30;
 					drawCharmanderNOnix();
 					textBox();
 					displayHP();
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt 30 Damage! \n";
+					cout << "                                                                                Charmander used Growl! \n";
 					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
@@ -3231,7 +3233,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					sandShrewMoveSet();
+					onixMoveSet();
 					Sleep(1500);
 					if (HP <= 0)
 					{
@@ -3249,7 +3251,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					squirtleMoveSet();
+					charmanderMoveSet();
 				}
 
 				else if (move3 == true)
@@ -3262,7 +3264,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt 20 Damage! \n";
+					cout << "                                                                                    Charmander used Ember! It is not very effective! \n";
 					Sleep(2500);
 					if (TraHP <= 0)
 					{
@@ -3280,7 +3282,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					sandShrewMoveSet();
+					onixMoveSet();
 					Sleep(2500);
 					if (HP <= 0)
 					{
@@ -3298,19 +3300,20 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					squirtleMoveSet();
+					charmanderMoveSet();
 				}
 
 				else if (move4 == true)
 				{
 					system("CLS");
+					TraHP -= 40;
 					drawCharmanderNOnix();
 					textBox();
 					displayHP();
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                   Squirtle Used Tail Whip!\n";
+					cout << "                                                                                   Charmander Used Dragon Rage!\n";
 					Sleep(2500);
 					system("CLS");
 					drawCharmanderNOnix();
@@ -3319,7 +3322,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					sandShrewMoveSet();
+					onixMoveSet();
 					Sleep(2500);
 					if (HP <= 0)
 					{
@@ -3346,7 +3349,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					squirtleMoveSet();
+					charmanderMoveSet();
 				}
 
 
