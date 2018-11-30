@@ -36,6 +36,20 @@ void battle::displayHP()
 	cout << "Pokemon HP:" << HP << "/50";
 }
 
+void battle::gameOver()
+{
+	std::ifstream draw("Game Over.txt");
+	if (draw.is_open())
+	{
+		while (getline(draw, line))
+		{
+			std::cout << line << "\n";
+		}
+		draw.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+}
 void battle::displayTrainerLevel()
 {
 	cout << "                                                                                                                                                                                                " << "Level:" << TrainerLevel;
@@ -328,6 +342,7 @@ void battle::sandShrewMoveSet()
 void battle::diglettMoveSet()
 {
 	std::cout << "                                                                                                  Diglett used Scratch!"<<std::endl;
+	HP -= 15;
 }
 
 void battle::geoDudeMoveSet()
@@ -354,7 +369,7 @@ void battle::onixMoveSet()
 	moveNum = rand() % 4 + 1;
 	if (moveNum == 2 || moveNum == 3 || moveNum == 4)
 	{
-		std::cout << "                                                                                              Geodude used Tackle! It dealt 15 Damage" << std::endl;
+		std::cout << "                                                                                             Onix used Rock Throw! It dealt 15 Damage" << std::endl;
 		HP -= 25;
 		if (starter == "Charmander")
 		{
@@ -364,10 +379,10 @@ void battle::onixMoveSet()
 	}
 	if (moveNum == 1)
 	{
-		std::cout << "                                                                                              Geodude used Defense Curl!" << std::endl;
+		std::cout << "                                                                                              Onix used Tackle!" << std::endl;
 		Sleep(1500);
-		std::cout << "                                                                                              Geodude's defense rose!" << std::endl;
-		defenseCurl = true;
+		HP -= 25;
+		
 	}
 
 }
@@ -647,6 +662,14 @@ void battle::battle1()
 					displayTrainerLevel();
 					sandShrewMoveSet();
 					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move1 = false;
 					system("CLS");
 					drawSquirtleNSandShrew();
@@ -689,6 +712,14 @@ void battle::battle1()
 					displayTrainerLevel();
 					sandShrewMoveSet();
 					Sleep(1500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move2 = false;
 					system("CLS");
 					drawSquirtleNSandShrew();
@@ -730,6 +761,14 @@ void battle::battle1()
 					displayTrainerLevel();
 					sandShrewMoveSet();
 					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move3 = false;
 					system("CLS");
 					drawSquirtleNSandShrew();
@@ -761,6 +800,14 @@ void battle::battle1()
 					displayTrainerLevel();
 					sandShrewMoveSet();
 					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					if (TraHP <= 0)
 					{
 						move1 = false;
@@ -852,6 +899,14 @@ void battle::battle1()
 				displayTrainerHP();
 				sandShrewMoveSet();
 				Sleep(2500);
+				if (HP <= 0)
+				{
+					system("CLS");
+					gameOver();
+					Sleep(3000);
+					system("pause");
+					exit(0);
+				}
 				move1 = false;
 				system("CLS");
 				drawBulbasaurNSandshrew();
@@ -894,6 +949,14 @@ void battle::battle1()
 				displayTrainerHP();
 				sandShrewMoveSet();
 				Sleep(2500);
+				if (HP <= 0)
+				{
+					system("CLS");
+					gameOver();
+					Sleep(3000);
+					system("pause");
+					exit(0);
+				}
 				move2 = false;
 				system("CLS");
 				drawBulbasaurNSandshrew();
@@ -929,6 +992,14 @@ void battle::battle1()
 				displayTrainerHP();
 				sandShrewMoveSet();
 				Sleep(2500);
+				if (HP <= 0)
+				{
+					system("CLS");
+					gameOver();
+					Sleep(3000);
+					system("pause");
+					exit(0);
+				}
 				move3 = false;
 				system("CLS");
 				drawBulbasaurNSandshrew();
@@ -966,6 +1037,14 @@ void battle::battle1()
 				displayTrainerHP();
 				sandShrewMoveSet();
 				Sleep(2500);
+				if (HP <= 0)
+				{
+					system("CLS");
+					gameOver();
+					Sleep(3000);
+					system("pause");
+					exit(0);
+				}
 				move4 = false;
 				system("CLS");
 				drawBulbasaurNSandshrew();
@@ -1045,6 +1124,14 @@ void battle::battle1()
 					displayTrainerHP();
 					sandShrewMoveSet();
 					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move1 = false;
 					system("CLS");
 					drawCharmanderNSandshrew();
@@ -1081,6 +1168,14 @@ void battle::battle1()
 					displayTrainerHP();
 					sandShrewMoveSet();
 					Sleep(1500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move2 = false;
 					system("CLS");
 					drawCharmanderNSandshrew();
@@ -1115,6 +1210,14 @@ void battle::battle1()
 					displayTrainerHP();
 					sandShrewMoveSet();
 					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move3 = false;
 					system("CLS");
 					drawCharmanderNSandshrew();
@@ -1151,6 +1254,14 @@ void battle::battle1()
 					displayTrainerHP();
 					sandShrewMoveSet();
 					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					system("CLS");
 					drawCharmanderNSandshrew();
 					textBox();
@@ -1249,8 +1360,16 @@ void battle::battle2()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
-					sandShrewMoveSet();
+					diglettMoveSet();
 					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move1 = false;
 					system("CLS");
 					drawSquirtleNDiglett();
@@ -1290,8 +1409,16 @@ void battle::battle2()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
-					sandShrewMoveSet();
+					diglettMoveSet();
 					Sleep(1500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move2 = false;
 					system("CLS");
 					drawSquirtleNDiglett();
@@ -1330,7 +1457,15 @@ void battle::battle2()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
-					sandShrewMoveSet();
+					diglettMoveSet();
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					Sleep(2500);
 					move3 = false;
 					system("CLS");
@@ -1360,8 +1495,16 @@ void battle::battle2()
 					displayHP();
 					displayTrainerHP();
 					displayXP();
-					sandShrewMoveSet();
+					diglettMoveSet();
 					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					if (TraHP <= 0)
 					{
 						move1 = false;
@@ -1404,9 +1547,9 @@ void battle::battle2()
 
 	if (starter == "Bulbasaur")
 	{
-		drawPlayerNSandhrew();
+		drawPlayerNDiglett();
 		textBox();
-		cout << "                                                                                                             Camper James sent out Sandshrew!\n";
+		cout << "                                                                                                             Camper James sent out Diglett!\n";
 
 
 		Sleep(2000);
@@ -1453,6 +1596,14 @@ void battle::battle2()
 				displayTrainerHP();
 				diglettMoveSet();
 				Sleep(2500);
+				if (HP <= 0)
+				{
+					system("CLS");
+					gameOver();
+					Sleep(3000);
+					system("pause");
+					exit(0);
+				}
 				move1 = false;
 				system("CLS");
 				drawBulbasaurNDiglett();
@@ -1496,6 +1647,14 @@ void battle::battle2()
 				displayTrainerHP();
 				diglettMoveSet();
 				Sleep(2500);
+				if (HP <= 0)
+				{
+					system("CLS");
+					gameOver();
+					Sleep(3000);
+					system("pause");
+					exit(0);
+				}
 				move2 = false;
 				system("CLS");
 				drawBulbasaurNDiglett();
@@ -1531,6 +1690,14 @@ void battle::battle2()
 				displayTrainerHP();
 				diglettMoveSet();
 				Sleep(2500);
+				if (HP <= 0)
+				{
+					system("CLS");
+					gameOver();
+					Sleep(3000);
+					system("pause");
+					exit(0);
+				}
 				move3 = false;
 				system("CLS");
 				drawBulbasaurNDiglett();
@@ -1568,6 +1735,14 @@ void battle::battle2()
 				displayTrainerHP();
 				diglettMoveSet();
 				Sleep(2500);
+				if (HP <= 0)
+				{
+					system("CLS");
+					gameOver();
+					Sleep(3000);
+					system("pause");
+					exit(0);
+				}
 				move4 = false;
 				system("CLS");
 				drawBulbasaurNDiglett();
@@ -1647,6 +1822,14 @@ void battle::battle2()
 					displayTrainerHP();
 					diglettMoveSet();
 					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move1 = false;
 					system("CLS");
 					drawCharmanderNDiglett();
@@ -1683,6 +1866,14 @@ void battle::battle2()
 					displayTrainerHP();
 					diglettMoveSet();
 					Sleep(1500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move2 = false;
 					system("CLS");
 					drawCharmanderNDiglett();
@@ -1717,6 +1908,14 @@ void battle::battle2()
 					displayTrainerHP();
 					diglettMoveSet();
 					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move3 = false;
 					system("CLS");
 					drawCharmanderNDiglett();
@@ -1753,6 +1952,14 @@ void battle::battle2()
 					displayTrainerHP();
 					diglettMoveSet();
 					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					system("CLS");
 					drawCharmanderNDiglett();
 					textBox();
@@ -1787,7 +1994,7 @@ void battle::battle2()
 }
 void battle::battle3()
 {
-	PlaySound("Pokemon RedBlueYellow - Battle! Trainer Music (HQ).wav", NULL, SND_FILENAME | SND_LOOP | SND_ASYNC);
+	PlaySound("Pokemon RedBlueYellow - Battle! Gym Leader Music (HQ).wav", NULL, SND_FILENAME | SND_LOOP | SND_ASYNC);
 	drawPlayerNCamper();
 	textBox();
 	std::cout << "                                                                                                  Gym Leader Brock wants to battle!" << std::endl;
@@ -1850,8 +2057,16 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					sandShrewMoveSet();
+					geoDudeMoveSet();
 					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move1 = false;
 					system("CLS");
 					drawSquirtleNGeodude();
@@ -1892,8 +2107,16 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					sandShrewMoveSet();
+					geoDudeMoveSet();
 					Sleep(1500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move2 = false;
 					system("CLS");
 					drawSquirtleNGeodude();
@@ -1933,8 +2156,16 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					sandShrewMoveSet();
+					geoDudeMoveSet();
 					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move3 = false;
 					system("CLS");
 					drawSquirtleNGeodude();
@@ -1964,8 +2195,16 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					sandShrewMoveSet();
+					geoDudeMoveSet();
 					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					if (TraHP <= 0)
 					{
 						move1 = false;
@@ -2034,8 +2273,16 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					sandShrewMoveSet();
+					geoDudeMoveSet();
 					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move1 = false;
 					system("CLS");
 					drawSquirtleNOnix();
@@ -2076,8 +2323,16 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					sandShrewMoveSet();
+					geoDudeMoveSet();
 					Sleep(1500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move2 = false;
 					system("CLS");
 					drawSquirtleNSandShrew();
@@ -2117,8 +2372,16 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					sandShrewMoveSet();
+					geoDudeMoveSet();
 					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move3 = false;
 					system("CLS");
 					drawSquirtleNOnix();
@@ -2148,8 +2411,16 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					sandShrewMoveSet();
+					geoDudeMoveSet();
 					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					if (TraHP <= 0)
 					{
 						move1 = false;
@@ -2191,338 +2462,441 @@ void battle::battle3()
 
 	if (starter == "Bulbasaur")
 	{
-		system("CLS");
-		drawBulbasaurNDiglett();
+
+
+
+
+		drawBulbasaurNGeodude();
 		textBox();
-		cout << "                                                                                                                Go Bulbasaur!\n";
+		cout << "                                                                                                               Go Squritle!\n";
 		Sleep(2000);
 		system("CLS");
-		drawBulbasaurNDiglett();
+		drawBulbasaurNGeodude();
 		textBox();
 		displayHP();
 		displayTrainerHP();
-		bulbasaurMoveSet();
-
+		displayXP();
+		displayTrainerLevel();
+		squirtleMoveSet();
 		for (;;)
 		{
-			keyBoardInput();
-
-			if (move1 == true)
+			if (playerTurn == true)
 			{
-				system("CLS");
-				TraHP = TraHP - 15;
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				cout << "                                                                                         Bulbasaur Used Tackle!\n";
-				Sleep(2500);
-				move1 = false;
-				system("CLS");
-				if (TraHP <= 0)
+				keyBoardInput();
+				if (move1 == true)
 				{
+					system("CLS");
+					attackTackle(defenseCurl);
+					drawBulbasaurNGeodude();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					displayTackleDmg();
+					Sleep(2500);
+					system("CLS");
+					if (TraHP <= 0)
+					{
+						move1 = false;
+						move2 = false;
+						move3 = false;
+						move4 = false;
+						TraHP = 50;
+						break;
+					}
+					drawBulbasaurNGeodude();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					geoDudeMoveSet();
+					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move1 = false;
-					move2 = false;
-					move3 = false;
-					move4 = false;
-					TraHP = 50;
-					break;
+					system("CLS");
+					drawBulbasaurNGeodude();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					squirtleMoveSet();
+
 				}
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				diglettMoveSet();
-				Sleep(2500);
-				move1 = false;
-				system("CLS");
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				bulbasaurMoveSet();
+
+				else if (move2 == true)
+				{
+					system("CLS");
+					TraHP = TraHP - 30;
+					drawBulbasaurNGeodude();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt 30 Damage! \n";
+					Sleep(2500);
+					system("CLS");
+					if (TraHP <= 0)
+					{
+						move1 = false;
+						move2 = false;
+						move3 = false;
+						move4 = false;
+						TraHP = 50;
+						break;
+					}
+					drawBulbasaurNGeodude();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					geoDudeMoveSet();
+					Sleep(1500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
+					move2 = false;
+					system("CLS");
+					drawBulbasaurNGeodude();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					squirtleMoveSet();
+				}
+
+				else if (move3 == true)
+				{
+					system("CLS");
+					TraHP = TraHP - 20;
+					drawBulbasaurNGeodude();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt 20 Damage! \n";
+					Sleep(2500);
+					if (TraHP <= 0)
+					{
+						move1 = false;
+						move2 = false;
+						move3 = false;
+						move4 = false;
+						TraHP = 50;
+						break;
+					}
+					system("CLS");
+					drawBulbasaurNGeodude();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					geoDudeMoveSet();
+					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
+					move3 = false;
+					system("CLS");
+					drawBulbasaurNGeodude();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					squirtleMoveSet();
+				}
+
+				else if (move4 == true)
+				{
+					system("CLS");
+					drawBulbasaurNGeodude();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					cout << "                                                                                   Squirtle Used Tail Whip!\n";
+					Sleep(2500);
+					system("CLS");
+					drawBulbasaurNGeodude();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					geoDudeMoveSet();
+					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
+					if (TraHP <= 0)
+					{
+						move1 = false;
+						move2 = false;
+						move3 = false;
+						move4 = false;
+						TraHP = 50;
+						break;
+					}
+					move4 = false;
+					system("CLS");
+					drawBulbasaurNGeodude();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					squirtleMoveSet();
+				}
+
 
 			}
-
-			else if (move2 == true)
-			{
-				system("CLS");
-				TraHP = TraHP - 5;
-				HP += 5;
-				if (HP > 50)
-				{
-
-					HP = 50;
-				}
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				cout << "                                                                                           Bulbasaur Used Leech Seed!\n";
-				Sleep(2500);
-				move2 = false;
-				system("CLS");
-				if (TraHP <= 0)
-				{
-					move1 = false;
-					move2 = false;
-					move3 = false;
-					move4 = false;
-					TraHP = 50;
-					break;
-				}
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				diglettMoveSet();
-				Sleep(2500);
-				move2 = false;
-				system("CLS");
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				bulbasaurMoveSet();
-			}
-
-			else if (move3 == true)
-			{
-				system("CLS");
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				cout << "                                                                                         Bulbasaur Used Growl!\n";
-				Sleep(2500);
-				move3 = false;
-				system("CLS");
-				if (TraHP <= 0)
-				{
-					move1 = false;
-					move2 = false;
-					move3 = false;
-					move4 = false;
-					TraHP = 50;
-					break;
-				}
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				diglettMoveSet();
-				Sleep(2500);
-				move3 = false;
-				system("CLS");
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				bulbasaurMoveSet();
-
-			}
-
-			else if (move4 == true)
-			{
-				system("CLS");
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				cout << "                                                                                   Bulbasaur Used Vine Whip! It was super effective and dealt 25 damage!\n";
-				Sleep(2500);
-				TraHP = TraHP - 25;
-				move4 = false;
-				system("CLS");
-				if (TraHP <= 0)
-				{
-					move1 = false;
-					move2 = false;
-					move3 = false;
-					move4 = false;
-					TraHP = 50;
-					break;
-				}
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				diglettMoveSet();
-				Sleep(2500);
-				move4 = false;
-				system("CLS");
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				bulbasaurMoveSet();
-
-			}
-
 		}
+		drawBulbasaurNOnix();
+		textBox();
+		cout << "                                                                                                             Camper James sent out Sandshrew!\n";
+		Sleep(2000);
 		system("CLS");
-		drawBulbasaurNDiglett();
+		drawBulbasaurNOnix();
 		textBox();
 		displayHP();
 		displayTrainerHP();
-		bulbasaurMoveSet();
-
+		displayXP();
+		displayTrainerLevel();
+		squirtleMoveSet();
 		for (;;)
 		{
-			keyBoardInput();
-
-			if (move1 == true)
+			if (playerTurn == true)
 			{
-				system("CLS");
-				TraHP = TraHP - 15;
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				cout << "                                                                                         Bulbasaur Used Tackle!\n";
-				Sleep(2500);
-				move1 = false;
-				system("CLS");
-				if (TraHP <= 0)
+				keyBoardInput();
+				if (move1 == true)
 				{
+					system("CLS");
+					attackTackle(defenseCurl);
+					drawBulbasaurNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					displayTackleDmg();
+					Sleep(2500);
+					system("CLS");
+					if (TraHP <= 0)
+					{
+						move1 = false;
+						move2 = false;
+						move3 = false;
+						move4 = false;
+						TraHP = 50;
+						break;
+					}
+					drawBulbasaurNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					sandShrewMoveSet();
+					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move1 = false;
-					move2 = false;
-					move3 = false;
-					move4 = false;
-					TraHP = 50;
-					break;
+					system("CLS");
+					drawBulbasaurNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					squirtleMoveSet();
+
 				}
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				diglettMoveSet();
-				Sleep(2500);
-				move1 = false;
-				system("CLS");
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				bulbasaurMoveSet();
+
+				else if (move2 == true)
+				{
+					system("CLS");
+					TraHP = TraHP - 30;
+					drawBulbasaurNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt 30 Damage! \n";
+					Sleep(2500);
+					system("CLS");
+					if (TraHP <= 0)
+					{
+						move1 = false;
+						move2 = false;
+						move3 = false;
+						move4 = false;
+						TraHP = 50;
+						break;
+					}
+					drawBulbasaurNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					sandShrewMoveSet();
+					Sleep(1500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
+					move2 = false;
+					system("CLS");
+					drawBulbasaurNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					squirtleMoveSet();
+				}
+
+				else if (move3 == true)
+				{
+					system("CLS");
+					TraHP = TraHP - 20;
+					drawBulbasaurNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt 20 Damage! \n";
+					Sleep(2500);
+					if (TraHP <= 0)
+					{
+						move1 = false;
+						move2 = false;
+						move3 = false;
+						move4 = false;
+						TraHP = 50;
+						break;
+					}
+					system("CLS");
+					drawBulbasaurNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					sandShrewMoveSet();
+					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
+					move3 = false;
+					system("CLS");
+					drawCharmanderNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					squirtleMoveSet();
+				}
+
+				else if (move4 == true)
+				{
+					system("CLS");
+					drawBulbasaurNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					cout << "                                                                                   Squirtle Used Tail Whip!\n";
+					Sleep(2500);
+					system("CLS");
+					drawBulbasaurNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					drawBulbasaurNOnix();
+					sandShrewMoveSet();
+					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
+					if (TraHP <= 0)
+					{
+						move1 = false;
+						move2 = false;
+						move3 = false;
+						move4 = false;
+						TraHP = 50;
+						break;
+					}
+					move4 = false;
+					system("CLS");
+					drawBulbasaurNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					drawBulbasaurNOnix();
+					squirtleMoveSet();
+				}
+
 
 			}
-
-			else if (move2 == true)
-			{
-				system("CLS");
-				TraHP = TraHP - 5;
-				HP += 5;
-				if (HP > 50)
-				{
-
-					HP = 50;
-				}
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				cout << "                                                                                           Bulbasaur Used Leech Seed!\n";
-				Sleep(2500);
-				move2 = false;
-				system("CLS");
-				if (TraHP <= 0)
-				{
-					move1 = false;
-					move2 = false;
-					move3 = false;
-					move4 = false;
-					TraHP = 50;
-					break;
-				}
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				diglettMoveSet();
-				Sleep(2500);
-				move2 = false;
-				system("CLS");
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				bulbasaurMoveSet();
-			}
-
-			else if (move3 == true)
-			{
-				system("CLS");
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				cout << "                                                                                         Bulbasaur Used Growl!\n";
-				Sleep(2500);
-				move3 = false;
-				system("CLS");
-				if (TraHP <= 0)
-				{
-					move1 = false;
-					move2 = false;
-					move3 = false;
-					move4 = false;
-					TraHP = 50;
-					break;
-				}
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				diglettMoveSet();
-				Sleep(2500);
-				move3 = false;
-				system("CLS");
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				bulbasaurMoveSet();
-
-			}
-
-			else if (move4 == true)
-			{
-				system("CLS");
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				cout << "                                                                                   Bulbasaur Used Vine Whip! It was super effective and dealt 25 damage!\n";
-				Sleep(2500);
-				TraHP = TraHP - 25;
-				move4 = false;
-				system("CLS");
-				if (TraHP <= 0)
-				{
-					move1 = false;
-					move2 = false;
-					move3 = false;
-					move4 = false;
-					TraHP = 50;
-					break;
-				}
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				diglettMoveSet();
-				Sleep(2500);
-				move4 = false;
-				system("CLS");
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				bulbasaurMoveSet();
-
-			}
-
 		}
 		cout << HP << "            " << TraHP;
 		PlaySound(NULL, 0, 0);
@@ -2538,20 +2912,26 @@ void battle::battle3()
 		std::cout << "                                                                                                          Alright, you pass. " << std::endl;
 		Sleep(1000);
 		system("pause");
+
 	}
 	if (starter == "Charmander")
 	{
 
-		drawCharmanderNDiglett();
+
+
+
+		drawCharmanderNGeodude();
 		textBox();
-		cout << "                                                                                                               Go Charmander!\n";
+		cout << "                                                                                                               Go Squritle!\n";
 		Sleep(2000);
 		system("CLS");
-		drawCharmanderNDiglett();
+		drawCharmanderNGeodude();
 		textBox();
 		displayHP();
 		displayTrainerHP();
-		charmanderMoveSet();
+		displayXP();
+		displayTrainerLevel();
+		squirtleMoveSet();
 		for (;;)
 		{
 			if (playerTurn == true)
@@ -2560,12 +2940,14 @@ void battle::battle3()
 				if (move1 == true)
 				{
 					system("CLS");
-					attackScratch(defenseCurl);
-					drawCharmanderNDiglett();
+					attackTackle(defenseCurl);
+					drawCharmanderNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					displayScratchDmg();
+					displayXP();
+					displayTrainerLevel();
+					displayTackleDmg();
 					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
@@ -2577,31 +2959,45 @@ void battle::battle3()
 						TraHP = 50;
 						break;
 					}
-					drawCharmanderNDiglett();
+					drawCharmanderNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					diglettMoveSet();
+					displayXP();
+					displayTrainerLevel();
+					sandShrewMoveSet();
 					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move1 = false;
 					system("CLS");
-					drawCharmanderNDiglett();
+					drawCharmanderNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					charmanderMoveSet();
+					displayXP();
+					displayTrainerLevel();
+					squirtleMoveSet();
 
 				}
 
 				else if (move2 == true)
 				{
 					system("CLS");
-					TraHP = TraHP - 20;
-					drawCharmanderNDiglett();
+					TraHP = TraHP - 30;
+					drawCharmanderNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					cout << "                                                                                Charmander Used Ember! It was super effective and dealt 20 Damage! \n";
+					displayXP();
+					displayTrainerLevel();
+					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt 30 Damage! \n";
 					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
@@ -2613,29 +3009,44 @@ void battle::battle3()
 						TraHP = 50;
 						break;
 					}
-					drawCharmanderNDiglett();
+					drawCharmanderNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					diglettMoveSet();
+					displayXP();
+					displayTrainerLevel();
+					sandShrewMoveSet();
 					Sleep(1500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move2 = false;
 					system("CLS");
-					drawCharmanderNDiglett();
+					drawCharmanderNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					charmanderMoveSet();
+					displayXP();
+					displayTrainerLevel();
+					squirtleMoveSet();
 				}
 
 				else if (move3 == true)
 				{
 					system("CLS");
-					drawCharmanderNDiglett();
+					TraHP = TraHP - 20;
+					drawCharmanderNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					cout << "                                                                                    Charmander Used Growl! \n";
+					displayXP();
+					displayTrainerLevel();
+					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt 20 Damage! \n";
 					Sleep(2500);
 					if (TraHP <= 0)
 					{
@@ -2647,31 +3058,61 @@ void battle::battle3()
 						break;
 					}
 					system("CLS");
-					drawCharmanderNDiglett();
+					drawCharmanderNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					diglettMoveSet();
+					displayXP();
+					displayTrainerLevel();
+					sandShrewMoveSet();
 					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move3 = false;
 					system("CLS");
-					drawCharmanderNDiglett();
+					drawCharmanderNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					charmanderMoveSet();
+					displayXP();
+					displayTrainerLevel();
+					squirtleMoveSet();
 				}
 
 				else if (move4 == true)
 				{
 					system("CLS");
-					TraHP = TraHP - 40;
-					drawCharmanderNDiglett();
+					drawCharmanderNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					cout << "                                                                                   Charmander Used Dragon Rage!\n";
+					displayXP();
+					displayTrainerLevel();
+					cout << "                                                                                   Squirtle Used Tail Whip!\n";
 					Sleep(2500);
+					system("CLS");
+					drawCharmanderNGeodude();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					sandShrewMoveSet();
+					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					if (TraHP <= 0)
 					{
 						move1 = false;
@@ -2683,204 +3124,248 @@ void battle::battle3()
 					}
 					move4 = false;
 					system("CLS");
-					drawCharmanderNDiglett();
+					drawCharmanderNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					diglettMoveSet();
-					Sleep(2500);
-					system("CLS");
-					drawCharmanderNDiglett();
-					textBox();
-					displayHP();
-					displayTrainerHP();
-					charmanderMoveSet();
+					displayXP();
+					displayTrainerLevel();
+					squirtleMoveSet();
 				}
 
 
 			}
 		}
+		drawCharmanderNOnix();
+		textBox();
+		cout << "                                                                                                             Camper James sent out Sandshrew!\n";
+		Sleep(2000);
 		system("CLS");
-		drawBulbasaurNDiglett();
+		drawCharmanderNOnix();
 		textBox();
 		displayHP();
 		displayTrainerHP();
-		bulbasaurMoveSet();
-
+		displayXP();
+		displayTrainerLevel();
+		squirtleMoveSet();
 		for (;;)
 		{
-			keyBoardInput();
-
-			if (move1 == true)
+			if (playerTurn == true)
 			{
-				system("CLS");
-				TraHP = TraHP - 15;
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				cout << "                                                                                         Bulbasaur Used Tackle!\n";
-				Sleep(2500);
-				move1 = false;
-				system("CLS");
-				if (TraHP <= 0)
+				keyBoardInput();
+				if (move1 == true)
 				{
+					system("CLS");
+					attackTackle(defenseCurl);
+					drawCharmanderNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					displayTackleDmg();
+					Sleep(2500);
+					system("CLS");
+					if (TraHP <= 0)
+					{
+						move1 = false;
+						move2 = false;
+						move3 = false;
+						move4 = false;
+						TraHP = 50;
+						break;
+					}
+					drawCharmanderNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					sandShrewMoveSet();
+					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
 					move1 = false;
-					move2 = false;
-					move3 = false;
-					move4 = false;
-					TraHP = 50;
-					break;
+					system("CLS");
+					drawCharmanderNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					squirtleMoveSet();
+
 				}
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				diglettMoveSet();
-				Sleep(2500);
-				move1 = false;
-				system("CLS");
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				bulbasaurMoveSet();
+
+				else if (move2 == true)
+				{
+					system("CLS");
+					TraHP = TraHP - 30;
+					drawCharmanderNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt 30 Damage! \n";
+					Sleep(2500);
+					system("CLS");
+					if (TraHP <= 0)
+					{
+						move1 = false;
+						move2 = false;
+						move3 = false;
+						move4 = false;
+						TraHP = 50;
+						break;
+					}
+					drawCharmanderNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					sandShrewMoveSet();
+					Sleep(1500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
+					move2 = false;
+					system("CLS");
+					drawCharmanderNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					squirtleMoveSet();
+				}
+
+				else if (move3 == true)
+				{
+					system("CLS");
+					TraHP = TraHP - 20;
+					drawCharmanderNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt 20 Damage! \n";
+					Sleep(2500);
+					if (TraHP <= 0)
+					{
+						move1 = false;
+						move2 = false;
+						move3 = false;
+						move4 = false;
+						TraHP = 50;
+						break;
+					}
+					system("CLS");
+					drawCharmanderNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					sandShrewMoveSet();
+					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
+					move3 = false;
+					system("CLS");
+					drawCharmanderNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					squirtleMoveSet();
+				}
+
+				else if (move4 == true)
+				{
+					system("CLS");
+					drawCharmanderNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					cout << "                                                                                   Squirtle Used Tail Whip!\n";
+					Sleep(2500);
+					system("CLS");
+					drawCharmanderNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					sandShrewMoveSet();
+					Sleep(2500);
+					if (HP <= 0)
+					{
+						system("CLS");
+						gameOver();
+						Sleep(3000);
+						system("pause");
+						exit(0);
+					}
+					if (TraHP <= 0)
+					{
+						move1 = false;
+						move2 = false;
+						move3 = false;
+						move4 = false;
+						TraHP = 50;
+						break;
+					}
+					move4 = false;
+					system("CLS");
+					drawCharmanderNOnix();
+					textBox();
+					displayHP();
+					displayTrainerHP();
+					displayXP();
+					displayTrainerLevel();
+					squirtleMoveSet();
+				}
+
 
 			}
-
-			else if (move2 == true)
-			{
-				system("CLS");
-				TraHP = TraHP - 5;
-				HP += 5;
-				if (HP > 50)
-				{
-
-					HP = 50;
-				}
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				cout << "                                                                                           Bulbasaur Used Leech Seed!\n";
-				Sleep(2500);
-				move2 = false;
-				system("CLS");
-				if (TraHP <= 0)
-				{
-					move1 = false;
-					move2 = false;
-					move3 = false;
-					move4 = false;
-					TraHP = 50;
-					break;
-				}
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				diglettMoveSet();
-				Sleep(2500);
-				move2 = false;
-				system("CLS");
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				bulbasaurMoveSet();
-			}
-
-			else if (move3 == true)
-			{
-				system("CLS");
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				cout << "                                                                                         Bulbasaur Used Growl!\n";
-				Sleep(2500);
-				move3 = false;
-				system("CLS");
-				if (TraHP <= 0)
-				{
-					move1 = false;
-					move2 = false;
-					move3 = false;
-					move4 = false;
-					TraHP = 50;
-					break;
-				}
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				diglettMoveSet();
-				Sleep(2500);
-				move3 = false;
-				system("CLS");
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				bulbasaurMoveSet();
-
-			}
-
-			else if (move4 == true)
-			{
-				system("CLS");
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				cout << "                                                                                   Bulbasaur Used Vine Whip! It was super effective and dealt 25 damage!\n";
-				Sleep(2500);
-				TraHP = TraHP - 25;
-				move4 = false;
-				system("CLS");
-				if (TraHP <= 0)
-				{
-					move1 = false;
-					move2 = false;
-					move3 = false;
-					move4 = false;
-					TraHP = 50;
-					break;
-				}
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				diglettMoveSet();
-				Sleep(2500);
-				move4 = false;
-				system("CLS");
-				drawBulbasaurNDiglett();
-				textBox();
-				displayHP();
-				displayTrainerHP();
-				bulbasaurMoveSet();
-
-			}
-			PlaySound(NULL, 0, 0);
-			system("CLS");
-			drawCharmanderNDiglett();
-			textBox();
-			std::cout << "                                                                                           You've gained 30 experience points, your pokemon is now level 11! " << std::endl;
-			Sleep(1000);
-			system("pause");
-			system("CLS");
-			drawCharmanderNCamper();
-			textBox();
-			std::cout << "                                                                                                         Alright, you pass. " << std::endl;
-			Sleep(1000);
-			system("pause");
-			system("CLS");
-			drawCharmanderNCamper();
-			textBox();
-			std::cout << "                                                                                                          Alright, you pass. " << std::endl;
-			Sleep(1000);
-			system("pause");
 		}
+		cout << HP << "            " << TraHP;
+		PlaySound(NULL, 0, 0);
+		system("CLS");
+		drawCharmanderNCamper();
+		textBox();
+		std::cout << "                                                                                                         Trainer Ash defeated Camper James! " << std::endl;
+		Sleep(1000);
+		system("pause");
+		system("CLS");
+		drawCharmanderNCamper();
+		textBox();
+		std::cout << "                                                                                                          Alright, you pass. " << std::endl;
+		Sleep(1000);
+		system("pause");
+
 	}
 }

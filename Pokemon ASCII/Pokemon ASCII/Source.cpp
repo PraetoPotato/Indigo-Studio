@@ -418,6 +418,7 @@ int main(int argc, char* argv[])
 	if (inOverWorld == true)
 	{
 		system("CLS");
+		
 		gym.display(x);
 
 		
