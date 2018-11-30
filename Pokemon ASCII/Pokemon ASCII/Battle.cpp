@@ -369,7 +369,7 @@ void battle::onixMoveSet()
 	moveNum = rand() % 4 + 1;
 	if (moveNum == 2 || moveNum == 3 || moveNum == 4)
 	{
-		std::cout << "                                                                                             Onix used Rock Throw! It dealt 15 Damage" << std::endl;
+		std::cout << "                                                                                             Onix used Rock Throw!" << std::endl;
 		HP -= 25;
 		if (starter == "Charmander")
 		{
@@ -3091,6 +3091,7 @@ void battle::battle3()
 				else if (move4 == true)
 				{
 					system("CLS");
+					TraHP -= 40;
 					drawCharmanderNGeodude();
 					textBox();
 					displayHP();
