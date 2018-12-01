@@ -1474,6 +1474,8 @@ void battle::battle1()
 		drawBulbasaurNCamper();
 		textBox();
 		std::cout << "                                                                                                          Dang! I lost to a chump! " << std::endl;
+		pokemonLevel = pokemonLevel + 1;
+		std::cout << "                                                                                                          You've gained 30 experience points, your pokemon is now level 11! " << std::endl;
 		Sleep(1000);
 		system("pause");
 	}
@@ -1684,7 +1686,6 @@ void battle::battle1()
 		system("CLS");
 		drawCharmanderNSandshrew();
 		textBox();
-		std::cout << "                                                                                           You've gained 30 experience points, your pokemon is now level 11! " << std::endl;
 		Sleep(1000);
 		system("pause");
 		system("CLS");
@@ -1697,6 +1698,8 @@ void battle::battle1()
 		drawCharmanderNCamper();
 		textBox();
 		std::cout << "                                                                                                          Dang! I lost to a chump! " << std::endl;
+		pokemonLevel = pokemonLevel + 1;
+		std::cout << "                                                                                                          You've gained 30 experience points, your pokemon is now level 11! " << std::endl;
 		Sleep(1000);
 		system("pause");
 	}
@@ -1948,7 +1951,7 @@ void battle::battle2()
 		textBox();
 		std::cout << "                                                                                                          Alright, you pass. " << std::endl;
 		pokemonLevel = pokemonLevel + 1;
-		std::cout << "                                                                                                          You've gained 30 experience points, your pokemon is now level 11! " << std::endl;
+		std::cout << "                                                                                                          You've gained 30 experience points, your pokemon is now level 12! " << std::endl;
 		Sleep(1000);
 		system("pause");
 	}
@@ -2174,7 +2177,8 @@ void battle::battle2()
 		system("CLS");
 		drawBulbasaurNCamper();
 		textBox();
-		std::cout << "                                                                                                          Alright, you pass. " << std::endl;
+		pokemonLevel = pokemonLevel + 1;
+		std::cout << "                                                                                                          You've gained 30 experience points, your pokemon is now level 12! " << std::endl;std::cout << "                                                                                                          Alright, you pass. " << std::endl;
 		Sleep(1000);
 		system("pause");
 	}
@@ -2384,16 +2388,21 @@ void battle::battle2()
 		system("CLS");
 		drawCharmanderNDiglett();
 		textBox();
-		std::cout << "                                                                                           You've gained 30 experience points, your pokemon is now level 11! " << std::endl;
 		Sleep(1000);
 		system("pause");
 		system("CLS");
 		drawCharmanderNCamper();
 		textBox();
-		std::cout << "                                                                                                         Alright, you pass. " << std::endl;
+		std::cout << "                                                                                                         Trainer Ash defeated Camper James! " << std::endl;
 		Sleep(1000);
 		system("pause");
 		system("CLS");
+		drawCharmanderNCamper();
+		textBox();
+		std::cout << "                                                                                                          Alright, you pass. " << std::endl;
+		pokemonLevel = pokemonLevel + 1;
+		std::cout << "                                                                                                          You've gained 30 experience points, your pokemon is now level 12! " << std::endl;
+		Sleep(1000);
 		system("pause");
 	}
 }
