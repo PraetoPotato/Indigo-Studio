@@ -27,6 +27,7 @@ int TraHP = 50;
 int pokemonLevel = 10;
 int TrainerLevel = 10;
 int attack;
+bool isFightingRock=false;
 bool defenseCurl(false);
 std::string line;
 std::ifstream draw;
@@ -66,6 +67,208 @@ void battle::displayTrainerHP()
 	}
 }
 
+int battle::tackleDamage()
+{
+	int dmg;
+	if (starter == "Squirtle")
+	{
+		if (pokemonLevel == 10)
+		{
+			dmg = 10;
+		}
+		if (pokemonLevel == 11)
+		{
+			dmg = 12;
+		}
+		if (pokemonLevel == 12)
+		{
+			dmg = 14;
+		}
+		if (pokemonLevel == 13)
+		{
+			dmg = 16;
+		}
+		if (pokemonLevel == 14)
+		{
+			dmg = 20;
+		}
+	}
+	if (starter == "Bulbasaur")
+	{
+		if (pokemonLevel == 10)
+		{
+			dmg = 10;
+		}
+		if (pokemonLevel == 11)
+		{
+			dmg = 12;
+		}
+		if (pokemonLevel == 12)
+		{
+			dmg = 14;
+		}
+		if (pokemonLevel == 13)
+		{
+			dmg = 16;
+		}
+		if (pokemonLevel == 14)
+		{
+			dmg = 20;
+		}
+	}
+	return dmg;
+
+}
+
+int battle::scratchDamage()
+{
+	int dmg;
+	if (pokemonLevel == 10)
+	{
+		dmg = 12;
+	}
+	if (pokemonLevel == 11)
+	{
+		dmg = 14;
+	}
+	if (pokemonLevel == 12)
+	{
+		dmg = 18;
+	}
+	if (pokemonLevel == 13)
+	{
+		dmg = 20;
+	}
+	if (pokemonLevel == 14)
+	{
+		dmg = 24;
+	}
+	return dmg;
+}
+
+int battle::bubbleDamage()
+{
+	int dmg;
+	if (pokemonLevel == 10)
+	{
+		dmg = 25;
+	}
+	if (pokemonLevel == 11)
+	{
+		dmg = 27;
+	}
+	if (pokemonLevel == 12)
+	{
+		dmg = 29;
+	}
+	if (pokemonLevel == 13)
+	{
+		dmg = 32;
+	}
+	if (pokemonLevel == 14)
+	{
+		dmg = 34;
+	}
+	return dmg;
+}
+
+int battle::waterGunDamage()
+{
+	int dmg;
+	if (pokemonLevel == 10)
+	{
+		dmg = 40;
+	}
+	if (pokemonLevel == 11)
+	{
+		dmg = 42;
+	}
+	if (pokemonLevel == 12)
+	{
+		dmg = 44;
+	}
+	if (pokemonLevel == 13)
+	{
+		dmg = 46;
+	}
+	if (pokemonLevel == 14)
+	{
+		dmg = 48;
+	}
+	return dmg;
+}
+
+int battle::vineWhipDamage()
+{
+	int dmg;
+	if (pokemonLevel == 10)
+	{
+		dmg = 40;
+	}
+	if (pokemonLevel == 11)
+	{
+		dmg = 42;
+	}
+	if (pokemonLevel == 12)
+	{
+		dmg = 44;
+	}
+	if (pokemonLevel == 13)
+	{
+		dmg = 46;
+	}
+	if (pokemonLevel == 14)
+	{
+		dmg = 48;
+	}
+	return dmg;
+}
+
+int battle::emberDamage()
+{
+	int dmg;
+	if (pokemonLevel == 10)
+	{
+		dmg = 20;
+		if (isFightingRock == true)
+		{
+			dmg /= 2;
+		}
+	}
+	if (pokemonLevel == 11)
+	{
+		dmg = 22;
+		if (isFightingRock == true)
+		{
+			dmg /= 2;
+		}
+	}
+	if (pokemonLevel == 12)
+	{
+		dmg = 24;
+		if (isFightingRock == true)
+		{
+			dmg /= 2;
+		}
+	}
+	if (pokemonLevel == 13)
+	{
+		dmg = 26;
+		if (isFightingRock == true)
+		{
+			dmg /= 2;
+		}
+	}
+	if (pokemonLevel == 14)
+	{
+		dmg = 28;
+		if (isFightingRock == true)
+		{
+			dmg /= 2;
+		}
+	}
+	return dmg;
+}
 void battle::displayXP()
 {
 	cout << "Level:" << pokemonLevel << endl;
@@ -75,12 +278,12 @@ void battle::attackTackle(bool defenseCurl)
 {
 	if (defenseCurl == true)
 	{
-		TraHP = TraHP -10;
+		TraHP = TraHP - (tackleDamage()/2);
 		defenseCurl = false;
 	}
 	else
 	{
-		TraHP = TraHP - 15;
+		TraHP = TraHP - scratchDamage();
 	}
 }
 
@@ -1994,8 +2197,9 @@ void battle::battle2()
 }
 void battle::battle3()
 {
+	isFightingRock = true;
 	PlaySound("Pokemon RedBlueYellow - Battle! Gym Leader Music (HQ).wav", NULL, SND_FILENAME | SND_LOOP | SND_ASYNC);
-	drawPlayerNCamper();
+	drawPlayerNBrock();
 	textBox();
 	std::cout << "                                                                                                  Gym Leader Brock wants to battle!" << std::endl;
 	system("pause");
@@ -3370,6 +3574,10 @@ void battle::battle3()
 		std::cout << "                                                                                                          Alright, you pass. " << std::endl;
 		Sleep(1000);
 		system("pause");
-
+		system("CLS");
+		
+		Sleep(3000);
+		system("pause");
+		exit(0);
 	}
 }

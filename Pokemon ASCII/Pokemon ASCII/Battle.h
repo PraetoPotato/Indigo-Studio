@@ -8,6 +8,12 @@ public:
 	void battle1();    //trainer battle number 1
 	void battle2();    //trainer battle number 2
 	void battle3();    //the gym leader
+	int tackleDamage();
+	int scratchDamage();
+	int emberDamage();
+	int waterGunDamage();
+	int bubbleDamage();
+	int vineWhipDamage();
 	void gameOver();
 	void keyBoardInput();
 	void squirtleMoveSet();
