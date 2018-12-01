@@ -50,6 +50,8 @@ public:
 	void displayHP();
 	void displayXP();
 	void displayTrainerHP();
+	int getMaxiHP();
+	int maxHP();
 	void attackTackle(bool);
 	void attackScratch(bool);
 	void displayTackleDmg();
