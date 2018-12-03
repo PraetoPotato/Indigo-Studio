@@ -56,6 +56,7 @@ public:
 	void attackScratch(bool);
 	void displayTackleDmg();
 	void displayScratchDmg();
+	void youWin();
 	void displayTrainerLevel();
 private:
 	std::string starter;

@@ -58,7 +58,7 @@ void DrawGym::display(int starterNum)
 
 			if (playerWin3 == false)
 			{
-				std::cout << "                                                                You do not want to play me. I am a very angry man." << std::endl;
+				std::cout << "                                                          I am Brock and as the Pewter City Gym Leader, I accept your challenge." << std::endl;
 				system("pause");
 				system("CLS");
 				PlaySound("Pokemon RedBlueYellow - Battle! Gym Leader Music Intro (HQ).wav", NULL, SND_FILENAME | SND_ASYNC);

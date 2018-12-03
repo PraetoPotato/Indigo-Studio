@@ -52,6 +52,21 @@ void battle::gameOver()
 
 	else std::cout << "unable to open file" << std::endl;
 }
+
+void battle::youWin()
+{
+	std::ifstream draw("well done.txt");
+	if (draw.is_open())
+	{
+		while (getline(draw, line))
+		{
+			std::cout << line << "\n";
+		}
+		draw.close();
+	}
+
+	else std::cout << "unable to open file" << std::endl;
+}
 void battle::displayTrainerLevel()
 {
 	cout << "                                                                                                                                                                                                " << "Level:" << TrainerLevel;
@@ -2388,6 +2403,7 @@ void battle::battle2()
 		system("CLS");
 		drawCharmanderNDiglett();
 		textBox();
+		std::cout << "                                                                                                          You've gained 30 experience points, your pokemon is now level 12! " << std::endl;
 		Sleep(1000);
 		system("pause");
 		system("CLS");
@@ -2401,7 +2417,6 @@ void battle::battle2()
 		textBox();
 		std::cout << "                                                                                                          Alright, you pass. " << std::endl;
 		pokemonLevel = pokemonLevel + 1;
-		std::cout << "                                                                                                          You've gained 30 experience points, your pokemon is now level 12! " << std::endl;
 		Sleep(1000);
 		system("pause");
 	}
@@ -2876,6 +2891,7 @@ void battle::battle3()
 		Sleep(1000);
 		system("pause");
 		Sleep(3000);
+		youWin();
 		system("pause");
 		exit(0);
 	}
@@ -3016,7 +3032,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                    Bulbasaur Used Growl! It was super effective and dealt 20 Damage! \n";
+					cout << "                                                                                    Bulbasaur Used Growl!\n";
 					Sleep(2500);
 					if (TraHP <= 0)
 					{
@@ -3066,6 +3082,15 @@ void battle::battle3()
 					displayXP();
 					displayTrainerLevel();
 					cout << "                                                                                   Bulbasaur Used Vine Whip! It's super effective!\n";
+					if (TraHP <= 0)
+					{
+						move1 = false;
+						move2 = false;
+						move3 = false;
+						move4 = false;
+						TraHP = 50;
+						break;
+					}
 					Sleep(2500);
 					system("CLS");
 					drawBulbasaurNGeodude();
@@ -3083,15 +3108,6 @@ void battle::battle3()
 						Sleep(3000);
 						system("pause");
 						exit(0);
-					}
-					if (TraHP <= 0)
-					{
-						move1 = false;
-						move2 = false;
-						move3 = false;
-						move4 = false;
-						TraHP = 50;
-						break;
 					}
 					move4 = false;
 					system("CLS");
@@ -3284,6 +3300,15 @@ void battle::battle3()
 					displayXP();
 					displayTrainerLevel();
 					cout << "                                                                                   Bulbasaur used Vine Whip! It's super Effective!!\n";
+					if (TraHP <= 0)
+					{
+						move1 = false;
+						move2 = false;
+						move3 = false;
+						move4 = false;
+						TraHP = 50;
+						break;
+					}
 					Sleep(2500);
 					system("CLS");
 					drawBulbasaurNOnix();
@@ -3300,15 +3325,6 @@ void battle::battle3()
 						Sleep(3000);
 						system("pause");
 						exit(0);
-					}
-					if (TraHP <= 0)
-					{
-						move1 = false;
-						move2 = false;
-						move3 = false;
-						move4 = false;
-						TraHP = 50;
-						break;
 					}
 					move4 = false;
 					system("CLS");
@@ -3337,6 +3353,8 @@ void battle::battle3()
 		std::cout << "                                                                                                          Alright, you pass. " << std::endl;
 		Sleep(1000);
 		system("pause");
+		system("CLS");
+		youWin();
 		Sleep(3000);
 		system("pause");
 		exit(0);
@@ -3792,11 +3810,11 @@ void battle::battle3()
 		system("CLS");
 		drawCharmanderNCamper();
 		textBox();
-		std::cout << "                                                                                                          Alright, you pass. " << std::endl;
+		std::cout << "                                                                                                          Alright, here's the boulderbadge. " << std::endl;
 		Sleep(1000);
 		system("pause");
 		system("CLS");
-		
+		youWin();
 		Sleep(3000);
 		system("pause");
 		exit(0);
