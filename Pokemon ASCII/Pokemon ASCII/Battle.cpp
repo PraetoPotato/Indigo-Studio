@@ -530,11 +530,11 @@ void battle::displayTackleDmg()
 {
 	if (defenseCurl == true)
 	{
-		cout << "                                                                                Squirtle Used Tackle! It dealt "<<tackleDamage() << "Damage\n";
+		cout << "                                                                                Squirtle Used Tackle! It dealt "<<tackleDamage() << " Damage\n";
 	}
 	else 
 	{
-		cout << "                                                                                Squirtle Used Tackle! It dealt " << tackleDamage() << "Damage\n";
+		cout << "                                                                                Squirtle Used Tackle! It dealt " << tackleDamage() << " Damage\n";
 	}
 	
 }
@@ -556,11 +556,11 @@ void battle::displayScratchDmg()
 {
 	if (defenseCurl == true)
 	{
-		cout << "                                                                                Charmander Used Scratch! It dealt"<<scratchDamage()<<" Damage\n";
+		cout << "                                                                                Charmander Used Scratch! It dealt "<<scratchDamage()<<" Damage\n";
 	}
-	if (isFightingRock == true)
+	else if (isFightingRock == true)
 	{
-		cout << "                                                                                Charmander Used Scratch!It's not very effective! It dealt" << scratchDamage() << " Damage\n";
+		cout << "                                                                                Charmander Used Scratch!It's not very effective! It dealt " << scratchDamage() << " Damage\n";
 	}
 	else
 	{
@@ -787,7 +787,7 @@ void battle::sandShrewMoveSet()
 }
 void battle::diglettMoveSet()
 {
-	std::cout << "                                                                                                  Diglett used Scratch!"<<std::endl;
+	std::cout << "                                                                                                  Diglett used Scratch! It dealt 15 damage!"<<std::endl;
 	HP -= 15;
 }
 
@@ -797,7 +797,7 @@ void battle::geoDudeMoveSet()
 	moveNum = rand() % 4 + 1;
 	if (moveNum == 2 || moveNum == 3 || moveNum == 4)
 	{
-		std::cout << "                                                                                              Geodude used Tackle! It dealt"<< 15* ifGrowlIsTrue() << " Damage" << std::endl;
+		std::cout << "                                                                                              Geodude used Tackle! It dealt "<< 15* ifGrowlIsTrue() << " Damage" << std::endl;
 		HP -= 15 * ifGrowlIsTrue();
 	}
 	if (moveNum == 1)
@@ -817,13 +817,13 @@ void battle::onixMoveSet()
 	{
 		if (starter == "Charmander")
 		{
-			std::cout << "                                                                                             Onix used Rock Throw!It dealt " << 40 * ifGrowlIsTrue() << " Damage" << std::endl;
+			std::cout << "                                                                                             Onix used Rock Throw!It dealt " << 35 * ifGrowlIsTrue() << " Damage" << std::endl;
 			std::cout << "                                                                                              It's super effective!" << std::endl;
-			HP -= 30 * ifGrowlIsTrue();
+			HP -= 35 * ifGrowlIsTrue();
 		}
 		else 
 		{
-			std::cout << "                                                                                             Onix used Rock Throw!It dealt" << 25 * ifGrowlIsTrue() << " Damage" << std::endl;
+			std::cout << "                                                                                             Onix used Rock Throw!It dealt " << 25 * ifGrowlIsTrue() << " Damage" << std::endl;
 			HP -= 25 * ifGrowlIsTrue();
 		}
 
@@ -1453,7 +1453,7 @@ void battle::battle1()
 				textBox();
 				displayHP();
 				displayTrainerHP();
-				cout << "                                                                                         Bulbasaur Used Growl!\n";
+				cout << "                                                                                         Bulbasaur Used Growl!Sandshrew's attack fell!\n";
 				growl = true;
 				Sleep(2500);
 				move3 = false;
@@ -1689,7 +1689,7 @@ void battle::battle1()
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					cout << "                                                                                    Charmander Used Growl! \n";
+					cout << "                                                                                    Charmander Used Growl! Sandshrew's attack fell! \n";
 					Sleep(2500);
 					if (TraHP <= 0)
 					{
@@ -1734,7 +1734,7 @@ void battle::battle1()
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					cout << "                                                                                   Charmander Used Dragon Rage!\n";
+					cout << "                                                                                   Charmander Used Dragon Rage! It dealt 40 damage!\n";
 					Sleep(2500);
 					if (TraHP <= 0)
 					{
@@ -2190,7 +2190,7 @@ void battle::battle2()
 				textBox();
 				displayHP();
 				displayTrainerHP();
-				cout << "                                                                                         Bulbasaur Used Growl!\n";
+				cout << "                                                                                         Bulbasaur Used Growl!Diglett's attack fell!\n";
 				growl = true;
 				Sleep(2500);
 				move3 = false;
@@ -2422,7 +2422,7 @@ void battle::battle2()
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					cout << "                                                                                    Charmander Used Growl! \n";
+					cout << "                                                                                    Charmander Used Growl!Diglett's attack fell! \n";
 					growl = true;
 					Sleep(2500);
 					if (TraHP <= 0)
@@ -2467,7 +2467,7 @@ void battle::battle2()
 					textBox();
 					displayHP();
 					displayTrainerHP();
-					cout << "                                                                                   Charmander Used Dragon Rage!\n";
+					cout << "                                                                                   Charmander Used Dragon Rage!It dealt 40 damage!\n";
 					Sleep(2500);
 					if (TraHP <= 0)
 					{
@@ -3036,7 +3036,7 @@ void battle::battle3()
 		system("CLS");
 		drawSquirtleNBrock();
 		textBox();
-		std::cout << "                                                                                                          Alright, you pass. " << std::endl;
+		std::cout << "                                                                                                          Alright, here's the boulderbadge. " << std::endl;
 		Sleep(1000);
 		system("CLS");
 		system("pause");
@@ -3184,7 +3184,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                    Bulbasaur Used Growl!\n";
+					cout << "                                                                                    Bulbasaur Used Growl!Geodude's Attack fell!\n";
 					Sleep(2500);
 					growl = true;
 					if (TraHP <= 0)
@@ -3195,6 +3195,7 @@ void battle::battle3()
 						move4 = false;
 						TraHP = 50;
 						defenseCurl = false;
+						growl = false;
 						break;
 					}
 					system("CLS");
@@ -3414,7 +3415,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                    Bulbasaur used Growl! \n";
+					cout << "                                                                                    Bulbasaur used Growl!Onix's attakc fell! \n";
 					growl = true;
 					Sleep(2500);
 					if (TraHP <= 0)
@@ -3521,9 +3522,9 @@ void battle::battle3()
 		Sleep(1000);
 		system("pause");
 		system("CLS");
-		drawBulbasaurNCamper();
+		drawBulbasaurNBrock();
 		textBox();
-		std::cout << "                                                                                                          Alright, you pass. " << std::endl;
+		std::cout << "                                                                                                          Alright, here's the boulderbadge. " << std::endl;
 		Sleep(1000);
 		system("pause");
 		system("CLS");
@@ -3616,7 +3617,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                Charmander used Growl! \n";
+					cout << "                                                                                Charmander used Growl! Geodude's attack fell!\n";
 					growl = true;
 					Sleep(2500);
 					system("CLS");
@@ -3628,6 +3629,7 @@ void battle::battle3()
 						move4 = false;
 						TraHP = 50;
 						defenseCurl = false;
+						growl = false;
 						break;
 					}
 					drawCharmanderNGeodude();
@@ -3716,7 +3718,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                   Charmander used Dragon Rage!\n";
+					cout << "                                                                                   Charmander used Dragon Rage!It dealt 40 damage!\n";
 					Sleep(2500);
 					if (TraHP <= 0)
 					{
@@ -3844,7 +3846,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                Charmander used Growl! \n";
+					cout << "                                                                                Charmander used Growl! Onix's attack fell!\n";
 					Sleep(2500);
 					growl = true;
 					system("CLS");
@@ -3943,7 +3945,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                   Charmander Used Dragon Rage!\n";
+					cout << "                                                                                   Charmander Used Dragon Rage!It dealt 40 damage!\n";
 					Sleep(2500);
 					if (TraHP <= 0)
 					{
@@ -4001,7 +4003,7 @@ void battle::battle3()
 		Sleep(1000);
 		system("pause");
 		system("CLS");
-		drawCharmanderNCamper();
+		drawCharmanderNBrock();
 		textBox();
 		std::cout << "                                                                                                          Alright, here's the boulderbadge. " << std::endl;
 		Sleep(1000);

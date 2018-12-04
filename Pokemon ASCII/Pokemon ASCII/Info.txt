@@ -11,7 +11,7 @@
                                                             |                  X                              X    X   XXX
                   O - Trainer                               |                  XXXXXX   XXXXX  X  X  X  XXX  XXXX  X  X   X
                                                             |                      XX   X   X  X  X  X  X     X    X  XXXXX
-                 $  -Gym Leader                             |                  XXXXXX   XXXXX  XXXX  X  X     X    X  X
+                 $ - Gym Leader                             |                  XXXXXX   XXXXX  XXXX  X  X     X    X  X
                                                             |                               X                         XXXXX
                                                             |                              XX
                                                             |

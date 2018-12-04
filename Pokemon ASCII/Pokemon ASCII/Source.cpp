@@ -158,14 +158,48 @@ int main(int argc, char* argv[])
 		if (advice == 1)
 		{
 			system("CLS");
-			std::cout << "Movement Controls: \n  W: Move Up \n  A: Move Left \n  D: Move Right \n  S: Move Down \n" << std::endl;
+			profOak.open("move.txt", std::ios::in);//open the text file
+
+			if (profOak.is_open())
+			{
+				while (getline(profOak, line))
+				{
+					std::cout << line << "\n";
+				}
+				profOak.close();
+			}
+			std::cout << "  W: Move Up \n  A: Move Left \n  D: Move Right \n  S: Move Down \n" << std::endl;
+			profOak.open("in battle Controls.txt", std::ios::in);//open the text file
+
+			if (profOak.is_open())
+			{
+				while (getline(profOak, line))
+				{
+					std::cout << line << "\n";
+				}
+				profOak.close();
+			}
+
+			std::cout << "  1: First move \n  2: Second move \n  3: Third move \n  4: Fourth move \n" << std::endl;
 			system("pause");
 		}
 		//adventure instructions screen
 		if (advice == 2)
 		{
 			system("CLS");
-			std::cout << "You are about to leave your home and live your new life travelling far and wide to become a Pokemon master." << std::endl << "Your goal in this new world is to defeat all the gym trainers and beat Brock, the Rock Gym Leader. " << std::endl;
+			profOak.open("adventure info.txt", std::ios::in);//open the text file
+
+			if (profOak.is_open())
+			{
+				while (getline(profOak, line))
+				{
+					std::cout << line << "\n";
+				}
+				profOak.close();
+			}
+			std::cout << "You are about to leave your home and live your new life travelling far and wide to become a Pokemon master." << std::endl << "Your goal right now is to defeat all the gym trainers and beat Brock, the Rock Gym Leader. " << std::endl;
+			std::cout << std::endl;
+			std::cout << std::endl;
 			system("pause");
 		}
 
@@ -329,7 +363,7 @@ int main(int argc, char* argv[])
 			starterPokemon.close();
 		}
 
-		std::cout << "Pick a Starter:" << std::endl;
+		std::cout << "Pick a Starter(please type 1,2 or 3):" << std::endl;
 		while (!(std::cin >> std::noskipws >> starter))
 		{
 			system("CLS");
@@ -344,7 +378,7 @@ int main(int argc, char* argv[])
 			}
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			std::cout << "Pick a Starter:" << std::endl;
+			std::cout << "Pick a Starter(please type 1,2 or 3):" << std::endl;
 		}
 		if (starter == 1|| starter == 2|| starter == 3)
 		{
@@ -359,26 +393,50 @@ int main(int argc, char* argv[])
 
 	if (starter == 1)
 	{
-		PlaySound("Pok�mon RedBlueYellow - Pok�mon Capture - Sound Effect.wav", NULL, SND_FILENAME| SND_ASYNC);
-		std::cout << "You choose Squirtle!"<<std::endl;
+		PlaySound("Pokémon RedBlueYellow - Pokémon Capture - Sound Effect.wav", NULL, SND_FILENAME| SND_ASYNC);
+		std::ifstream starterPokemon("You chose Squirtle.txt");
+		if (starterPokemon.is_open())
+		{
+			while (getline(starterPokemon, line))
+			{
+				std::cout << line << "\n";
+			}
+			starterPokemon.close();
+		}
 		x = 1;
 
 	}
 
 	if (starter == 2)
 	{
-		PlaySound("Pok�mon RedBlueYellow - Pok�mon Capture - Sound Effect.wav", NULL, SND_FILENAME | SND_ASYNC);
-		std::cout << "You choose Bulbasaur!" << std::endl;
+		PlaySound("Pokémon RedBlueYellow - Pokémon Capture - Sound Effect.wav", NULL, SND_FILENAME | SND_ASYNC);
+		std::ifstream starterPokemon("You chose bulbasaur.txt");
+		if (starterPokemon.is_open())
+		{
+			while (getline(starterPokemon, line))
+			{
+				std::cout << line << "\n";
+			}
+			starterPokemon.close();
+		}
 		x = 2;
 	
 	}
 
 	if (starter == 3)
 	{
-		PlaySound("Pok�mon RedBlueYellow - Pok�mon Capture - Sound Effect.wav", NULL, SND_FILENAME | SND_ASYNC);
-		std::cout << "You choose Charmander!" << std::endl;
+		PlaySound("Pokémon RedBlueYellow - Pokémon Capture - Sound Effect.wav", NULL, SND_FILENAME | SND_ASYNC);
+		std::ifstream starterPokemon("You choose charmander.txt");
+		if (starterPokemon.is_open())
+		{
+			while (getline(starterPokemon, line))
+			{
+				std::cout << line << "\n";
+			}
+			starterPokemon.close();
+		}
 		x = 3;
-		
+	
 	}
 
 
@@ -427,14 +485,6 @@ int main(int argc, char* argv[])
 	}
 	
 	
-//while(inOverworld)
-	//char var(0);
-	//var=getch();
-	//switch(var)
-	// {
-	//   case:
-	//      wasd;
-	// }
 
 	system("pause");
 	return 0;

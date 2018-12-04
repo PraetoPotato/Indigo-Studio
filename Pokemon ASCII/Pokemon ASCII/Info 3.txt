@@ -7,11 +7,11 @@
 + (____/\+ (____/\+ (___) ++ (____/\| )  \  ++ (__/  )      |        + +   + (___) ++ (___) ++ ) \ \__    | )      + (___) ++  /  \ \+ (____/\| )   ( ++ (___) ++ )  \  +
 (_______/(_______/(_______)(_______/+/    )_)(______/       |        \_/   (_______)(_______)+/   \__/    +/       (_______)+_/    \/(_______/+/     \+(_______)+/    )_)
                                                             |
-                   @ + Player                               |             XXXXXX              X   X
+                   @ - Player                               |             XXXXXX              X   X
                                                             |             X    X              X   X
-                  O + Trainer                               |             XXXXXXXX   X    X   X   X             XXXX           X    X  XXXXX
+                  O - Trainer                               |             XXXXXXXX   X    X   X   X             XXXX           X    X  XXXXX
                                                             |             X      X   X    X   X   XXXXX  XXXXX  X      XXXXXX  X    X  X
-                 $  +Gym Leader                             |             X      X   X    X   X   X   X  X   X  XXXX   X    X  X    X  X
+                 $  - Gym Leader                            |             X      X   X    X   X   X   X  X   X  XXXX   X    X  X    X  X
                                                             |             XXXXXXXX   XXXXXX   X   XXXXX  XXXXX     X   XXXXXX  XXXXXX  X
                                                             |                                                X  XXXX        X
                                                             |

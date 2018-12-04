@@ -1,0 +1,21 @@
+if (_kbhit())
+	{
+		switch (_getch())
+		{
+		case 'w':
+			direction = 1;
+			break;
+		case 's':
+			direction = 2;
+			break;
+		case 'a':
+			direction = 3;
+			break;
+		case 'd':
+			direction = 4;
+			break;
+		case 'x':
+			gameOver = true;
+			break;
+		}
+	}

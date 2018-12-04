@@ -30,6 +30,7 @@ void DrawGym::display(int starterNum)
 			if (playerWin == false)
 			{
 				std::cout << "                                                                Hah! do you think you can beat Brock you chump?" << std::endl;
+				Sleep(2000);
 				system("pause");
                 system("CLS");
 				PlaySound("Trainer Battle intro.wav", NULL, SND_FILENAME | SND_ASYNC);
@@ -47,6 +48,7 @@ void DrawGym::display(int starterNum)
 			if (playerWin2 == false)
 			{
 				std::cout << "                                                                You do not want to play me. I am a very angry man." << std::endl;
+				Sleep(2000);
 				system("pause");
 				system("CLS");
 				PlaySound("Trainer Battle intro.wav", NULL, SND_FILENAME | SND_ASYNC);
@@ -69,6 +71,8 @@ void DrawGym::display(int starterNum)
 			{
 				std::cout << "                                                          I am Brock and as the Pewter City Gym Leader, I accept your challenge." << std::endl;
 				system("pause");
+				Sleep(2000);
+
 				system("CLS");
 				PlaySound("Pokemon RedBlueYellow - Battle! Gym Leader Music Intro (HQ).wav", NULL, SND_FILENAME | SND_ASYNC);
 				Sleep(3100);
