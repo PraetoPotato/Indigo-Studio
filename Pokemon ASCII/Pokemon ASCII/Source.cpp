@@ -418,7 +418,7 @@ int main(int argc, char* argv[])
 	if (inOverWorld == true)
 	{
 		system("CLS");
-		
+		gym.setStarterChosen(starter);
 		gym.display(x);
 
 		

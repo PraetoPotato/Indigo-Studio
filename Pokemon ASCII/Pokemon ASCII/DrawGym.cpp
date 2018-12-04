@@ -2,7 +2,16 @@
 #include "Battle.h"
 #include <iostream>
 #include <windows.h>
+#include <fstream>
+#include <string>
 #pragma comment(lib, "winmm.lib")
+
+std::string linee;
+std::ifstream draww;
+void DrawGym::setStarterChosen(int starterNum)
+{
+	starterChosen = starterNum;
+}
 void DrawGym::display(int starterNum)
 {
 	PlaySound("28 Poke’mon Gym.wav", NULL, SND_FILENAME | SND_LOOP | SND_ASYNC);
@@ -32,7 +41,7 @@ void DrawGym::display(int starterNum)
 	
 		}
 		
-		if (map[14][5] == '@' || map[13][5] == '@' || map[12][5] == '@' || map[11][5] == '@' || map[10][5] == '@' || map[9][5] == '@' || map[8][5] == '@')
+		if (map[8][5] == '@'|| map[7][5] == '@' || map[6][5] == '@' || map[5][5] == '@' || map[4][5] == '@' || map[3][5] == '@' || map[2][5] == '@' ||map[1][5]=='@' || map[0][5] == '@')
 		{
 
 			if (playerWin2 == false)
@@ -94,33 +103,62 @@ void DrawGym::drawGym(int charX,int charB)
 		std::cout << std::endl;
 		
 	}
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
+	//std::cout << std::endl;
+	//std::cout << std::endl;
+	//std::cout << std::endl;
+	//std::cout << std::endl;
+	//std::cout << std::endl;
+	//std::cout << std::endl;
+	//std::cout << std::endl;
+	//std::cout << std::endl;
+	//std::cout << std::endl;
+	//std::cout << std::endl;
+	//std::cout << std::endl;
+	//std::cout << std::endl;
+	//std::cout << std::endl;
+	//std::cout << std::endl;
+	//std::cout << std::endl;
+	//std::cout << std::endl;
+	if (starterChosen == 1)
+	{
+		std::ifstream draww("Info.txt");
+		if (draww.is_open())
+		{
+			while (getline(draww, linee))
+			{
+				std::cout << linee << "\n";
+			}
+			draww.close();
+		}
+	}
+	if (starterChosen == 2)
+	{
+		std::ifstream draww("Info 3.txt");
+		if (draww.is_open())
+		{
+			while (getline(draww, linee))
+			{
+				std::cout << linee << "\n";
+			}
+			draww.close();
+		}
+	}
+	if (starterChosen == 3)
+	{
+		std::ifstream draww("Info2.txt");
+		if (draww.is_open())
+		{
+			while (getline(draww, linee))
+			{
+				std::cout << linee << "\n";
+			}
+			draww.close();
+		}
+	}
+
 	std::cout << "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+	std::cout << "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+
 	
 }
 

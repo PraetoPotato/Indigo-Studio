@@ -4,6 +4,7 @@
 class DrawGym
 {
 public:
+	void setStarterChosen(int starterNum);
 	void display(int);
 	void drawGym(int,int);//function for drawing the gym
 	void movement();//function responsible for movement in the gym

@@ -29,10 +29,20 @@ int pokemonLevel = 10;
 int TrainerLevel = 10;
 int attack;
 bool isFightingRock=false;
+bool tailWhip = false;
+bool growl = false;
 bool defenseCurl(false);
 std::string line;
 std::ifstream draw;
 
+int battle::ifGrowlIsTrue()
+{
+	if (growl == true)
+	{
+		return 2;
+	}
+	return 1;
+}
 void battle::displayHP()
 {
 	cout << "Pokemon HP:" << HP <<"/" <<getMaxiHP();
@@ -239,6 +249,10 @@ int battle::tackleDamage()
 		if (pokemonLevel == 10)
 		{
 			dmg = 10;
+			if (tailWhip == true)
+			{
+				dmg *= 2;
+			}
 			if (isFightingRock == true)
 			{
 				dmg /= 2;
@@ -246,6 +260,10 @@ int battle::tackleDamage()
 		}
 		if (pokemonLevel == 11)
 		{
+			if (tailWhip == true)
+			{
+				dmg *= 2;
+			}
 			dmg = 12;
 			if (isFightingRock == true)
 			{
@@ -255,6 +273,10 @@ int battle::tackleDamage()
 		if (pokemonLevel == 12)
 		{
 			dmg = 14;
+			if (tailWhip == true)
+			{
+				dmg *= 2;
+			}
 			if (isFightingRock == true)
 			{
 				dmg /= 2;
@@ -263,6 +285,10 @@ int battle::tackleDamage()
 		if (pokemonLevel == 13)
 		{
 			dmg = 16;
+			if (tailWhip == true)
+			{
+				dmg *= 2;
+			}
 			if (isFightingRock == true)
 			{
 				dmg /= 2;
@@ -271,6 +297,10 @@ int battle::tackleDamage()
 		if (pokemonLevel == 14)
 		{
 			dmg = 20;
+			if (tailWhip == true)
+			{
+				dmg *= 2;
+			}
 			if (isFightingRock == true)
 			{
 				dmg /= 2;
@@ -485,9 +515,14 @@ void battle::attackTackle(bool defenseCurl)
 		TraHP = TraHP - (tackleDamage()/2);
 		defenseCurl = false;
 	}
+	if (isFightingRock == true)
+	{
+		TraHP = TraHP - (tackleDamage() / 2);
+		defenseCurl = false;
+	}
 	else
 	{
-		TraHP = TraHP - scratchDamage();
+		TraHP = TraHP - tackleDamage();
 	}
 }
 
@@ -521,11 +556,15 @@ void battle::displayScratchDmg()
 {
 	if (defenseCurl == true)
 	{
-		cout << "                                                                                Charmander Used Scratch! It dealt 10 Damage\n";
+		cout << "                                                                                Charmander Used Scratch! It dealt"<<scratchDamage()<<" Damage\n";
+	}
+	if (isFightingRock == true)
+	{
+		cout << "                                                                                Charmander Used Scratch!It's not very effective! It dealt" << scratchDamage() << " Damage\n";
 	}
 	else
 	{
-		cout << "                                                                                Charmander Used Scratch! It dealt 15 Damage\n";
+		cout << "                                                                                Charmander Used Scratch! It dealt "<<scratchDamage() <<" Damage\n";
 	}
 }
 void battle::keyBoardInput()
@@ -735,7 +774,7 @@ void battle::sandShrewMoveSet()
 	if (moveNum == 1)
 	{
 		std::cout << "                                                                                              SandShrew used Scratch! It dealt 15 Damage"<<std::endl;
-		HP -= 15;
+		HP -= 15 * ifGrowlIsTrue();
 	}
 	if (moveNum == 2)
 	{
@@ -758,14 +797,14 @@ void battle::geoDudeMoveSet()
 	moveNum = rand() % 4 + 1;
 	if (moveNum == 2 || moveNum == 3 || moveNum == 4)
 	{
-		std::cout << "                                                                                              Geodude used Tackle! It dealt 15 Damage" << std::endl;
-		HP -= 15;
+		std::cout << "                                                                                              Geodude used Tackle! It dealt"<< 15* ifGrowlIsTrue() << " Damage" << std::endl;
+		HP -= 15 * ifGrowlIsTrue();
 	}
 	if (moveNum == 1)
 	{
 		std::cout << "                                                                                              Geodude used Defense Curl!" << std::endl;
 		Sleep(1500);
-		std::cout << "                                                                                              Geodude's defense rose!" << std::endl;
+		std::cout << "                                                                                       Geodude's defense rose!" << std::endl;
 		defenseCurl = true;
 	}
 }
@@ -776,13 +815,19 @@ void battle::onixMoveSet()
 	moveNum = rand() % 4 + 1;
 	if (moveNum == 2 || moveNum == 3 || moveNum == 4)
 	{
-		std::cout << "                                                                                             Onix used Rock Throw!" << std::endl;
-		HP -= 25;
 		if (starter == "Charmander")
 		{
+			std::cout << "                                                                                             Onix used Rock Throw!It dealt " << 40 * ifGrowlIsTrue() << " Damage" << std::endl;
 			std::cout << "                                                                                              It's super effective!" << std::endl;
-			HP -= 40;
+			HP -= 30 * ifGrowlIsTrue();
 		}
+		else 
+		{
+			std::cout << "                                                                                             Onix used Rock Throw!It dealt" << 25 * ifGrowlIsTrue() << " Damage" << std::endl;
+			HP -= 25 * ifGrowlIsTrue();
+		}
+
+	
 	}
 	if (moveNum == 1)
 	{
@@ -1073,6 +1118,7 @@ void battle::battle1()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						tailWhip = false;
 						break;
 					}
 					drawSquirtleNSandShrew();
@@ -1113,7 +1159,7 @@ void battle::battle1()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt 30 Damage! \n";
+					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt "<< waterGunDamage()<<" Damage! \n";
 					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
@@ -1123,6 +1169,7 @@ void battle::battle1()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						tailWhip = false;
 						break;
 					}
 					drawSquirtleNSandShrew();
@@ -1162,7 +1209,7 @@ void battle::battle1()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt 20 Damage! \n";
+					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt "<<bubbleDamage() <<" Damage! \n";
 					Sleep(2500);
 					if (TraHP <= 0)
 					{
@@ -1171,6 +1218,7 @@ void battle::battle1()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						tailWhip = false;
 						break;
 					}
 					system("CLS");
@@ -1211,6 +1259,7 @@ void battle::battle1()
 					displayXP();
 					displayTrainerLevel();
 					cout << "                                                                                   Squirtle Used Tail Whip!\n";
+					tailWhip = true;
 					Sleep(2500);
 					system("CLS");
 					drawSquirtleNSandShrew();
@@ -1236,6 +1285,7 @@ void battle::battle1()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						tailWhip = false;
 						break;
 					}
 					move4 = false;
@@ -1254,6 +1304,13 @@ void battle::battle1()
 		}
 		PlaySound(NULL, 0, 0);
 		system("CLS");
+		drawSquirtleNSandShrew();
+		textBox();
+		pokemonLevel = pokemonLevel + 1;
+		std::cout << "                                                                                                 Your Pokemon Leveled Up! " << std::endl;
+		Sleep(1000);
+		system("pause");
+		system("CLS");
 		drawSquirtleNCamper();
 		textBox();
 		std::cout << "                                                                                                         Trainer Ash defeated Camper Todd! " << std::endl;
@@ -1263,8 +1320,6 @@ void battle::battle1()
 		drawSquirtleNCamper();
 		textBox();
 		std::cout << "                                                                                                          Dang! I lost to a chump! " << std::endl;
-		pokemonLevel = pokemonLevel + 1;
-		std::cout << "                                                                                                          You've gained 30 experience points, your pokemon is now level 11! " << std::endl;
 		Sleep(1000);
 		system("pause");
 	}
@@ -1301,8 +1356,9 @@ void battle::battle1()
 				drawBulbasaurNSandshrew();
 				textBox();
 				displayHP();
+				attackTackle(defenseCurl);
 				displayTrainerHP();
-				cout << "                                                                                         Bulbasaur Used Tackle!\n";
+				cout << "                                                                                         Bulbasaur Used Tackle! It dealt "<<tackleDamage()<<" damage!\n";
 				Sleep(2500);
 				move1 = false;
 				system("CLS");
@@ -1313,6 +1369,7 @@ void battle::battle1()
 					move3 = false;
 					move4 = false;
 					TraHP = 50;
+					defenseCurl=false;
 					break;
 				}
 				drawBulbasaurNSandshrew();
@@ -1363,6 +1420,7 @@ void battle::battle1()
 					move3 = false;
 					move4 = false;
 					TraHP = 50;
+					defenseCurl = false;
 					break;
 				}
 				drawBulbasaurNSandshrew();
@@ -1396,6 +1454,7 @@ void battle::battle1()
 				displayHP();
 				displayTrainerHP();
 				cout << "                                                                                         Bulbasaur Used Growl!\n";
+				growl = true;
 				Sleep(2500);
 				move3 = false;
 				system("CLS");
@@ -1406,6 +1465,8 @@ void battle::battle1()
 					move3 = false;
 					move4 = false;
 					TraHP = 50;
+					defenseCurl = false;
+					growl = false;
 					break;
 				}
 				drawBulbasaurNSandshrew();
@@ -1450,6 +1511,9 @@ void battle::battle1()
 					move2 = false;
 					move3 = false;
 					move4 = false;
+					TraHP = 50;
+					defenseCurl = false;
+					growl = false;
 					break;
 				}
 				drawBulbasaurNSandshrew();
@@ -1480,6 +1544,13 @@ void battle::battle1()
 		cout << HP << "            " << TraHP;
 		PlaySound(NULL, 0, 0);
 		system("CLS");
+		drawBulbasaurNSandshrew();
+		textBox();
+		pokemonLevel = pokemonLevel + 1;
+		std::cout << "                                                                                                 Your Pokemon Leveled Up! " << std::endl;
+		Sleep(1000);
+		system("pause");
+		system("CLS");
 		drawBulbasaurNCamper();
 		textBox();
 		std::cout << "                                                                                                         Trainer Ash defeated Camper Todd! " << std::endl;
@@ -1489,8 +1560,6 @@ void battle::battle1()
 		drawBulbasaurNCamper();
 		textBox();
 		std::cout << "                                                                                                          Dang! I lost to a chump! " << std::endl;
-		pokemonLevel = pokemonLevel + 1;
-		std::cout << "                                                                                                          You've gained 30 experience points, your pokemon is now level 11! " << std::endl;
 		Sleep(1000);
 		system("pause");
 	}
@@ -1540,6 +1609,8 @@ void battle::battle1()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
+						growl = false;
 						break;
 					}
 					drawCharmanderNSandshrew();
@@ -1584,6 +1655,8 @@ void battle::battle1()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
+						growl = false;
 						break;
 					}
 					drawCharmanderNSandshrew();
@@ -1625,6 +1698,8 @@ void battle::battle1()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
+						growl = false;
 						break;
 					}
 					system("CLS");
@@ -1668,6 +1743,8 @@ void battle::battle1()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
+						growl = false;
 						break;
 					}
 					move4 = false;
@@ -1701,6 +1778,8 @@ void battle::battle1()
 		system("CLS");
 		drawCharmanderNSandshrew();
 		textBox();
+		pokemonLevel = pokemonLevel + 1;
+		std::cout << "                                                                                                 Your Pokemon Leveled Up! " << std::endl;
 		Sleep(1000);
 		system("pause");
 		system("CLS");
@@ -1713,8 +1792,6 @@ void battle::battle1()
 		drawCharmanderNCamper();
 		textBox();
 		std::cout << "                                                                                                          Dang! I lost to a chump! " << std::endl;
-		pokemonLevel = pokemonLevel + 1;
-		std::cout << "                                                                                                          You've gained 30 experience points, your pokemon is now level 11! " << std::endl;
 		Sleep(1000);
 		system("pause");
 	}
@@ -1779,6 +1856,8 @@ void battle::battle2()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						growl = false;
+						tailWhip = false;
 						break;
 					}
 					drawSquirtleNDiglett();
@@ -1818,7 +1897,7 @@ void battle::battle2()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt 30 Damage! \n";
+					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt " << waterGunDamage() << " Damage! \n";
 					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
@@ -1828,6 +1907,8 @@ void battle::battle2()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						growl = false;
+						tailWhip = false;
 						break;
 					}
 					drawSquirtleNDiglett();
@@ -1866,7 +1947,7 @@ void battle::battle2()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt 20 Damage! \n";
+					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt " << bubbleDamage() << " Damage! \n";
 					Sleep(2500);
 					if (TraHP <= 0)
 					{
@@ -1875,6 +1956,8 @@ void battle::battle2()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						growl = false;
+						tailWhip = false;
 						break;
 					}
 					system("CLS");
@@ -1938,6 +2021,8 @@ void battle::battle2()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						growl = false;
+						tailWhip = false;
 						break;
 					}
 					move4 = false;
@@ -1956,6 +2041,13 @@ void battle::battle2()
 		}
 		PlaySound(NULL, 0, 0);
 		system("CLS");
+		drawSquirtleNDiglett();
+		textBox();
+		pokemonLevel = pokemonLevel + 1;
+		std::cout << "                                                                                                 Your Pokemon Leveled Up! " << std::endl;
+		Sleep(1000);
+		system("pause");
+		system("CLS");
 		drawSquirtleNCamper();
 		textBox();
 		std::cout << "                                                                                                         Trainer Ash defeated Camper James! " << std::endl;
@@ -1965,8 +2057,6 @@ void battle::battle2()
 		drawSquirtleNCamper();
 		textBox();
 		std::cout << "                                                                                                          Alright, you pass. " << std::endl;
-		pokemonLevel = pokemonLevel + 1;
-		std::cout << "                                                                                                          You've gained 30 experience points, your pokemon is now level 12! " << std::endl;
 		Sleep(1000);
 		system("pause");
 	}
@@ -2004,7 +2094,7 @@ void battle::battle2()
 				textBox();
 				displayHP();
 				displayTrainerHP();
-				cout << "                                                                                         Bulbasaur Used Tackle!\n";
+				cout << "                                                                                         Bulbasaur Used Tackle! It dealt " << tackleDamage() << " damage!\n";
 				Sleep(2500);
 				move1 = false;
 				system("CLS");
@@ -2015,6 +2105,7 @@ void battle::battle2()
 					move3 = false;
 					move4 = false;
 					TraHP = 50;
+					growl = false;
 					break;
 				}
 				drawBulbasaurNDiglett();
@@ -2066,6 +2157,7 @@ void battle::battle2()
 					move3 = false;
 					move4 = false;
 					TraHP = 50;
+					growl = false;
 					break;
 				}
 				drawBulbasaurNDiglett();
@@ -2099,6 +2191,7 @@ void battle::battle2()
 				displayHP();
 				displayTrainerHP();
 				cout << "                                                                                         Bulbasaur Used Growl!\n";
+				growl = true;
 				Sleep(2500);
 				move3 = false;
 				system("CLS");
@@ -2109,6 +2202,7 @@ void battle::battle2()
 					move3 = false;
 					move4 = false;
 					TraHP = 50;
+					growl = false;
 					break;
 				}
 				drawBulbasaurNDiglett();
@@ -2154,6 +2248,7 @@ void battle::battle2()
 					move3 = false;
 					move4 = false;
 					TraHP = 50;
+					growl = false;
 					break;
 				}
 				drawBulbasaurNDiglett();
@@ -2183,6 +2278,13 @@ void battle::battle2()
 		}
 		cout << HP << "            " << TraHP;
 		PlaySound(NULL, 0, 0);
+		system("CLS");
+		drawBulbasaurNDiglett();
+		textBox();
+		pokemonLevel = pokemonLevel + 1;
+		std::cout << "                                                                                                 Your Pokemon Leveled Up! " << std::endl;
+		Sleep(1000);
+		system("pause");
 		system("CLS");
 		drawBulbasaurNCamper();
 		textBox();
@@ -2243,6 +2345,7 @@ void battle::battle2()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						growl = false;
 						break;
 					}
 					drawCharmanderNDiglett();
@@ -2286,6 +2389,7 @@ void battle::battle2()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						growl = false;
 						break;
 					}
 					drawCharmanderNDiglett();
@@ -2319,6 +2423,7 @@ void battle::battle2()
 					displayHP();
 					displayTrainerHP();
 					cout << "                                                                                    Charmander Used Growl! \n";
+					growl = true;
 					Sleep(2500);
 					if (TraHP <= 0)
 					{
@@ -2328,6 +2433,7 @@ void battle::battle2()
 						move4 = false;
 						TraHP = 50;
 						break;
+						growl = false;
 					}
 					system("CLS");
 					drawCharmanderNDiglett();
@@ -2371,6 +2477,7 @@ void battle::battle2()
 						move4 = false;
 						TraHP = 50;
 						break;
+						growl = false;
 					}
 					move4 = false;
 					system("CLS");
@@ -2403,7 +2510,8 @@ void battle::battle2()
 		system("CLS");
 		drawCharmanderNDiglett();
 		textBox();
-		std::cout << "                                                                                                          You've gained 30 experience points, your pokemon is now level 12! " << std::endl;
+		pokemonLevel = pokemonLevel + 1;
+		std::cout << "                                                                                                 Your Pokemon Leveled Up! " << std::endl;
 		Sleep(1000);
 		system("pause");
 		system("CLS");
@@ -2480,6 +2588,9 @@ void battle::battle3()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
+						growl = false;
+						tailWhip = false;
 						break;
 					}
 					drawSquirtleNGeodude();
@@ -2520,8 +2631,9 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt 30 Damage! \n";
+					cout << "                                                                                Squirtle Used Water Gun! It was super effective and dealt " << waterGunDamage() << " Damage! \n";
 					Sleep(2500);
+
 					system("CLS");
 					if (TraHP <= 0)
 					{
@@ -2530,6 +2642,9 @@ void battle::battle3()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
+						growl = false;
+						tailWhip = false;
 						break;
 					}
 					drawSquirtleNGeodude();
@@ -2569,7 +2684,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt 20 Damage! \n";
+					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt " << bubbleDamage() << " Damage! \n";
 					Sleep(2500);
 					if (TraHP <= 0)
 					{
@@ -2578,6 +2693,9 @@ void battle::battle3()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
+						growl = false;
+						tailWhip = false;
 						break;
 					}
 					system("CLS");
@@ -2618,6 +2736,7 @@ void battle::battle3()
 					displayXP();
 					displayTrainerLevel();
 					cout << "                                                                                   Squirtle Used Tail Whip!\n";
+					tailWhip = true;
 					Sleep(2500);
 					system("CLS");
 					drawSquirtleNGeodude();
@@ -2643,6 +2762,9 @@ void battle::battle3()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
+						growl = false;
+						tailWhip = false;
 						break;
 					}
 					move4 = false;
@@ -2659,10 +2781,18 @@ void battle::battle3()
 
 			}
 		}
+		system("CLS");
+		drawSquirtleNGeodude();
+		textBox();
 		pokemonLevel = pokemonLevel + 1;
+		HP += 2;
+		std::cout << "                                                                                                 Your Pokemon Leveled Up! " << std::endl;
+		Sleep(1000);
+		system("pause");
+		system("CLS");
 		drawSquirtleNOnix();
 		textBox();
-		cout << "                                                                                                             Camper James sent out Sandshrew!\n";
+		cout << "                                                                                                             Gym Leader Brock sent out Sandshrew!\n";
 		Sleep(2000);
 		system("CLS");
 		drawSquirtleNOnix();
@@ -2697,6 +2827,9 @@ void battle::battle3()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
+						growl = false;
+						tailWhip = false;
 						break;
 					}
 					drawSquirtleNOnix();
@@ -2747,6 +2880,9 @@ void battle::battle3()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
+						growl = false;
+						tailWhip = false;
 						break;
 					}
 					drawSquirtleNOnix();
@@ -2786,7 +2922,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt 20 Damage! \n";
+					cout << "                                                                                    Squirtle Used Bubble! It was super effective and dealt " << bubbleDamage() << " Damage! \n";
 					Sleep(2500);
 					if (TraHP <= 0)
 					{
@@ -2795,6 +2931,9 @@ void battle::battle3()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
+						growl = false;
+						tailWhip = false;
 						break;
 					}
 					system("CLS");
@@ -2835,6 +2974,7 @@ void battle::battle3()
 					displayXP();
 					displayTrainerLevel();
 					cout << "                                                                                   Squirtle Used Tail Whip!\n";
+					tailWhip = true;
 					Sleep(2500);
 					system("CLS");
 					drawSquirtleNOnix();
@@ -2860,6 +3000,8 @@ void battle::battle3()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
+						tailWhip = false;
 						break;
 					}
 					move4 = false;
@@ -2879,16 +3021,24 @@ void battle::battle3()
 		cout << HP << "            " << TraHP;
 		PlaySound(NULL, 0, 0);
 		system("CLS");
-		drawSquirtleNCamper();
+		drawSquirtleNOnix();
 		textBox();
-		std::cout << "                                                                                                         Trainer Ash defeated Camper James! " << std::endl;
+		pokemonLevel = pokemonLevel + 1;
+		std::cout << "                                                                                                 Your Pokemon Leveled Up! " << std::endl;
 		Sleep(1000);
 		system("pause");
 		system("CLS");
-		drawSquirtleNCamper();
+		drawSquirtleNBrock();
+		textBox();
+		std::cout << "                                                                                                         Trainer Ash defeated Gym Leader Brock! " << std::endl;
+		Sleep(1000);
+		system("pause");
+		system("CLS");
+		drawSquirtleNBrock();
 		textBox();
 		std::cout << "                                                                                                          Alright, you pass. " << std::endl;
 		Sleep(1000);
+		system("CLS");
 		system("pause");
 		Sleep(3000);
 		youWin();
@@ -2929,7 +3079,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					std::cout << "                                                                                             Bulbasaur used Tackle!";
+					cout << "                                                                                         Bulbasaur Used Tackle! It dealt " << tackleDamage() << " damage!\n";
 					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
@@ -2939,6 +3089,7 @@ void battle::battle3()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
 						break;
 					}
 					drawBulbasaurNGeodude();
@@ -2994,6 +3145,7 @@ void battle::battle3()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
 						break;
 					}
 					drawBulbasaurNGeodude();
@@ -3034,6 +3186,7 @@ void battle::battle3()
 					displayTrainerLevel();
 					cout << "                                                                                    Bulbasaur Used Growl!\n";
 					Sleep(2500);
+					growl = true;
 					if (TraHP <= 0)
 					{
 						move1 = false;
@@ -3041,6 +3194,7 @@ void battle::battle3()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
 						break;
 					}
 					system("CLS");
@@ -3089,6 +3243,7 @@ void battle::battle3()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
 						break;
 					}
 					Sleep(2500);
@@ -3123,11 +3278,18 @@ void battle::battle3()
 
 			}
 		}
+		system("CLS");
+		drawBulbasaurNGeodude();
+		textBox();
 		pokemonLevel = pokemonLevel + 1;
+		HP += 2;
+		std::cout << "                                                                                                 Your Pokemon Leveled Up! " << std::endl;
+		Sleep(1000);
+		system("pause");
 		system("CLS");
 		drawBulbasaurNOnix();
 		textBox();
-		cout << "                                                                                                             Camper James sent out Onix!\n";
+		cout << "                                                                                                             Gym Leader Brock sent out Onix!\n";
 		Sleep(2000);
 		system("CLS");
 		drawBulbasaurNOnix();
@@ -3152,7 +3314,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-				    std::cout << "                                                                                               Bulbasaur used Tackle!" << std::endl;
+					cout << "                                                                                         Bulbasaur Used Tackle! It dealt " << tackleDamage() << " damage!\n";
 					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
@@ -3162,6 +3324,7 @@ void battle::battle3()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
 						break;
 					}
 					drawBulbasaurNOnix();
@@ -3202,7 +3365,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                Squirtle Used Leech Seed! It was super effective and dealt 30 Damage! \n";
+					cout << "                                                                                Bulbasaur Used Leech Seed! It was super effective and dealt 30 Damage! \n";
 					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
@@ -3212,6 +3375,7 @@ void battle::battle3()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
 						break;
 					}
 					drawBulbasaurNOnix();
@@ -3250,7 +3414,8 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                    Bulbasaur used Growl! It was super effective and dealt 20 Damage! \n";
+					cout << "                                                                                    Bulbasaur used Growl! \n";
+					growl = true;
 					Sleep(2500);
 					if (TraHP <= 0)
 					{
@@ -3307,6 +3472,7 @@ void battle::battle3()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
 						break;
 					}
 					Sleep(2500);
@@ -3342,9 +3508,16 @@ void battle::battle3()
 		cout << HP << "            " << TraHP;
 		PlaySound(NULL, 0, 0);
 		system("CLS");
-		drawBulbasaurNCamper();
+		drawBulbasaurNOnix();
 		textBox();
-		std::cout << "                                                                                                         Trainer Ash defeated Camper James! " << std::endl;
+		pokemonLevel = pokemonLevel + 1;
+		std::cout << "                                                                                                 Your Pokemon Leveled Up! " << std::endl;
+		Sleep(1000);
+		system("pause");
+		system("CLS");
+		drawBulbasaurNBrock();
+		textBox();
+		std::cout << "                                                                                                         Trainer Ash defeated Gym Leader Brock! " << std::endl;
 		Sleep(1000);
 		system("pause");
 		system("CLS");
@@ -3386,14 +3559,14 @@ void battle::battle3()
 				if (move1 == true)
 				{
 					system("CLS");
-					TraHP = TraHP - 20;
+					attackScratch(defenseCurl);
 					drawCharmanderNGeodude();
 					textBox();
 					displayHP();
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                              Charmander used Scratch!";
+					displayScratchDmg();
 					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
@@ -3403,6 +3576,7 @@ void battle::battle3()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
 						break;
 					}
 					drawCharmanderNGeodude();
@@ -3433,7 +3607,7 @@ void battle::battle3()
 
 				}
 
-				else if (move2 == true)
+				else if (move3 == true)
 				{
 					system("CLS");
 					drawCharmanderNGeodude();
@@ -3443,6 +3617,7 @@ void battle::battle3()
 					displayXP();
 					displayTrainerLevel();
 					cout << "                                                                                Charmander used Growl! \n";
+					growl = true;
 					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
@@ -3452,6 +3627,7 @@ void battle::battle3()
 						move3 = false;
 						move4 = false;
 						TraHP = 50;
+						defenseCurl = false;
 						break;
 					}
 					drawCharmanderNGeodude();
@@ -3481,7 +3657,7 @@ void battle::battle3()
 					charmanderMoveSet();
 				}
 
-				else if (move3 == true)
+				else if (move2 == true)
 				{
 					system("CLS");
 					TraHP = TraHP - emberDamage();
@@ -3491,7 +3667,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                Charmander Used Ember!It dealt" << emberDamage() << "Damage! \n";
+					cout << "                                                                                Charmander Used Ember!It dealt " << emberDamage() << " Damage! \n";
 					Sleep(2500);
 					if (TraHP <= 0)
 					{
@@ -3542,6 +3718,16 @@ void battle::battle3()
 					displayTrainerLevel();
 					cout << "                                                                                   Charmander used Dragon Rage!\n";
 					Sleep(2500);
+					if (TraHP <= 0)
+					{
+						move1 = false;
+						move2 = false;
+						move3 = false;
+						move4 = false;
+						TraHP = 50;
+						defenseCurl = false;
+						break;
+					}
 					system("CLS");
 					drawCharmanderNGeodude();
 					textBox();
@@ -3559,15 +3745,6 @@ void battle::battle3()
 						system("pause");
 						exit(0);
 					}
-					if (TraHP <= 0)
-					{
-						move1 = false;
-						move2 = false;
-						move3 = false;
-						move4 = false;
-						TraHP = 50;
-						break;
-					}
 					move4 = false;
 					system("CLS");
 					drawCharmanderNGeodude();
@@ -3582,7 +3759,15 @@ void battle::battle3()
 
 			}
 		}
+		system("CLS");
+		drawCharmanderNGeodude();
+		textBox();
 		pokemonLevel = pokemonLevel + 1;
+		HP += 2;
+		std::cout << "                                                                                                 Your Pokemon Leveled Up! " << std::endl;
+		Sleep(1000);
+		system("pause");
+		system("CLS");
 		drawCharmanderNOnix();
 		textBox();
 		cout << "                                                                                                             Gym Leader Brock sent out Onix!\n";
@@ -3603,14 +3788,14 @@ void battle::battle3()
 				if (move1 == true)
 				{
 					system("CLS");
-					TraHP = TraHP - 20;
+					attackScratch(defenseCurl);
 					drawCharmanderNOnix();
 					textBox();
 					displayHP();
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                      Charmander used Scratch!";
+					displayScratchDmg();
 					Sleep(2500);
 					system("CLS");
 					if (TraHP <= 0)
@@ -3661,6 +3846,7 @@ void battle::battle3()
 					displayTrainerLevel();
 					cout << "                                                                                Charmander used Growl! \n";
 					Sleep(2500);
+					growl = true;
 					system("CLS");
 					if (TraHP <= 0)
 					{
@@ -3759,6 +3945,15 @@ void battle::battle3()
 					displayTrainerLevel();
 					cout << "                                                                                   Charmander Used Dragon Rage!\n";
 					Sleep(2500);
+					if (TraHP <= 0)
+					{
+						move1 = false;
+						move2 = false;
+						move3 = false;
+						move4 = false;
+						TraHP = 50;
+						break;
+					}
 					system("CLS");
 					drawCharmanderNOnix();
 					textBox();
@@ -3775,15 +3970,6 @@ void battle::battle3()
 						Sleep(3000);
 						system("pause");
 						exit(0);
-					}
-					if (TraHP <= 0)
-					{
-						move1 = false;
-						move2 = false;
-						move3 = false;
-						move4 = false;
-						TraHP = 50;
-						break;
 					}
 					move4 = false;
 					system("CLS");
@@ -3802,9 +3988,16 @@ void battle::battle3()
 		cout << HP << "            " << TraHP;
 		PlaySound(NULL, 0, 0);
 		system("CLS");
-		drawCharmanderNCamper();
+		drawCharmanderNOnix();
 		textBox();
-		std::cout << "                                                                                                         Trainer Ash defeated Camper James! " << std::endl;
+		pokemonLevel = pokemonLevel + 1;
+		std::cout << "                                                                                                 Your Pokemon Leveled Up! " << std::endl;
+		Sleep(1000);
+		system("pause");
+		system("CLS");
+		drawCharmanderNBrock();
+		textBox();
+		std::cout << "                                                                                                         Trainer Ash defeated Gym Leader Brock! " << std::endl;
 		Sleep(1000);
 		system("pause");
 		system("CLS");

@@ -47,6 +47,8 @@ public:
 	void drawBulbasaurNGeodude();
 	void drawBulbasaurNOnix();
 	void drawBulbasaurNBrock();
+	int ifTailWhipIsTrue();
+	int ifGrowlIsTrue();
 	void displayHP();
 	void displayXP();
 	void displayTrainerHP();
