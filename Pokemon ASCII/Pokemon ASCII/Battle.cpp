@@ -1258,7 +1258,7 @@ void battle::battle1()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                   Squirtle Used Tail Whip!\n";
+					cout << "                                                                                   Squirtle Used Tail Whip!\n Sandshrew's defense fell!";
 					tailWhip = true;
 					Sleep(2500);
 					system("CLS");
@@ -1996,7 +1996,8 @@ void battle::battle2()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                   Squirtle Used Tail Whip!\n";
+					cout << "                                                                                   Squirtle Used Tail Whip!\n Diglett's defense fell!";
+					tailWhip = true;
 					Sleep(2500);
 					system("CLS");
 					drawSquirtleNDiglett();
@@ -2735,7 +2736,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                   Squirtle Used Tail Whip!\n";
+					cout << "                                                                                   Squirtle Used Tail Whip!\n Geodude's defense fell!";
 					tailWhip = true;
 					Sleep(2500);
 					system("CLS");
@@ -2973,7 +2974,7 @@ void battle::battle3()
 					displayTrainerHP();
 					displayXP();
 					displayTrainerLevel();
-					cout << "                                                                                   Squirtle Used Tail Whip!\n";
+					cout << "                                                                                   Squirtle Used Tail Whip! Onix's defense fell!\n";
 					tailWhip = true;
 					Sleep(2500);
 					system("CLS");

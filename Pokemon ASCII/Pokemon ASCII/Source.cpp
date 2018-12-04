@@ -73,7 +73,7 @@ int main(int argc, char* argv[])
 	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
 	std::cout<< "                                                                                               Hello there, it's so very nice to see you!"<<std::endl;
 
-
+	Sleep(1000);
 	system("pause");
 	system("CLS");
 
@@ -92,7 +92,7 @@ int main(int argc, char* argv[])
 	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
 	std::cout << "                                                                                              Welcome to the world of Pokemon!" << std::endl;
 
-
+	Sleep(1000);
 	system("pause");
 	system("CLS");
 
@@ -112,7 +112,7 @@ int main(int argc, char* argv[])
 	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
 	std::cout << "                                                                                              My name is Professor Oak." << std::endl;
 
-
+	Sleep(1000);
 	system("pause");
 	system("CLS");
 
@@ -236,6 +236,7 @@ int main(int argc, char* argv[])
 	//PlaySound("Pokemon BlueRed - Route 24 & 25.wav", NULL, SND_FILENAME | SND_LOOP | SND_ASYNC);
 	std::cout << "                                                                                      This world is inhabited by creatures called Pokemon." << std::endl;
 
+	Sleep(500);
 	system("pause");
 	system("CLS");
 
@@ -262,6 +263,7 @@ int main(int argc, char* argv[])
 	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
 	std::cout << "                                                                                   For some people,Pokemon are pets. Some use them for battles." << std::endl;
 
+	Sleep(500);
 	system("pause");
 	system("CLS");
 	
@@ -287,6 +289,7 @@ int main(int argc, char* argv[])
 	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
 	std::cout << "                                                                                   I on the other hand, study Pokemon as a profession." << std::endl;
 
+	Sleep(500);
 	system("pause");
 	system("CLS");
 
@@ -306,6 +309,7 @@ int main(int argc, char* argv[])
 	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
 	std::cout << "                                                                                              Ash!" << std::endl;
 
+	Sleep(500);
 	system("pause");
 	system("CLS");
 
@@ -325,7 +329,7 @@ int main(int argc, char* argv[])
 	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
 	std::cout << "                                                                                             Your very own Pokemon legend is about to unfold!" << std::endl;
 
-
+	Sleep(500);
 	system("pause");
 	system("CLS");
 
@@ -345,7 +349,7 @@ int main(int argc, char* argv[])
 	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
 	std::cout << "                                                                             A world full of hopes and dream with Pokemon awaits! Let's go!" << std::endl;
 
-
+	Sleep(500);
 	system("pause");
 	system("CLS");
 	PlaySound(NULL, 0, 0);
@@ -363,7 +367,7 @@ int main(int argc, char* argv[])
 			starterPokemon.close();
 		}
 
-		std::cout << "Pick a Starter(please type 1,2 or 3):" << std::endl;
+		std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\nPick a Starter(please type 1,2 or 3):" << std::endl;
 		while (!(std::cin >> std::noskipws >> starter))
 		{
 			system("CLS");
@@ -378,7 +382,7 @@ int main(int argc, char* argv[])
 			}
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			std::cout << "Pick a Starter(please type 1,2 or 3):" << std::endl;
+			std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\nPick a Starter(please type 1,2 or 3):" << std::endl;
 		}
 		if (starter == 1|| starter == 2|| starter == 3)
 		{
@@ -442,50 +446,31 @@ int main(int argc, char* argv[])
 
 	system("pause");
 
-/*
-	status starter;
-	
-	{
-		starter.pokemon();
-	}
-
-	
-	*/
-//Battle Stuff
-	//battle()
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
 
 //OverWorld stuff
+	system("CLS");
+	profOak.open("you are now in pewter city gym.txt", std::ios::in);
+
+	if (profOak.is_open())
+	{
+		while (getline(profOak, line))
+		{
+			std::cout << line << "\n";
+		}
+		profOak.close();
+	}
+	Sleep(3000);
 	system("CLS");
 	DrawGym gym;
 	if (inOverWorld == true)
 	{
+
 		system("CLS");
 		gym.setStarterChosen(starter);
 		gym.display(x);
 
-		
-
-
 	}
 	
-	
-
 	system("pause");
 	return 0;
 }
